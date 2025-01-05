@@ -1,3 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: ClashDisplay-Regular;
+  src: url('../src/fonts/ClashDisplay_Complete/ClashDisplay-Regular.ttf');
+}
+
+@font-face {
+  font-family: ClashDisplay-SemiBold;
+  src: url('../src/fonts/ClashDisplay_Complete/ClashDisplay-Semibold.ttf');
+}
+
+@font-face {
+  font-family: ClashDisplay-Bold;
+  src: url('../src/fonts/ClashDisplay_Complete/ClashDisplay-Bold.ttf');
+}
+
+@font-face {
+  font-family: ClashDisplay-ExtraLight;
+  src: url('../src/fonts/ClashDisplay_Complete/ClashDisplay-Extralight.ttf');
+}
+
+@font-face {
+  font-family: ClashDisplay-Light;
+  src: url('../src/fonts/ClashDisplay_Complete/ClashDisplay-Light.ttf');
+}
+
 .App {
   text-align: center;
 }

@@ -1,0 +1,17 @@
+h1{
+    background: linear-gradient(to right,#2B2B2B,#FFFFFF); /* Gradiente de cor */
+    background-clip: text; /* Aplica o gradiente ao texto */
+    color: transparent; 
+}
+
+.divImg{
+    box-shadow: 80px -40px 200px #9FFAFF;
+
+}
+
+/* Adiciona um estilo inicial para os paths */
+path, line {
+    stroke: #494949; /* Cor do contorno */
+    stroke-width: 1.5; /* Tamanho da linha */
+    fill: none; /* Preenchimento vazio, para que o contorno seja visível */
+  }

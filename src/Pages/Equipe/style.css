@@ -1,0 +1,59 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    overflow-x: clip;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+  }
+  
+  .swiper-pagination{
+    bottom: -24px!important;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius:12px;
+    object-fit: cover;
+  }
+
+  .swiper-pagination-bullet{
+    background-color: #fff;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: #007aff;
+  }
+  .swiper-slide div {
+    width: 100%;
+    position: relative;
+    border: 4px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box;
+    /* just to show box-shadow still works fine */
+  }
+  
+  .swiper-slide div::after {
+    position: absolute;
+    top: -4px; bottom: -4px;
+    left: -4px; right: -4px;
+    background: linear-gradient(to bottom right,#06E5F1B2, black, black, #06E5F1B2);
+    content: '';
+    z-index: -1;
+    border-radius: 16px;
+}
+
+.teamSlider .swiper-slide-active{
+  transform: scale(1.2)!important; /* Aumenta o tamanho */
+  transform-origin: bottom center; /* Faz o aumento partir de baixo */
+  transform: translateZ(1)!important;
+  transition: all 0.1s linear;
+}
