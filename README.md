@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
@@ -88,3 +89,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# vision
+Vision website project, 3D
+>>>>>>> 18bfd4bee06463a19f4d06dc39e9ef6d434d7313
