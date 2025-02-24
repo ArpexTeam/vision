@@ -1,4 +1,5 @@
 import About from "./Pages/About";
+import Commercial from "./Pages/Commercial";
 import Contact from "./Pages/Contact";
 import Equipe from "./Pages/Equipe";
 import Events from "./Pages/Events";
@@ -16,6 +17,7 @@ const Router = () => {
                  <Route element = { <Contact/> }  path="/contato" />
                  <Route element = { <About/> }  path="/sobre" />
                  <Route element = { <Events/> }  path="/eventos" />
+                 <Route element = { <Commercial/> }  path="/commercial" />
             </Routes>
    )
 }

@@ -5,12 +5,15 @@ h1{
     color: transparent; 
 }
 
-.servicesCard {
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-}
 
-.servicesCard:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
+
+.titleBlueLine::before{
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #06E5F1;
+    color: #06E5F1;
+    position: relative;
+    top: -25px;
 }

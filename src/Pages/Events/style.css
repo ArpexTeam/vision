@@ -1,0 +1,11 @@
+.titleBlueLineLeft::before{
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #06E5F1;
+    color: #06E5F1;
+    position: relative;
+    top:30px;
+    left: -50px;
+}
