@@ -15,3 +15,17 @@ path, line {
     stroke-width: 1.5; /* Tamanho da linha */
     fill: none; /* Preenchimento vazio, para que o contorno seja visível */
   }
+
+  .textGradient{
+    background-image: linear-gradient(to right, #202020, #FFFFFF);
+  
+    /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+  
+    /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+    -webkit-text-fill-color: transparent;
+  
+    /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+    color: white!important;
+  }

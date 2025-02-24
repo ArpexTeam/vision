@@ -3,6 +3,7 @@ import Services from '../../components/Services';
 import Banner from '../../components/Banner';
 import Partners from '../../components/Partners';
 import Robot from '../../components/RobotSection';
+import Feedback from '../../components/Feedback';
 
 function Home(){
     return(
@@ -12,6 +13,7 @@ function Home(){
         <Services/>
         <Banner/>
         <Partners/>
+        <Feedback/>
         </>
     )
 }

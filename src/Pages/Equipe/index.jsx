@@ -41,9 +41,9 @@ function Equipe(){
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><div className='w-full h-full'><img src={eq1}/></div></SwiperSlide>
-        <SwiperSlide><div className='w-full h-full'><img src={eq2}/></div></SwiperSlide>
-        <SwiperSlide><div className='w-full h-full'><img src={eq3}/></div></SwiperSlide>
+        <SwiperSlide className='slideTeam'><div className='w-full h-full'><img src={eq1}/></div></SwiperSlide>
+        <SwiperSlide className='slideTeam'><div className='w-full h-full'><img src={eq2}/></div></SwiperSlide>
+        <SwiperSlide className='slideTeam'><div className='w-full h-full'><img src={eq3}/></div></SwiperSlide>
 
     
       </Swiper>

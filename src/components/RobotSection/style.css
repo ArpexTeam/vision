@@ -1,3 +1,9 @@
+/* .gradientDiv{
+    background: linear-gradient(to bottom, #06E5F1, rgba(0, 0, 0, 0.1));
+    position: relative;
+    border-radius: 10px;
+} */
+
 button{
-    border-image: linear-gradient(#06E5F1, #000000) 30;
+    border:none;
 }

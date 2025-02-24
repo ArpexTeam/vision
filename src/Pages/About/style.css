@@ -1,31 +1,23 @@
 .cardFront {
     position: relative;
-    border: 4px solid transparent;
+    border: 0px solid transparent;
     border-radius: 16px;
     background-clip: padding-box;
     /* just to show box-shadow still works fine */
   }
   
-  .cardFront::after {
-    position: absolute;
-    top: -1px; bottom: -1px;
-    left: -1px; right: -1px;
-    background: linear-gradient(to bottom right,rgba(6, 229, 241, 0.68), black, black, rgba(6, 229, 241, 0.68));
-    content: '';
-    z-index: 1;
-    border-radius: 16px;
-}
+
 .cardFront img{
     z-index:2;
     position: relative;
     border-radius: 16px;
 }
 
-.textCardTeam div div::after {
+.textCardTeam div div div::after {
     position: absolute;
-    top: -1px; bottom: -1px;
-    left: -1px; right: -1px;
-    background: linear-gradient(to bottom right,rgba(6, 229, 241, 0.68), black, black, black);
+    top: -6px; bottom: -6px;
+    left: -6px; right: -6px;
+    background: linear-gradient(to bottom right,rgba(6, 229, 241, 0.68), rgba(6, 229, 241, 0.212), black, black);
     content: '';
     z-index: -1;
     border-radius: 16px;
@@ -39,4 +31,10 @@
 .textCardTeam div div p{
     border-radius: 16px;
     background-color: black;
+}
+
+.textBodyGradient{
+    background: linear-gradient(to right,#2B2B2B,#FFFFFF); /* Gradiente de cor */
+    background-clip: text; /* Aplica o gradiente ao texto */
+    color: transparent; 
 }
