@@ -27,6 +27,15 @@
   src: url('../src/fonts/ClashDisplay_Complete/ClashDisplay-Light.ttf');
 }
 
+@font-face {
+  font-family: ClashDisplay-Medium;
+  src: url('../src/fonts/ClashDisplay_Complete/ClashDisplay-Medium.ttf');
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
 .App {
   text-align: center;
 }
