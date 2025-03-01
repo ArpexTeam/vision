@@ -17,8 +17,8 @@ function App() {
           <NavBar/>
           <Router/>
           <Footer/>
-        <a target="_blank" href="https://wa.me/393663013278" className="fixed bottom-44 right-7 text-white p-2 bg-green-600 rounded-full"><img src={whats} className="w-10 h-10"/></a>
-        <a href="#topo" className="fixed bottom-24 right-7 text-white p-4 bg-[#06E5F1] rounded-xl"><img className="w-6 h-6" src={upArrow}/></a>
+        <a target="_blank" href="https://wa.me/393663013278" className="fixed bottom-44 right-7 text-white p-2 bg-green-600 rounded-full z-50"><img src={whats} className="w-10 h-10"/></a>
+        <a href="#topo" className="fixed bottom-24 right-7 text-white p-4 bg-[#06E5F1] rounded-xl"><img className="w-6 h-6 z-50" src={upArrow}/></a>
     </div>
     </BrowserRouter>
 
