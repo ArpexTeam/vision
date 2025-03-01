@@ -22,8 +22,8 @@ function About(){
                 <div className='flex flex-col lg:flex-row gap-10 mt-20 relative textCardTeam'>
                     
                 <div className='order-2 lg:order-1 flex flex-col items-center lg:mb-0 mb-20'>
-                <div className='flex w-3/4 md:w-2/4 lg:w-full h-[500px] cardFront relative'>
-                <div className="h-[400px] mt-auto relative">
+                <div className='flex w-3/4 justify-center md:w-2/4 lg:w-full lg:h-[500px] cardFront relative'>
+                <div className="lg:h-[400px] mt-auto relative">
                 <img src={eq2} className='w-full h-full'/>
                 </div>
                 </div>
@@ -34,8 +34,8 @@ function About(){
                 </div>
 
                 <div className='order-1 lg:order-2 w-fit flex flex-col items-center lg:mb-0 mb-20'>
-                <div className='w-3/4 md:w-2/4 lg:w-full h-[500px] cardFront'>
-                <div className="mt-auto relative">
+                <div className='w-3/4 md:w-2/4 lg:w-full lg:h-[500px] cardFront'>
+                <div className="h-full mt-auto relative">
 
                 <img src={eq1} className='h-full w-full'/></div>
                 </div>
@@ -46,8 +46,8 @@ function About(){
                 </div>
 
                 <div className='order-3 lg:order-3 w-fit flex flex-col items-center lg:mb-0 mb-20'>
-                <div className='flex w-3/4 md:w-2/4 lg:w-full h-[500px] cardFront relative'>
-                <div className="h-[400px] mt-auto relative">
+                <div className='flex justify-center w-3/4 md:w-2/4 lg:w-full lg:h-[500px] cardFront relative'>
+                <div className="lg:h-[400px] mt-auto relative">
 
                 <img src={eq3} className='h-full w-full'/>
                 </div>

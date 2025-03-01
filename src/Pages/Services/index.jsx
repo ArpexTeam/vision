@@ -368,8 +368,8 @@ function Services() {
     <div className="bg-black w-full pt-20 h-auto relative">
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
 
-      <div className="text-left flex justify-between mb-40">
-        <div className="w-2/3">
+      <div className="relative md:text-left flex flex-col md:flex-row items-center md:items-start justify-between mb-40">
+        <div className="w-full md:w-1/2 lg:w-2/3">
         <h1 className="font-[ClashDisplay-Bold] text-[40px] mb-4">Our Services</h1>
         <h1 className="font-[ClashDisplay-Semibold] text-[30px] mb-8">Difficulty to sell? We are the solution</h1>
 
@@ -378,14 +378,14 @@ function Services() {
           Our portfolio includes advertising, corporate videos, 2D/3D animations, and more.
           </h1>
           </div>
-          <div className="w-1/3">
-            <div className="ml-auto w-10/12 h-full rounded-2xl bg-[#B1B1B1]/20">
+          <div className="h-56 w-full mt-6 md:mt-0 md:w-1/2 lg:w-1/3">
+            <div className="ml-auto mr-auto md:mr-0 w-10/12 h-full rounded-2xl bg-[#B1B1B1]/20">
 
             </div>
           </div>
       </div>
 
-      <svg className='float-left' width="87" height="4110" viewBox="0 0 87 4110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className='float-left hidden sm:block' width="87" height="4110" viewBox="0 0 87 4110" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path id="line1" d="M42 0.566244L27.5662 15L42 29.4338L56.4338 15L42 0.566244ZM39.5 15L39.5 4067H44.5L44.5 15H39.5Z" fill="#494949"/>
 <g filter="url(#filter0_d_1009_4703)">
 <ellipse id="shadow1" cx="43.5" cy="354.709" rx="12.5" ry="12.1152" fill="black"/>
@@ -509,27 +509,27 @@ function Services() {
         <div>
           <div className="pb-96 mt-44">
             <CardService image={cardImg} title={"Video Productions"} textBody={"We create personalized plans that combine market analysis, clear goals, and effective actions to elevate your brand and achieve your business objectives."}
-             left="" paddingDirection={"pl-10 pr-16"} marginDirection="-ml-48 md:-ml-16" flexDirection="flex-row" gradientDirection="bg-gradient-to-l" />
+             top="md:mt-0 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
-            <CardService image={cardImg2} paddingDirection={"pr-10 pl-24"} title={"Motion Design"} textBody={"With the power of motion design, we can present your promotion or product in the best way possible."}
-             top="mt-[200px]" left="" marginDirection="-mr-48 md:-mr-20" flexDirection="flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+            <CardService image={cardImg2} paddingDirection={"md:pr-10 md:pl-24 p-10"} title={"Motion Design"} textBody={"With the power of motion design, we can present your promotion or product in the best way possible."}
+             top="mt-[100px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg3} title={"CGI 3D"}
-             textBody={"With the power of CGI, we insert 3D elements into real scenes, creating a perfect fusion between the virtual and the real."} paddingDirection={"pl-10 pr-20"} top="mt-[250px]" left="" marginDirection="-ml-48 md:-ml-20" flexDirection="flex-row" gradientDirection="bg-gradient-to-l" />
+             textBody={"With the power of CGI, we insert 3D elements into real scenes, creating a perfect fusion between the virtual and the real."} paddingDirection={"md:pl-10 md:pr-20 p-10"} top="mt-[100px] md:mt-[250px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg4} title={"3D Modeling"} 
-            textBody={"We model your product or scene and animate it with textures and lighting that make it realistic."} paddingDirection={"pr-10 pl-24"} top="mt-[300px]" left="" marginDirection="-mr-48 md:-mr-20" flexDirection="flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+            textBody={"We model your product or scene and animate it with textures and lighting that make it realistic."} paddingDirection={"md:pr-10 md:pl-24 p-10"} top="mt-[100px] md:mt-[300px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg5} title={"3D Animation"}
-             textBody={"We animate any 3D object or scene, bringing movement and life to every detail."} paddingDirection={"pl-10 pr-16"} top="mt-[430px]" left="" marginDirection="-ml-48 md:-ml-20" flexDirection="flex-row" gradientDirection="bg-gradient-to-l" />
+             textBody={"We animate any 3D object or scene, bringing movement and life to every detail."} paddingDirection={"md:pl-10 md:pr-16 p-10"} top="mt-[100px] md:mt-[430px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg6} title={"Graphic Animation"}
-             textBody={"We bring movement to your graphics to showcase your company in the best possible way, and we also offer general graphic design services."} paddingDirection={"pr-10 pl-24"} top="mt-[200px]" left="" marginDirection="-mr-48 md:-mr-20" flexDirection="flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+             textBody={"We bring movement to your graphics to showcase your company in the best possible way, and we also offer general graphic design services."} paddingDirection={"pr-10 md:pl-24 p-10"} top="mt-[100px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
           
           <CardService image={cardImg5} title={"3D Animation"}
-             textBody={"We animate any 3D object or scene, bringing movement and life to every detail."} paddingDirection={"pl-10 pr-16"} top="mt-[150px]" left="" marginDirection="-ml-48 md:-ml-20" flexDirection="flex-row" gradientDirection="bg-gradient-to-l" />
+             textBody={"We animate any 3D object or scene, bringing movement and life to every detail."} paddingDirection={"md:pl-10 md:pr-16 p-10"} top="mt-[80px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
-            <div className="relative w-full text-left mt-72">
+            <div className="relative w-full text-left mt-52">
               <h1 className="font-[ClashDisplay-Bold] text-[28px] mb-7">Our Numbers in 2024</h1>
               <div className='flex gap-10 justify-between'>
               <div>
