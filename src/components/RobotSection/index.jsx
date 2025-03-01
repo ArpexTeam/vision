@@ -25,7 +25,7 @@ function Robot(){
                         Graphic Animation
                         </button>
                         </div>
-                    </div>
+                    
                     <div className='hidden md:block w-1/3'></div>
                     <div className='w-full md:w-3/12 flex flex-col gap-5 mb-5 md:mb-0'>
                     <button className='font-[ClashDisplay-Medium] text-[13px] md:text-[20px] md:mr-auto ml-auto md:ml-0 border w-40 md:w-11/12 h-20 bg-gradient-to-l from-[#06E5F108]/10 to-[#00000026]/15 rounded-md'>
@@ -37,6 +37,7 @@ function Robot(){
                         <button className='font-[ClashDisplay-Medium] text-[13px] md:text-[20px] md:mr-auto ml-auto md:ml-0 border w-40 md:w-11/12 h-20 bg-gradient-to-l from-[#06E5F108]/10 to-[#00000026]/15 rounded-md'>
                         Motion Design
                         </button>
+                    </div>
                     </div>
                 </div>
             </div>
