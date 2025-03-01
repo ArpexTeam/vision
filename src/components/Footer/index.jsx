@@ -35,10 +35,11 @@ function Footer(){
 
                 <ul className='flex flex-col gap-2 mt-6'>
                     <li><NavLink to='/' className={'hover:text-[#06E5F180]'}>Home</NavLink></li>
-                    <li><NavLink to='/servicos' className={'hover:text-[#06E5F180]'}>Serviços</NavLink></li>
-                    <li><NavLink to='/equipe' className={'hover:text-[#06E5F180]'}>Equipe</NavLink></li>
-                    <li className={'hover:text-[#06E5F180]'}>Quem somos</li>
-                    <li><NavLink to='/contato' className={'hover:text-[#06E5F180]'}>Contato</NavLink></li>
+                    <li><NavLink to='/servicos' className={'hover:text-[#06E5F180]'}>Services</NavLink></li>
+                    <li><NavLink to='/commercial' className={'hover:text-[#06E5F180]'}>Commercial</NavLink></li>
+                    <li><NavLink to='/eventos' className={'hover:text-[#06E5F180]'}>Events</NavLink></li>
+                    <li><NavLink to='/sobre' className={'hover:text-[#06E5F180]'}>Wo we are</NavLink></li>
+                    <li><NavLink to='/contato' className={'hover:text-[#06E5F180]'}>Contact</NavLink></li>
                 </ul>
             </div>
             <div className='w-full sm:w-auto'>
@@ -50,7 +51,7 @@ function Footer(){
                 <a href="https://www.instagram.com/visionproductionsco?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target='_blank'>
                 <img src={instaIcon} className='w-6 h-auto hover:rotate-12 transition-all cursor-pointer'/>
                 </a>
-                <a href='https://wa.me/+393663013278' target='_blank'>
+                <a href="https://wa.me/393663013278" target='_blank'>
                 <img src={whatsIcon} className='w-6 h-auto hover:rotate-12 transition-all cursor-pointer'/>
                 </a>
                 </div>
