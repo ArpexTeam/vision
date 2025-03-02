@@ -50,7 +50,7 @@ function Services(){
                             that captivate and deliver results.
                             Let’s create together!
                         </p>
-                        <button className='bg-[#06E5F1] px-7 py-3 mt-10 rounded-md font-[ClashDisplay-Medium]'>
+                        <button className='bg-[#06E5F1] hover:bg-transparent hover:text-[#06E5F1] hover:border-2 hover:border-[#06E5F1] px-7 py-3 mt-10 rounded-md font-[ClashDisplay-Medium] transition-all duration-500 ease-in-out' style={{border:'1px solid #06E7F2'}}>
                             View more
                         </button>
                     </div>
@@ -110,7 +110,7 @@ function Services(){
                             visuals and storytelling
                             that captivate your audience.
                         </p>
-                        <button className='bg-[#06E5F1] px-7 py-3 mt-10 rounded-md font-[ClashDisplay-Medium]'>
+                        <button className='bg-[#06E5F1] hover:bg-transparent hover:text-[#06E5F1] hover:border-2 hover:border-[#06E5F1] px-7 py-3 mt-10 rounded-md font-[ClashDisplay-Medium] transition-all duration-500 ease-in-out' style={{border:'1px solid #06E7F2'}}>
                             View more
                         </button>
                     </div>

@@ -5,10 +5,13 @@ import instaIcon from '../../images/instaIcon.png';
 import whatsIcon from '../../images/whatsIcon.png';
 import burguer from '../../images/MenuBurguer.svg';
 import { NavLink } from "react-router";
+import downArrow from "../../images/down.png";
+import ItalyFlag from "../../images/italy_flags_flag_8964.png";
+import UnitedStatesFlag from "../../images/UnitedStates-Flag.png";
 
 function NavBar() {
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState("EN"); // Idioma padrão
+    const [selectedLanguage, setSelectedLanguage] = useState("EN");
 
     const toggleLanguageMenu = () => {
         setIsLanguageOpen(!isLanguageOpen);
@@ -16,7 +19,7 @@ function NavBar() {
 
     const selectLanguage = (language) => {
         setSelectedLanguage(language);
-        setIsLanguageOpen(false); // Fecha o menu após a seleção
+        setIsLanguageOpen(false);
     };
 
     return (
@@ -41,11 +44,10 @@ function NavBar() {
                     </ul>
                 </nav>
                 <div className='hidden md:flex items-center gap-4 relative'>
-                    {/* Ícones de redes sociais */}
                     <ul className='flex gap-3'>
                         <li className='h-6 w-6 hover:rotate-12 transition-all cursor-pointer'><img src={facebookIcon} /></li>
                         <li className='h-6 w-6 hover:rotate-12 transition-all cursor-pointer'>
-                            <a href="https://www.instagram.com/visionproductionsco?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target='_blank'>
+                            <a href="https://www.instagram.com/visionproductionsco" target='_blank'>
                                 <img src={instaIcon} />
                             </a>
                         </li>
@@ -53,31 +55,27 @@ function NavBar() {
                             <li className='h-6 w-6 hover:rotate-12 transition-all cursor-pointer'><img src={whatsIcon} /></li>
                         </a>
                     </ul>
-
-                    {/* Botão de seleção de idioma */}
                     <div className="relative">
                         <button 
                             onClick={toggleLanguageMenu} 
-                            className="text-white bg-gray-900 px-3 py-1 rounded-md flex items-center gap-2 cursor-pointer hover:bg-gray-800"
+                            className="text-white bg-[#000] px-3 py-1 rounded-md flex items-center gap-2 cursor-pointer hover:bg-gray-800"
                         >
-                            {selectedLanguage} <span>▼</span>
+                            {selectedLanguage} <span><img src={downArrow} alt="ArrowDown" className='w-5 h-5'/></span>
                         </button>
-
-                        {/* Popup de seleção de idioma */}
                         {isLanguageOpen && (
-                            <div className="absolute right-0 mt-2 w-28 bg-gray-950 text-white rounded-md shadow-lg z-50">
+                            <div className="absolute right-0 mt-2 w-28 bg-[#080808] text-white rounded-md shadow-lg z-50">
                                 <ul className="py-2 text-center">
                                     <li 
-                                        className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                        className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2"
                                         onClick={() => selectLanguage("EN")}
                                     >
-                                        English
+                                        <img src={UnitedStatesFlag} alt="United States Flag" className='w-5 h-3' />English
                                     </li>
                                     <li 
-                                        className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                                        className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2"
                                         onClick={() => selectLanguage("IT")}
                                     >
-                                        Italiano
+                                        <img src={ItalyFlag} alt="Italy flag" className='w-5 h-5'/>Italian
                                     </li>
                                 </ul>
                             </div>
@@ -85,7 +83,7 @@ function NavBar() {
                     </div>
                 </div>
             </div>
-            <hr style={{ background: 'linear-gradient(to left, transparent, #06E5F180, transparent)' }} className='h-1 m-0 border-0 w-full absolute' />
+            <hr style={{background:'linear-gradient(to left, #000000, #06E7F2, #000000)'}} className='h-0.5 m-0 border-0 w-full absolute bottom-0'/>
         </div>
     );
 }

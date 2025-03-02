@@ -19,11 +19,11 @@ function Robot() {
           </h1>
           <div className="w-full h-fit flex justify-center">
             <div className="relative w-52 h-20">
-              <button className="absolute top-0 left-0 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
+              <button className="absolute top-0 -left-9 w-72 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 CGI 3D
               </button>
-              <div className="absolute -top-1 -left-1 w-[218px] h-[90px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-1 -left-10 w-[297px] h-[90px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               before:bg-gradient-to-b before:from-cyan-600/90 before:to-gray-950/10 
               before:p-[2px] before:content-['']">
