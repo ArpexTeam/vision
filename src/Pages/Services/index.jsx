@@ -519,7 +519,7 @@ function Services() {
             <CardService image={cardImg} title={"Video Productions"} textBody={"We create personalized plans that combine market analysis, clear goals, and effective actions to elevate your brand and achieve your business objectives."}
              left="" paddingDirection={"pl-10 pr-16"} marginDirection="-ml-48 md:-ml-16 -mb-28" flexDirection="flex-row" gradientDirection="bg-gradient-to-l" />
             
-            <CardService image={cardImg2} paddingDirection={"pr-10 pl-28"} title={"Motion Design"} textBody={"With the power of motion design, we can present your promotion or product in the best way possible."}
+            <CardService image={cardImg2} paddingDirection={"pr-10 pl-32"} title={"Motion Design"} textBody={"With the power of motion design, we can present your promotion or product in the best way possible."}
              top="mt-[200px]" left="" marginDirection="-mr-48 md:-mr-20 -mb-28" flexDirection="flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg3} title={"CGI 3D"}
@@ -527,7 +527,7 @@ function Services() {
               paddingDirection={"pl-10 pr-20"} top="mt-[200px]" left="" marginDirection="-ml-48 md:-ml-20 -mb-28" flexDirection="flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg4} title={"3D Modeling"} 
-            textBody={"We model your product or scene and animate it with textures and lighting that make it realistic."} paddingDirection={"pr-10 pl-28"}
+            textBody={"We model your product or scene and animate it with textures and lighting that make it realistic."} paddingDirection={"pr-10 pl-32"}
              top="mt-[200px]" left="" marginDirection="-mr-48 md:-mr-20 -mb-28" flexDirection="flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg5} title={"3D Animation"}
@@ -536,7 +536,7 @@ function Services() {
             
             <CardService image={cardImg6} title={"Graphic Animation"}
              textBody={"We bring movement to your graphics to showcase your company in the best possible way, and we also offer general graphic design services."} 
-             paddingDirection={"pr-10 pl-28"} top="mt-[200px]" left="" marginDirection="-mr-48 md:-mr-20 -mb-28" flexDirection="flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+             paddingDirection={"pr-10 pl-32"} top="mt-[200px]" left="" marginDirection="-mr-48 md:-mr-20 -mb-28" flexDirection="flex-row-reverse" gradientDirection="bg-gradient-to-l" />
           
           <CardService image={cardImg7} title={"Website creation and editing"}
              textBody={ <span className='break-words'>We design and edit websites that combine functionality and creativity to enhance your online presence and engage your audience.</span>}
