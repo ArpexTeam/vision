@@ -380,7 +380,7 @@ function Services() {
           </div>
           <div className="w-1/3">
             <div className="ml-auto w-10/12 h-full rounded-2xl bg-[#B1B1B1]/20">
-
+            {/*colocar imagem aqui */}
             </div>
           </div>
       </div>

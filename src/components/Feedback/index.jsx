@@ -139,7 +139,7 @@ function Feedback(){
       <div className="w-full mt-40 py-10 bg-[#070707]">
         <div className="max-w-[1280px] ml-auto mr-auto flex justify-center text-center md:text-left w-4/5 flex-col items-center">
           <h1 className="font-[ClashDisplay-Regular] text-[26px] w-2/3 text-center">Speak with one of our specialists and receive a personalized quote right now</h1>
-          <button className="text-lg mt-10 bg-[#06E7F2] h-fit w-[250px] p-4 px-6 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact Us</button>
+          <button className="text-lg mt-10 bg-[#06E7F2] h-fit w-[250px] p-4 px-6 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2] transition-all duration-500 ease-in-out" style={{border:'1px solid #06E7F2'}}>Contact Us</button>
         </div>
       </div>
       </div>
