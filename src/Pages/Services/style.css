@@ -1,5 +1,7 @@
 h1{
-    color: #d8d8d8; /*Titulos de todo o site*/
+  background: linear-gradient(to right, rgb(175, 175, 175), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /*Titulos de todo o site*/
 }
 
 .divImg{
