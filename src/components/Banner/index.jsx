@@ -5,7 +5,7 @@ import video1 from '../../images/Motion Sponsor.MP4';
 
 function Banner(){
     return(
-        <div className="bg-black w-full py-14 h-auto relative">
+        <div className="bg-black w-full pb-10 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
             <h1 className='text-[38px] font-[ClashDisplay-Semibold]'>Oficial Sponsor 2025</h1>
                 <div className="w-full h-72 rounded-3xl mt-20">
