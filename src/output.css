@@ -537,6 +537,8 @@ img,
 video {
   max-width: 100%;
   height: auto;
+  border-radius: 20px;
+  background-color: aquamarine;
 }
 
 /* Make elements with the HTML hidden attribute stay hidden by default */

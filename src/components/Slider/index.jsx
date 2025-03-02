@@ -11,10 +11,9 @@ function Slider() {
   };
 
   return (
-    <div className="bg-[#242424] w-full h-[500px] slider relative">
+    <div className="bg-[#242424] w-full h-[470px] flex flex-col items-center slider relative">
       <video
-        width="100%"
-        height="100%"
+        className="w-[100%] h-auto"
         loop
         autoPlay
         muted={isMuted}  // O vídeo começa mudo

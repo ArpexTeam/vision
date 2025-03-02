@@ -1,7 +1,5 @@
 h1{
-    background: linear-gradient(to right,#2B2B2B,#FFFFFF); /* Gradiente de cor */
-    background-clip: text; /* Aplica o gradiente ao texto */
-    color: transparent; 
+    color: #d8d8d8; /*Titulos de todo o site*/
 }
 
 .divImg{
