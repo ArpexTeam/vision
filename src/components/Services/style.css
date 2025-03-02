@@ -2,7 +2,7 @@
 h1{
     background: linear-gradient(to right, #000000, #FFFFFF); /* Gradiente de cor */
     background-clip: text; /* Aplica o gradiente ao texto */
-    color: transparent; 
+    color: #fff; 
 }
 
 

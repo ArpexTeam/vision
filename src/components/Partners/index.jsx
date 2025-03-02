@@ -16,19 +16,23 @@ import partner7 from '../../images/partner7.png';
 function Partners() {
   
   return (
-    <div className="bg-black w-full pt-10 pb-36 h-auto relative">
+    <div className="bg-black w-full pt-10 pb-0 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
     <h1 className='text-[38px] font-[ClashDisplay-Semibold]'>Ours Clients</h1>
-    <p className='text-[#CCCCCC]'>Over the years, we've worked with companies from various industries</p>
+    <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>Over the years, we've worked with companies from various industries</p>
     <div className='flex justify-between items-center pt-16'>
-        <img src={partner1} className='w-32 h-full bg-transparent ' />
+        <img src={partner1} className='w-20 h-full bg-transparent ' />
         <img src={partner2} className='w-32 h-full bg-transparent ' />
         <img src={partner3} className='w-32 h-full bg-transparent ' />
-        <img src={partner4} className='w-32 h-full bg-transparent ' />
+        <img src={partner4} className='w-20 h-full bg-transparent ' />
         <img src={partner5} className='w-32 h-full bg-transparent ' />
         <img src={partner6} className='w-32 h-full bg-transparent ' />
-        <img src={partner7} className='w-32 h-full bg-transparent ' />
+        <img src={partner7} className='w-24 h-full bg-transparent ' />
         </div>
+    </div>
+
+    <div className='w-full h-[100px] mt-20 flex justify-center items-center'> 
+      <p className='text-[38px] text-center text-[#ffffff] font-[ClashDisplay-medium]'>What do our clients say?</p>
     </div>
     </div>
   );
