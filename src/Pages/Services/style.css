@@ -1,11 +1,8 @@
 h1{
-  background: linear-gradient(to right, rgb(175, 175, 175), rgb(255, 255, 255));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /*Titulos de todo o site*/
+  color: #dadada; /*Titulos de todo o site*/
 }
-
 .divImg{
-    box-shadow: 20px -40px 200px #9FFAFF;
+    box-shadow: 80px -40px 2000px #04f2ff69;
 
 }
 
@@ -17,7 +14,7 @@ path, line {
   }
 
   .textGradient{
-    background-image: linear-gradient(to right, #202020, #FFFFFF);
+    background-image: linear-gradient(to right, #9b9b9b, #FFFFFF);
   
     /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
     background-clip: text;
