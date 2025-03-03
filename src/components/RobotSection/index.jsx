@@ -108,6 +108,7 @@ function Robot() {
       </div>
     </div>
   );
+
 }
 
 export default Robot;

@@ -10,6 +10,7 @@ import ItalyFlag from "../../images/italy_flags_flag_8964.png";
 import UnitedStatesFlag from "../../images/UnitedStates-Flag.png";
 
 function NavBar() {
+    const [isExpanded, setExpanded] = useState(false);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState("EN");
 
@@ -25,15 +26,16 @@ function NavBar() {
     return (
         <div className="w-full bg-black h-16 xl-h16 relative">
             <div className="max-w-[1280px] w-4/5 h-full flex ml-auto mr-auto justify-between items-center">
-                <div className='md:hidden block'>
-                    <img src={burguer} />
+                 <div className='lg:hidden block' onClick={() =>{setExpanded(!isExpanded)}}>
+                    <img src={burguer}/>
+
                 </div>
                 <div className='h-full'>
                     <NavLink to='/'>
                         <img src={logo} className='h-full hover:scale-105 cursor-pointer transition-all' />
                     </NavLink>
                 </div>
-                <nav className='h-fit hidden md:block'>
+                <nav className='h-fit hidden lg:block'>
                     <ul className='text-white flex gap-3 lg:gap-6 items-center font-[ClashDisplay-Regular]'>
                         <li><NavLink to='/' className={'hover:text-[#06E5F180]'}>Home</NavLink></li>
                         <li><NavLink to='/servicos' className={'hover:text-[#06E5F180]'}>Services</NavLink></li>
@@ -83,7 +85,21 @@ function NavBar() {
                     </div>
                 </div>
             </div>
+       <div className={`${isExpanded == true ? 'block lg:hidden' : 'hidden'} relative bg-black py-10 z-20 -mt-1`}>
+            <nav>
+                    <ul className='text-white flex flex-col gap-3 lg:gap-6 items-center font-[ClashDisplay-Regular]'>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/' className={'hover:text-[#06E5F180]'}>Home</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/servicos' className={'hover:text-[#06E5F180]'}>Services</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/commercial' className={'hover:text-[#06E5F180]'}>Commercial</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/eventos' className={'hover:text-[#06E5F180]'}>Events</NavLink></li>
+                        {/* <li><NavLink to='/equipe' className={'hover:text-[#06E5F180]'}>Equipe</NavLink></li> */}
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/sobre' className={'hover:text-[#06E5F180]'}>Who we are</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/contato' className={'hover:text-[#06E5F180]'}>Contact</NavLink></li>
+                    </ul>
+                </nav>
+            </div>
             <hr style={{background:'linear-gradient(to left, #000000, #06E7F2, #000000)'}} className='h-0.5 m-0 border-0 w-full absolute bottom-0'/>
+
         </div>
     );
 }

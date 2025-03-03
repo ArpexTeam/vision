@@ -21,13 +21,14 @@ function Partners() {
     <h1 className='text-[38px] font-[ClashDisplay-Semibold]'>Our Clients</h1>
     <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>Over the years, we've worked with companies from various industries</p>
     <div className='flex justify-between items-center pt-16'>
-        <img src={partner1} className='w-20 h-full bg-transparent ' />
-        <img src={partner2} className='w-32 h-full bg-transparent ' />
-        <img src={partner3} className='w-32 h-full bg-transparent ' />
-        <img src={partner4} className='w-20 h-full bg-transparent ' />
-        <img src={partner5} className='w-32 h-full bg-transparent ' />
-        <img src={partner6} className='w-32 h-full bg-transparent ' />
-        <img src={partner7} className='w-24 h-full bg-transparent ' />
+        <img src={partner1} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
+        <img src={partner2} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
+        <img src={partner3} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
+        <img src={partner4} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
+        <img src={partner5} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
+        <img src={partner6} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
+        <img src={partner7} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
+
         </div>
     </div>
 
