@@ -1,5 +1,25 @@
 import back from '../../images/Background.jpg';
 import './style.css';
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, useGLTF, useAnimations  } from "@react-three/drei";
+import { useEffect } from "react";
+
+
+function Model() {
+    const { scene, animations } = useGLTF("/models/Robozinho.glb");
+    const { actions } = useAnimations(animations, scene); // Obtém animações
+
+    useEffect(() => {
+        if (actions && actions["animation_0"]) {  // Substitua "Idle" pelo nome da animação correta
+            console.log(actions);
+            actions["animation_0"].play();
+          }
+      }, [actions]);
+
+
+ 
+    return <primitive object={scene} scale={0.3} position={[0, -200, 200]}/>;
+  }
 
 function Robot(){
     return(
@@ -14,6 +34,12 @@ function Robot(){
                         </button>
                         </div>
                     </div>
+                    <Canvas className='absolute' camera={{ position: [300, 1000, 0], fov: 50, near: 0.1, far: 10000 }}>
+                        <ambientLight intensity={0.5} />
+                        <directionalLight position={[5, 5, 5]} intensity={1} />
+                        <Model />
+                        <OrbitControls enableZoom={false}/>
+                    </Canvas>
                     <div className='w-full md:w-3/12 flex flex-col gap-5 mb-5 md:mb-0'>
                     <button className='font-[ClashDisplay-Medium] text-[13px] md:text-[20px] ml-auto border w-40 md:w-11/12 h-20 bg-gradient-to-r from-[#06E5F108]/10 to-[#00000026]/15 rounded-md'>
                         3D Modeling
