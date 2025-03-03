@@ -378,9 +378,9 @@ function Services() {
           Our portfolio includes advertising, corporate videos, 2D/3D animations, and more.
           </h1>
           </div>
+
           <div className="h-56 w-full mt-6 md:mt-0 md:w-1/2 lg:w-1/3">
             <div className="ml-auto mr-auto md:mr-0 w-10/12 h-full rounded-2xl bg-[#B1B1B1]/20">
-
             </div>
           </div>
       </div>
