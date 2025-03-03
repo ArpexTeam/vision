@@ -42,9 +42,9 @@ function Services(){
             <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>
                 <h1 className='text-[36px] font-[ClashDisplay-Semibold]'>Hard to sell? we are the<br/> solution!</h1>
 
-                <div className='w-full mt-14'>
-                    <div className='flex w-10/12 h-[350px] justify-between gap-5 transition-all servicesCard relative ml-auto mr-auto'>
-                    <div className='text-left w-4/12'>
+                <div className='w-full mt-14 mb-36 lg:mb-0'>
+                    <div className='flex flex-col lg:flex-row w-10/12 h-[450px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
+                    <div className='text-center lg:text-left w-8/12 xl:w-4/12 mb-10 lg:mb-0'>
                         <h1 className='text-[38px] font-[ClashDisplay-Semibold] titleBlueLine mt-8'>COMMERCIAL</h1>
                         <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>Boost your sales with commercials
                             that captivate and deliver results.
@@ -54,16 +54,16 @@ function Services(){
                             View more
                         </button>
                     </div>
-                    <div className='w-7/12 h-full rounded-2xl'>
+                    <div className='w-8/12 xl:w-7/12 h-full rounded-2xl'>
                         <div className='w-full h-full relative'>
                             <div onClick={pauseResume} className={`${isPlaying ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer `}>
                             <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg -mt-20">
+
                                 <img src={rightArrow} className="w-4"/>
                             </div>
                             </div>
                             <video
-                                    width="100%"
-                                    height="100%"
+                                    className="w-full h-full object-cover"
                                     controls
                                     ref={videoRef}
                                     onPause={pauseResume}
@@ -82,17 +82,17 @@ function Services(){
 
 
                     <div className='w-full mt-14'>
-                    <div className='flex w-10/12 h-[350px] justify-between gap-5 transition-all servicesCard relative ml-auto mr-auto'>
-                    <div className='w-7/12 h-full rounded-2xl'>
-                    <div className='w-full h-full relative '>
+
+                    <div className='flex flex-col lg:flex-row w-10/12 h-[450px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
+                    <div className='w-8/12 xl:w-7/12 h-full rounded-2xl'>
+                    <div className='w-full h-full relative'>
                             <div onClick={pauseResume2} className={`${isPlaying2 ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer`}>
-                            <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg -mt-20">
+                            <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg">
                                 <img src={rightArrow} className="w-4"/>
                             </div>
                             </div>
                             <video
-                                    width="100%"
-                                    height="100%"
+                                    className="w-full h-full object-cover"
                                     controls
                                     ref={videoRef2}
                                     onPause={pauseResume2}
@@ -103,7 +103,7 @@ function Services(){
                                 </video>
                         </div>
                     </div>
-                    <div className='text-left w-4/12'>
+                    <div className='text-center lg:text-left w-8/12 xl:w-4/12 mb-10 lg:mb-0'>
                         <h1 className='text-[38px] font-[ClashDisplay-Semibold] titleBlueLine mt-8'>EVENTS</h1>
                         <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>
                             Transform your event with dynamic

@@ -7,6 +7,7 @@ function CardService(props){
             <p className='font-[ClashDisplay-Light] text-[15px]'>{props.textBody}</p>
             </div>
             <div className={`mt-12 md:mt-6 ${props.marginDirection} w-60 h-64 rounded-xl z-10 divImg`} style={{backgroundImage:`url(${props.image})`, backgroundSize:'cover', backgroundPosition:'center'}}>
+
             </div>
        </div>
         </>

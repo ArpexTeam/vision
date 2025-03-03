@@ -26,13 +26,24 @@ function Feedback(){
         <div className="bg-black w-full pt-28 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative feedbackDiv">
         <Swiper
-        slidesPerView={3}
+        slidesPerView={1}
         loop={true}
         spaceBetween={40}
         navigation={{
             prevE1: ".custom-prev",
             nextE1: ".custom-next",
         }}
+           breakpoints={{
+            520: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+            900: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            }
+          }}
+
         modules={[Navigation]}
         className="mySwiper"
       >
@@ -66,8 +77,22 @@ function Feedback(){
 
         <SwiperSlide className='p-5 rounded-md bg-gradient-to-b from-[#000000] to-[#8FCE3F]'>
         <div className='w-full flex items-center gap-3 text-white'>
+
             <img className='w-12 h-12 rounded-full' src={Marinoni}/>
-            <h2 className='font-[ClashDisplay-Semibold]'>Marinoni Serramenti</h2>
+            <h2 className='font-[ClashDisplay-Semibold]'>Luccas Marinoni</h2>
+        </div>
+        <div className='w-full'>
+            <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
+            Since day one, Vision Production has been my trusted partner
+             for all my racing circuit needs, consistently exceeding 
+             expectations with their outstanding content.
+            </p>
+        </div>
+        </SwiperSlide>
+        <SwiperSlide className='p-5 bg-[rgba(34,33,33,1)]'>
+        <div className='w-full flex items-center gap-3 text-white'>
+            <img className='w-12 h-12 rounded-full' src={perfil1}/>
+            <h2 className='font-[ClashDisplay-Semibold]'>Luccas Marinoni</h2>
         </div>
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
