@@ -1,8 +1,8 @@
 import trofeu from '../../images/trofeuIcon.svg';
-import ev1 from '../../images/ev1.jpeg';
+import ev1 from '../../images/Varano-Internacional-Circuit.jpg';
 import ev2 from '../../images/ev2.jpeg';
-import ev3 from '../../images/ev3.jpeg';
-import ev4 from '../../images/ev4.jpeg';
+import ev3 from '../../images/campione-italiano.png';
+import ev4 from '../../images/indoor-events.png';
 
 import c1 from '../../images/c1.jpeg';
 import c2 from '../../images/c2.png';
@@ -85,25 +85,26 @@ function Events(){
     }
 
     return(
-        <div className='bg-black w-full pt-20 h-auto relative'>
+        <div className='bg-black w-full pt-10 h-auto relative'>
             <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>  
-                <div className='items-center justify-center flex flex-col md:flex-row'>
+                <div className='items-center justify-center flex flex-col md:flex-row gap-32'>
                         <div className='text-center'>
-                            <h1 className="font-[ClashDisplay-Bold] text-[33px] sm:text-[46px]">ETERNALIZE YOUR EVENT WITH THE BEST COVERAGE</h1>
+                            <h1 className="font-[ClashDisplay-SemiBold] text-[#dadada] text-[40px]/10">ETERNALIZE YOUR EVENT <div /> WITH THE BEST COVERAGE</h1>
                         </div>
                         <div>
-                            <img src={claquete} className='w-7/12 ml-auto mr-auto md:mr-0'/>
+                            <img src={claquete} className='w-[260px] ml-auto'/>
                         </div>
                         </div>
-                <div className="gap-12 mt-48 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto">
-                    <div className="mt-8 w-full md:text-left text-center md:w-6/12 xl:w-5/12 bg-gradient-to-l pl-6 pb-16 xl:px-10 rounded-xl">
-                    <h1 className="font-[ClashDisplay-Semibold] text-[30px] md:text-[35px] lg:text-[40px] titleBlueLine">
+                        
+                <div className="gap-12 mt-32 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto">
+                    <div className="mt-8 md:w-6/12 xl:w-5/12 md:text-left text-center bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
+                    <h1 className="font-[ClashDisplay-Semibold] text-[36px]/10 titleBlueLine mb-8">
                     VARANO INTERNATIONAL CIRCUIT
                     </h1>
-                        <p className='mt-10 font-[ClashDisplay-Regular]'>We capture the adrenaline and excitement of the most thrilling circuits, like the Varano International Circuit, with a video production that turns every moment into an unforgettable visual experience. No matter the location or event, we bring this same energy to you.</p>
+                        <p className='mt-10 font-[ClashDisplay-Regular] '>We capture the adrenaline and excitement of the most thrilling circuits, like the Varano International Circuit, with a video production that turns every moment into an unforgettable visual experience. No matter the location or event, we bring this same energy to you.</p>
                     </div>
                     <div className='w-full md:w-7/12 h-[500px] rounded-3xl relative'>
-                    <div className='w-full h-full relative'>
+                    <div className='w-full bg-[#000000]/20 h-full relative'>
                                     <div onClick={pauseResume} className={`${isPlaying ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer`}>
                                     <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg">
                                         <img src={rightArrow} className="w-4 z-30"/>
@@ -126,19 +127,13 @@ function Events(){
                     </div>
                 </div>
 
-                <div className="gap-12 mt-48 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto">
-                <div className='md:order-1 order-2 w-full md:w-7/12 h-[500px] rounded-3xl relative' style={{backgroundImage:`url(${ev2})`, backgroundSize:'cover', backgroundPosition:'center'}}>
-                <div className='w-full h-full relative'>
-                                    <div onClick={pauseResume2} className={`${isPlaying2 ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer`}>
-                                    <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg">
-                                        <img src={rightArrow} className="w-4 z-30"/>
-                                    </div>
-                                    </div>
-                              
-                                    <video
-                                               className="w-full h-full object-cover rounded-lg"
-
+                <div className="gap-12 mt-36 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto">
+                <div className='w-7/12 h-[400px] rounded-3xl relative' style={{backgroundImage:`url(${ev2})`, backgroundSize:'cover', backgroundPosition:'center'}}>
+                    <div className='bg-[#000000]/20 w-full h-full'>
+<video
                                             controls
+                                            className="w-full h-full object-cover rounded-lg"
+
                                             ref={videoRef2}
                                             onPause={pauseResume2}
                                         >
@@ -150,9 +145,9 @@ function Events(){
                                 </div>
                     </div>
                    
-                    <div className="md:order-2 order-1 mt-8 text-center md:text-left w-full md:w-5/12 bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
-                    <h1 className="font-[ClashDisplay-Semibold] text-[30px]  sm:text-[40px] titleBlueLine">
-                    CATTOLICA STADIUM
+                    <div className="mt-8 w-5/12 bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
+                    <h1 className="font-[ClashDisplay-Semibold] text-[36px]/10 titleBlueLine">
+                    CATTOLICA <br /> STADIUM
                     </h1>
                         <p className='mt-10 font-[ClashDisplay-Regular]'>We capture the intense emotion of football, with the vibrant energy of major stadiums like Cattolica Stadium. Our video production translates every goal, every cheer, and every unforgettable moment into images that make the heart race. Regardless of your event, we bring this passion and cinematic quality to create a unique experience, wherever you are.</p>
                     </div>
@@ -161,13 +156,13 @@ function Events(){
 
                 <div className="gap-12 mt-48 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto">
                     <div className="mt-8 text-center md:text-left w-full md:w-5/12 bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
-                    <h1 className="font-[ClashDisplay-Semibold] text-[40px] titleBlueLine">
+                    <h1 className="font-[ClashDisplay-Semibold] text-[40px]/10 titleBlueLine mb-8">
                     CUSTOM EVENT - MISANO CIRCUIT
                     </h1>
                         <p className='mt-10 font-[ClashDisplay-Regular]'>With the experience of covering custom events at the Misano Circuit, where we had the honor of working with the Tecnosports team and the Italian Legend Car 850cc champion, Filippo Majrani, we create video productions that capture every detail and the emotion of the moment. Our flexible and dedicated approach ensures that, no matter your event or location, we can convey all the intensity and personalization it deserves.</p>
                     </div>
-                    <div className='w-full md:w-7/12 h-[500px] rounded-3xl relative' style={{backgroundImage:`url(${ev3})`, backgroundSize:'cover', backgroundPosition:'center'}}>
-                    <div className='w-full h-full relative'>
+                    <div className='w-full md:w-7/12 h-[500px] rounded-3xl relative mt-5 overflow-hidden' style={{backgroundImage:`url(${ev3})`, backgroundSize:'cover', backgroundPosition:'center'}}>
+                    <div className='w-full h-full relative bg-[#000]/20'>
                                     <div onClick={pauseResume3} className={`${isPlaying3 ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer`}>
                                     <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg">
                                         <img src={rightArrow} className="w-4 z-30"/>
@@ -190,9 +185,9 @@ function Events(){
                     </div>
                 </div>
 
-                <div className="gap-12 mt-48 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto">
-                <div className='w-full order-2 md:order-1 md:w-7/12 h-[500px] rounded-3xl relative' style={{backgroundImage:`url(${ev4})`, backgroundSize:'cover', backgroundPosition:'center'}}>
-                <div className='w-full h-full relative'>
+                <div className="gap-12 mt-36 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto">
+                <div className='w-full order-2 md:order-1 md:w-7/12 h-[500px] rounded-3xl relative overflow-hidden ml-5' style={{backgroundImage:`url(${ev4})`, backgroundSize:'cover', backgroundPosition:'center'}}>
+                <div className='w-full h-full relative bg-[#000000]/20'>
                                     <div onClick={pauseResume4} className={`${isPlaying4 ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer`}>
                                     <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg">
                                         <img src={rightArrow} className="w-4 z-30"/>
@@ -215,7 +210,7 @@ function Events(){
                     </div>
                    
                     <div className="mt-8 text-center order-1 md:order-2 md:text-left w-full md:w-5/12 bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
-                    <h1 className="font-[ClashDisplay-Semibold] text-[40px] titleBlueLine">
+                    <h1 className="font-[ClashDisplay-Semibold] text-[40px]/10 titleBlueLine">
                     INDOOR EVENTS
                     </h1>
                         <p className='mt-10 font-[ClashDisplay-Regular]'>We transform any indoor space into a cinematic setting, capturing the essence and energy of your event with the same dedication we apply to large outdoor productions. From conventions to presentations, our team brings production quality and flexibility to create an unforgettable visual experience, wherever your event takes place.</p>
@@ -223,7 +218,7 @@ function Events(){
                     
                 </div>
 
-                <div className="mt-48">
+                <div className="mt-28">
                     <div className="w-full md:w-1/2 ml-auto mr-auto">
                 <h1 className="ml-auto mr-auto font-[ClashDisplay-Semibold] text-[40px] w-fit titleBlueLineLeft">
                     IN 2024

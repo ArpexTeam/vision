@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import CardService from '../../components/CardService';
-import cardImg from '../../images/cardImg1.png';
-import cardImg2 from '../../images/cardImg2.jpeg';
-import cardImg3 from '../../images/cardImg3.jpeg';
-import cardImg4 from '../../images/cardImg4.png';
-import cardImg5 from '../../images/cardImg5.jpeg';
-import cardImg6 from '../../images/cardImg6.jpeg';
+import cardImg from '../../images/Video-Production.jpg';
+import cardImg2 from '../../images/MotionDesign.jpg';
+import cardImg3 from '../../images/CGI-3D.jpg';
+import cardImg4 from '../../images/3DModeling.jpg';
+import cardImg5 from '../../images/3D-animation.jpg';
+import cardImg6 from '../../images/Graphics.jpg';
+import cardImg7 from '../../images/Website.jpg';
+import ImageService from '../../images/Image-service.svg';
 import './style.css';
 
 function Services() {
@@ -365,13 +367,13 @@ function Services() {
   
 
   return (
-    <div className="bg-black w-full pt-20 h-auto relative">
+    <div className="bg-black w-full pt-28 h-auto relative">
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
 
       <div className="relative md:text-left flex flex-col md:flex-row items-center md:items-start justify-between mb-40">
-        <div className="w-full md:w-1/2 lg:w-2/3">
+        <div className="w-full -mb-20 md:w-1/2 lg:w-2/3">
         <h1 className="font-[ClashDisplay-Bold] text-[40px] mb-4">Our Services</h1>
-        <h1 className="font-[ClashDisplay-Semibold] text-[30px] mb-8">Difficulty to sell? We are the solution</h1>
+        <h1 className="font-[ClashDisplay-medium] text-[30px] mb-8">Difficulty to sell? We are the solution</h1>
 
         <h1 className="font-[ClashDisplay-Light] text-[17px]">
           We offer complete solutions in video and animation, from creation to final delivery.
@@ -385,33 +387,39 @@ function Services() {
           </div>
       </div>
 
-      <svg className='float-left hidden sm:block' width="87" height="4110" viewBox="0 0 87 4110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg style={{ transform: "translateY(-110px)" }} className='float-left hidden sm:block' width="87" height="4110" viewBox="0 0 87 4110" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path id="line1" d="M42 0.566244L27.5662 15L42 29.4338L56.4338 15L42 0.566244ZM39.5 15L39.5 4067H44.5L44.5 15H39.5Z" fill="#494949"/>
-<g filter="url(#filter0_d_1009_4703)">
+<g style={{ transform: "translateY(50px)" }} filter="url(#filter0_d_1009_4703)">
 <ellipse id="shadow1" cx="43.5" cy="354.709" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse1" d="M55.5 354.709C55.5 361.109 50.1423 366.324 43.5 366.324C36.8577 366.324 31.5 361.109 31.5 354.709C31.5 348.309 36.8577 343.094 43.5 343.094C50.1423 343.094 55.5 348.309 55.5 354.709Z" stroke="#06E5F1"/>
 </g>
-<g filter="url(#filter1_d_1009_4703)">
+
+<g style={{ transform: "translateY(90px)" }} filter="url(#filter1_d_1009_4703)">
 <ellipse cx="44.5" cy="891.654" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse2" d="M56.5 891.654C56.5 898.055 51.1423 903.27 44.5 903.27C37.8577 903.27 32.5 898.055 32.5 891.654C32.5 885.254 37.8577 880.039 44.5 880.039C51.1423 880.039 56.5 885.254 56.5 891.654Z" stroke="#06E5F1"/>
 </g>
-<g filter="url(#filter2_d_1009_4703)">
-<ellipse cx="42.5" cy="1371.42" rx="12.5" ry="12.1152" fill="black"/>
+
+<g style={{ transform: "translateY(80px)" }} filter="url(#filter2_d_1009_4703)">
+<ellipse cx="42.5" cy="1370" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse3" d="M54.5 1371.42C54.5 1377.82 49.1423 1383.04 42.5 1383.04C35.8577 1383.04 30.5 1377.82 30.5 1371.42C30.5 1365.02 35.8577 1359.8 42.5 1359.8C49.1423 1359.8 54.5 1365.02 54.5 1371.42Z" stroke="#06E5F1"/>
 </g>
-<g filter="url(#filter3_d_1009_4703)">
+
+<g style={{ transform: "translateY(40px)" }} filter="url(#filter3_d_1009_4703)">
 <ellipse cx="42.5" cy="1994.63" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse4" d="M54.5 1994.63C54.5 2001.03 49.1423 2006.24 42.5 2006.24C35.8577 2006.24 30.5 2001.03 30.5 1994.63C30.5 1988.23 35.8577 1983.01 42.5 1983.01C49.1423 1983.01 54.5 1988.23 54.5 1994.63Z" stroke="#06E5F1"/>
 </g>
-<g filter="url(#filter4_d_1009_4703)">
+
+<g style={{ transform: "translateY(-130px)" }} filter="url(#filter4_d_1009_4703)">
 <ellipse cx="42.5" cy="2639.15" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse5" d="M54.5 2639.15C54.5 2645.55 49.1423 2650.77 42.5 2650.77C35.8577 2650.77 30.5 2645.55 30.5 2639.15C30.5 2632.75 35.8577 2627.54 42.5 2627.54C49.1423 2627.54 54.5 2632.75 54.5 2639.15Z" stroke="#06E5F1"/>
 </g>
-<g filter="url(#filter5_d_1009_4703)">
+
+<g style={{ transform: "translateY(-80px)" }} filter="url(#filter5_d_1009_4703)">
 <ellipse cx="42.5" cy="3161.57" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse6" d="M54.5 3161.57C54.5 3167.97 49.1423 3173.18 42.5 3173.18C35.8577 3173.18 30.5 3167.97 30.5 3161.57C30.5 3155.17 35.8577 3149.95 42.5 3149.95C49.1423 3149.95 54.5 3155.17 54.5 3161.57Z" stroke="#06E5F1"/>
 </g>
-<g filter="url(#filter6_d_1009_4703)">
+
+<g style={{ transform: "translateY(0px)" }} filter="url(#filter6_d_1009_4703)">
 <ellipse cx="42.5" cy="3556.04" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse7" d="M54.5 3556.04C54.5 3562.44 49.1423 3567.65 42.5 3567.65C35.8577 3567.65 30.5 3562.44 30.5 3556.04C30.5 3549.64 35.8577 3544.42 42.5 3544.42C49.1423 3544.42 54.5 3549.64 54.5 3556.04Z" stroke="#06E5F1"/>
 </g>
@@ -502,12 +510,12 @@ function Services() {
 </filter>
 </defs>
 </svg>
-        <div className="text-left relative -top-4">
-          <h1 className="font-[ClashDisplay-Bold] text-[48px]">Services</h1>
+        <div className="text-left relative -top-8">
+          <h1 className="font-[ClashDisplay-SemiBold] text-[48px] ">Services</h1>
         </div>
 
         <div>
-          <div className="pb-96 mt-44">
+          <div className="pb-2 mt-20">
             <CardService image={cardImg} title={"Video Productions"} textBody={"We create personalized plans that combine market analysis, clear goals, and effective actions to elevate your brand and achieve your business objectives."}
              top="md:mt-0 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
@@ -534,15 +542,15 @@ function Services() {
               <div className='flex gap-10 justify-between'>
               <div>
                 <h1 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>+100</h1>
-                <p className='textGradient'>Projects  successfully completed</p>
+                <p className='textGradient font-[ClashDisplay-Semibold]'>Projects  successfully completed</p>
               </div>
               <div>
               <h1 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>35</h1>
-              <p className='textGradient'>Companies served</p>
+              <p className='textGradient font-[ClashDisplay-Semibold]'>Companies served</p>
               </div>
               <div>
               <h1 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>98%</h1>
-              <p className='textGradient'>Increase in client satisfaction</p>
+              <p className='textGradient font-[ClashDisplay-Semibold]'>Increase in client satisfaction</p>
               </div>
               </div>
             </div>
@@ -551,9 +559,9 @@ function Services() {
         </div>
       </div>
 
-      <div className="w-full py-20 bg-[#070707]">
-        <div className="max-w-[1280px] ml-auto mr-auto flex justify-center text-center w-4/5 flex-col items-center">
-          <h1 className="font-[ClashDisplay-Semibold] text-[26px] w-2/3">Speak with one of our specialists and receive a personalized quote right now</h1>
+      <div className="w-full py-10 bg-[#070707] flex justify-center">
+        <div className="max-w-[1280px] w-full flex flex-col items-center text-center px-4">
+          <h1 className="font-[ClashDisplay-Semibold] text-[26px] w-2/3 text-center">Speak with one of our specialists and receive <br></br> a personalized quote right now</h1>
           <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact us</button>
         </div>
       </div>
