@@ -18,7 +18,7 @@ function Partners() {
   return (
     <div className="bg-black w-full pt-10 pb-0 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
-    <h1 className='text-[38px] font-[ClashDisplay-Semibold]'>Ours Clients</h1>
+    <h1 className='text-[38px] font-[ClashDisplay-Semibold]'>Our Clients</h1>
     <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>Over the years, we've worked with companies from various industries</p>
     <div className='flex justify-between items-center pt-16'>
         <img src={partner1} className='w-20 h-full bg-transparent ' />
