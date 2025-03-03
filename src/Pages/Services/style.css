@@ -1,11 +1,11 @@
 h1{
-    background: linear-gradient(to right,#2B2B2B,#FFFFFF); /* Gradiente de cor */
-    background-clip: text; /* Aplica o gradiente ao texto */
-    color: transparent; 
+  background: linear-gradient(to right, rgb(175, 175, 175), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /*Titulos de todo o site*/
 }
 
 .divImg{
-    box-shadow: 80px -40px 200px #9FFAFF;
+    box-shadow: 20px -40px 200px #9FFAFF;
 
 }
 

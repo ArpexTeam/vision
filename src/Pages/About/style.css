@@ -34,7 +34,7 @@
 }
 
 .textBodyGradient{
-    background: linear-gradient(to right,#2B2B2B,#FFFFFF); /* Gradiente de cor */
+    background: linear-gradient(to right,#919191,#FFFFFF); /* Gradiente de cor */
     background-clip: text; /* Aplica o gradiente ao texto */
     color: transparent; 
 }
