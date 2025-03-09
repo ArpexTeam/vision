@@ -20,7 +20,7 @@ function Partners() {
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
     <h1 className='text-[38px] font-[ClashDisplay-Semibold]'>Our Clients</h1>
     <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>Over the years, we've worked with companies from various industries</p>
-    <div className='flex justify-between items-center pt-16'>
+    <div className='flex justify-between items-center pt-16 flex-wrap'>
         <img src={partner1} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
         <img src={partner2} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
         <img src={partner3} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
