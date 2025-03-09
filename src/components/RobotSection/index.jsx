@@ -2,16 +2,14 @@ import back from "../../images/Background.jpg";
 import "./style.css";
 
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, useGLTF, useAnimations  } from "@react-three/drei";
 import { useEffect, useState, useRef } from "react";
-import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 import * as THREE from "three";
 
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 function Model({ isVisible }) {
-    const gltf = useLoader(GLTFLoader, "/models/Modelo-Textura.gltf"); // Caminho do seu modelo
+    const gltf = useLoader(GLTFLoader, "/models/Modelo-textura.gltf"); // Caminho do seu modelo
     const headRef = useRef();
     const mixerRef = useRef(null);
 
