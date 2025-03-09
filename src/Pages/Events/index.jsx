@@ -12,10 +12,10 @@ import c4 from '../../images/c4.png';
 import React, { useState, useRef } from 'react';
 import rightArrow from '../../images/rightArrow.svg';
 
-import video1 from '../../images/loopToscano.mp4';
-import video2 from '../../images/loopCatolica.mp4';
-import video3 from '../../images/loopShark.mp4';
-import video4 from '../../images/loopVoila.mp4';
+// import video1 from '../../images/loopToscano.mp4';
+// import video2 from '../../images/loopCatolica.mp4';
+// import video3 from '../../images/loopShark.mp4';
+// import video4 from '../../images/loopVoila.mp4';
 
 
 
@@ -118,7 +118,7 @@ function Events(){
                                             ref={videoRef}
                                             onPause={pauseResume}
                                         >
-                                            <source src={video1} type="video/mp4" />
+                                            <source src={null} type="video/mp4" />
                                             Seu navegador não suporta a tag de vídeo.
                                         </video>
                                    
@@ -128,7 +128,7 @@ function Events(){
                 </div>
 
                 <div className="gap-12 mt-36 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto">
-                <div className='w-7/12 h-[400px] rounded-3xl relative' style={{backgroundImage:`url(${ev2})`, backgroundSize:'cover', backgroundPosition:'center'}}>
+                <div className='w-full order-2 md:order-1 md:w-7/12 h-[400px] rounded-3xl relative' style={{backgroundImage:`url(${ev2})`, backgroundSize:'cover', backgroundPosition:'center'}}>
                     <div className='bg-[#000000]/20 w-full h-full'>
 <video
                                             controls
@@ -137,7 +137,7 @@ function Events(){
                                             ref={videoRef2}
                                             onPause={pauseResume2}
                                         >
-                                            <source src={video2} type="video/mp4" />
+                                            <source src={null} type="video/mp4" />
                                             Seu navegador não suporta a tag de vídeo.
                                         </video>
                                    
@@ -145,7 +145,7 @@ function Events(){
                                 </div>
                     </div>
                    
-                    <div className="mt-8 w-5/12 bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
+                    <div className="mt-8 order-1 md:order-2 w-full md:text-left text-center md:w-5/12 bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
                     <h1 className="font-[ClashDisplay-Semibold] text-[36px]/10 titleBlueLine">
                     CATTOLICA <br /> STADIUM
                     </h1>
@@ -176,7 +176,7 @@ function Events(){
                                             ref={videoRef3}
                                             onPause={pauseResume3}
                                         >
-                                            <source src={video3} type="video/mp4" />
+                                            <source src={null} type="video/mp4" />
                                             Seu navegador não suporta a tag de vídeo.
                                         </video>
                                    
@@ -201,7 +201,7 @@ function Events(){
                                             ref={videoRef4}
                                             onPause={pauseResume4}
                                         >
-                                            <source src={video4} type="video/mp4" />
+                                            <source src={null} type="video/mp4" />
                                             Seu navegador não suporta a tag de vídeo.
                                         </video>
                                    

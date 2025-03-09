@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import CardService from '../../components/CardService';
 import cardImg from '../../images/Video-Production.jpg';
 import cardImg2 from '../../images/MotionDesign.jpg';
@@ -9,9 +8,117 @@ import cardImg6 from '../../images/Graphics.jpg';
 import cardImg7 from '../../images/Website.jpg';
 import ImageService from '../../images/Image-service.svg';
 import './style.css';
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { OrbitControls, useGLTF, useAnimations  } from "@react-three/drei";
+import { useEffect, useState, useRef } from "react";
+import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
+import * as THREE from "three";
+
+
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+
+function Model({ isVisible }) {
+    const gltf = useLoader(GLTFLoader, "/models/Drone.glb"); // Caminho do seu modelo
+    const headRef = useRef();
+    const mixerRef = useRef(null);
+    const [scrollTriggered, setScrollTriggered] = useState(false); // Usado para evitar chamadas repetidas de animação
+
+
+    useEffect(() => {
+        if (!gltf) return;
+        gltf.scene.rotation.y = 89.7; // Gira 180 graus no eixo Y
+
+
+        let parts = [];
+
+        // Procurando a cabeça dentro do modelo
+        gltf.scene.traverse((child) => {
+            if (child.name.toLowerCase().includes("head")) {
+                parts.push(child);
+            }
+        });
+
+        headRef.current = parts[0];
+
+        // Configuração da animação (caso existam animações no modelo)
+        if (gltf.animations.length > 0) {
+            console.log(gltf.animations);
+            mixerRef.current = new THREE.AnimationMixer(gltf.scene);
+            const action = mixerRef.current.clipAction(gltf.animations[0]); // Pegamos a primeira animação
+            action.setLoop(THREE.LoopOnce, 1); // Executa uma vez
+            action.clampWhenFinished = true; // Mantém o último frame quando terminar
+            action.play();
+        }
+    }, [gltf]);
+
+      // Detecta o evento de scroll
+      useEffect(() => {
+        const handleScroll = () => {
+            if (!scrollTriggered) {
+                setScrollTriggered(true); // Marca que o scroll ocorreu
+                console.log(mixerRef.current);
+                if (mixerRef.current) {
+                    const action = mixerRef.current.clipAction(gltf.animations[0]);
+                    action.reset(); // Reinicia a animação
+                    action.play(); // Executa a animação
+                    console.log("aaaa");
+
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // Remove o listener quando o componente for desmontado
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [gltf]);
+
+    useFrame(({ mouse }) => {
+        if (headRef.current) {
+            // Definição dos limites para evitar exageros
+            const maxRotationX = Math.PI / 3;  // Máximo de 30 graus para cima/baixo
+            const maxRotationY = Math.PI / 3;  // Máximo de 30 graus para olhar para os lados
+    
+            // Ajuste para manter a posição inicial correta
+            const initialRotationX = 1.8;  // Inclinação inicial
+            const initialRotationY = 0;    // Sem rotação inicial para o "não"
+    
+            // Movimento do mouse ajustado corretamente
+            const moveX = -mouse.y * maxRotationX; // Movimento vertical (olhar para cima/baixo)
+            const moveY = -mouse.x * maxRotationY; // Movimento horizontal (girar a cabeça para os lados)
+    
+            // Aplicar os movimentos ajustados
+            headRef.current.rotation.x = initialRotationX + moveX; // Inclinação para cima/baixo
+            headRef.current.rotation.z = initialRotationY + moveY; // Agora ele gira para os lados como um "não"
+        }
+    });
+
+    useFrame((_, delta) => {
+        if (mixerRef.current) mixerRef.current.update(delta); // Atualiza a animação a cada frame
+    });
+
+    // Ajuste de posição e escala
+    gltf.scene.scale.set(1, 1, 1); // Diminui o modelo caso esteja muito grande
+    gltf.scene.position.set(0, 0.3, 0);
+
+    return <primitive object={gltf.scene} />;
+}
 
 function Services() {
+  const [isVisible, setIsVisible] = useState(false);
+  const modelRef = useRef();
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.5 }
+    );
+
+    if (modelRef.current) observer.observe(modelRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const line1 = document.getElementById("line1");
@@ -371,7 +478,7 @@ function Services() {
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
 
       <div className="relative md:text-left flex flex-col md:flex-row items-center md:items-start justify-between mb-40">
-        <div className="w-full -mb-20 md:w-1/2 lg:w-2/3">
+        <div className="w-full md:w-1/2 lg:w-2/3">
         <h1 className="font-[ClashDisplay-Bold] text-[40px] mb-4">Our Services</h1>
         <h1 className="font-[ClashDisplay-medium] text-[30px] mb-8">Difficulty to sell? We are the solution</h1>
 
@@ -510,12 +617,20 @@ function Services() {
 </filter>
 </defs>
 </svg>
-        <div className="text-left relative -top-8">
+
+          <div ref={modelRef} className="w-full absolute left-0 -mt-5 first-letter h-[400px]">
+          <Canvas camera={{ position: [3, 3, 0], fov: 50 }}>
+        <ambientLight intensity={3} />
+        <directionalLight position={[5, 5, 5]} intensity={7} />
+        <Model isVisible={isVisible} />
+      </Canvas>
+          </div>
+        <div className="text-left relative -top-8 mb-24">
           <h1 className="font-[ClashDisplay-SemiBold] text-[48px] ">Services</h1>
         </div>
 
-        <div>
-          <div className="pb-2 mt-20">
+        <div className='relative'>
+          <div className="pb-2 mt-40 md:mt-20">
             <CardService image={cardImg} title={"Video Productions"} textBody={"We create personalized plans that combine market analysis, clear goals, and effective actions to elevate your brand and achieve your business objectives."}
              top="md:mt-0 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             

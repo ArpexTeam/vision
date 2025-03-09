@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import video1 from '../../images/Home.mp4';
+// import video1 from '../../images/Home.mp4';
 import './style.css';
 
 function Slider() {
@@ -20,7 +20,7 @@ function Slider() {
         muted={isMuted}  // O vídeo começa mudo
         onEnded={handleVideoEnd}
       >
-        <source src={video1} type="video/mp4" />
+        <source src={null} type="video/mp4" />
         Seu navegador não suporta a tag de vídeo.
       </video>
     </div>

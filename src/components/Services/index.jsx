@@ -2,8 +2,8 @@ import './style.css';
 import temp6 from '../../images/temp6.png';
 import thumb1 from '../../images/thumb1.jpeg';
 import thumb2 from '../../images/thumb2.jpeg';
-import video1 from '../../images/Toscano Marketing .MP4';
-import video2 from '../../images/loopToscano.mp4';
+// import video1 from '../../images/Toscano Marketing .MP4';
+// import video2 from '../../images/loopToscano.mp4';
 import rightArrow from '../../images/rightArrow.svg';
 import React, { useState, useRef } from 'react';
 
@@ -44,7 +44,7 @@ function Services(){
 
                 <div className='w-full mt-14 mb-36 lg:mb-0'>
                     <div className='flex flex-col lg:flex-row w-10/12 h-[450px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
-                    <div className='text-center lg:text-left w-8/12 xl:w-4/12 mb-10 lg:mb-0'>
+                    <div className='text-center lg:text-left w-10/12 xl:w-4/12 mb-10 lg:mb-0'>
                         <h1 className='text-[38px] font-[ClashDisplay-Semibold] titleBlueLine mt-8'>COMMERCIAL</h1>
                         <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>Boost your sales with commercials
                             that captivate and deliver results.
@@ -54,10 +54,10 @@ function Services(){
                             View more
                         </button>
                     </div>
-                    <div className='w-8/12 xl:w-7/12 h-full rounded-2xl'>
+                    <div className='w-12/12 xl:w-7/12 h-full rounded-2xl'>
                         <div className='w-full h-full relative'>
                             <div onClick={pauseResume} className={`${isPlaying ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer `}>
-                            <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg -mt-20">
+                            <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg -mt-10 md:-mt-20">
 
                                 <img src={rightArrow} className="w-4"/>
                             </div>
@@ -69,7 +69,7 @@ function Services(){
                                     onPause={pauseResume}
                                 
                                 >
-                                    <source src={video1} type="video/mp4" />
+                                    <source src="https://drive.google.com/file/d/1W1frlevAh4b14_vq1kWM2n3dj2n8fFec/view?usp=drive_link" type="video/mp4" />
                                     Seu navegador não suporta a tag de vídeo.
                                 </video>
                         </div>
@@ -84,7 +84,7 @@ function Services(){
                     <div className='w-full mt-14'>
 
                     <div className='flex flex-col lg:flex-row w-10/12 h-[450px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
-                    <div className='w-8/12 xl:w-7/12 h-full rounded-2xl'>
+                    <div className='w-12/12 xl:w-7/12 h-full rounded-2xl'>
                     <div className='w-full h-full relative'>
                             <div onClick={pauseResume2} className={`${isPlaying2 ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer`}>
                             <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg">
@@ -97,12 +97,12 @@ function Services(){
                                     ref={videoRef2}
                                     onPause={pauseResume2}
                                 >
-                                    <source src={video2} type="video/mp4" />
+                                    <source src={null} type="video/mp4" />
                                     Seu navegador não suporta a tag de vídeo.
                                 </video>
                         </div>
                     </div>
-                    <div className='text-center lg:text-left w-8/12 xl:w-4/12 mb-10 lg:mb-0'>
+                    <div className='text-center lg:text-left w-10/12 xl:w-4/12 mb-10 lg:mb-0'>
                         <h1 className='text-[38px] font-[ClashDisplay-Semibold] titleBlueLine mt-8'>EVENTS</h1>
                         <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>
                             Transform your event with dynamic

@@ -21,10 +21,10 @@ function App() {
         <a href="https://wa.me/393663013278" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="fixed bottom-24 right-8 bg-green-500 p-3 rounded-full shadow-lg">
+          className="fixed bottom-24 right-8 bg-green-500 p-3 rounded-full shadow-lg z-[999]">
           <img className="w-7 h-7" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
         </a>
-        <a href="#topo" className="fixed bottom-8 right-8 text-white p-4 bg-[#06E5F1] rounded-xl"><img className="w-4 h-4" src={upArrow}/></a>
+        <a href="#topo" className="fixed bottom-8 right-8 text-white p-4 z-[999] bg-[#06E5F1] rounded-xl"><img className="w-4 h-4" src={upArrow}/></a>
 
     </div>
     </BrowserRouter>
