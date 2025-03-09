@@ -14,12 +14,12 @@ import sm3 from '../../images/sm3.png';
 import sm4 from '../../images/sm4.png';
 import sm5 from '../../images/sm5.png';
 import sm6 from '../../images/sm6.jpeg';
-import video1 from '../../images/Galeus_1.mp4';
-import video2 from '../../images/Weester high 2.MP4';
-import video3 from '../../images/UNIPV 3D.mp4';
-import video4 from '../../images/Marinoni.mp4';
-import video5 from '../../images/TECNO SPORT.MP4';
-import video6 from '../../images/loopToscano.mp4';
+// import video1 from '../../images/Galeus_1.mp4';
+// import video2 from '../../images/Weester high 2.MP4';
+// import video3 from '../../images/UNIPV 3D.mp4';
+// import video4 from '../../images/Marinoni.mp4';
+// import video5 from '../../images/TECNO SPORT.MP4';
+// import video6 from '../../images/loopToscano.mp4';
 
 import pic1 from '../../images/pic1.jpeg';
 
@@ -43,12 +43,12 @@ function Commercial(){
                 <p className='text-[#CCCCCC] font-[ClashDisplay-regular]'>Working with the best clients and collaborators.</p>
             </div>
             <div className='flex gap-4 lg:gap-6 justify-center md:justify-between flex-wrap mt-24'>
-            <CardCommercial type="large" thumb={cm1} video={video1} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm2} video={video2} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm3} video={video3} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm4} video={video4} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm5} video={video5} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm6} video={video6} typeModal="video"/>
+            <CardCommercial type="large" thumb={cm1} video={null} typeModal="video"/>
+            <CardCommercial type="large" thumb={cm2} video={null} typeModal="video"/>
+            <CardCommercial type="large" thumb={cm3} video={null} typeModal="video"/>
+            <CardCommercial type="large" thumb={cm4} video={null} typeModal="video"/>
+            <CardCommercial type="large" thumb={cm5} video={null} typeModal="video"/>
+            <CardCommercial type="large" thumb={cm6} video={null} typeModal="video"/>
             </div>
 
             <div>
