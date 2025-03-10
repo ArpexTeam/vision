@@ -103,7 +103,7 @@ function Events(){
                     </h1>
                         <p className='mt-10 font-[ClashDisplay-Regular] '>We capture the adrenaline and excitement of the most thrilling circuits, like the Varano International Circuit, with a video production that turns every moment into an unforgettable visual experience. No matter the location or event, we bring this same energy to you.</p>
                     </div>
-                    <div className='w-full md:w-7/12 h-[500px] rounded-3xl relative'>
+                    <div className='w-full md:w-7/12 h-[400px] rounded-3xl relative'>
                     <div className='w-full bg-[#000000]/20 h-full relative'>
                                     <div onClick={pauseResume} className={`${isPlaying ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer`}>
                                     <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg">

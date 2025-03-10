@@ -10,7 +10,7 @@ function Banner(){
             <h1 className='text-[38px] font-[ClashDisplay-Semibold]'>Oficial Sponsor 2025</h1>
                 <div className="w-full h-40 md:h-72 rounded-3xl mt-20">
                     <video
-                    className="rounded-xl"
+                    className="rounded-xl bg-slate-900"
                             width="100%"
                             height="100%"
                             loop
