@@ -52,48 +52,48 @@ function Model({ isVisible }) {
     }, [gltf]);
 
       // Detecta o evento de scroll
-      useEffect(() => {
-        const handleScroll = () => {
-            if (!scrollTriggered) {
-                setScrollTriggered(true); // Marca que o scroll ocorreu
-                console.log(mixerRef.current);
-                if (mixerRef.current) {
-                    const action = mixerRef.current.clipAction(gltf.animations[0]);
-                    action.reset(); // Reinicia a animação
-                    action.play(); // Executa a animação
-                    console.log("aaaa");
+    //   useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (!scrollTriggered) {
+    //             setScrollTriggered(true); // Marca que o scroll ocorreu
+    //             console.log(mixerRef.current);
+    //             if (mixerRef.current) {
+    //                 const action = mixerRef.current.clipAction(gltf.animations[0]);
+    //                 action.reset(); // Reinicia a animação
+    //                 action.play(); // Executa a animação
+    //                 console.log("aaaa");
 
-                }
-            }
-        };
+    //             }
+    //         }
+    //     };
 
-        window.addEventListener("scroll", handleScroll);
+    //     window.addEventListener("scroll", handleScroll);
 
-        // Remove o listener quando o componente for desmontado
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [gltf]);
+    //     // Remove o listener quando o componente for desmontado
+    //     return () => {
+    //         window.removeEventListener("scroll", handleScroll);
+    //     };
+    // }, [gltf]);
 
-    useFrame(({ mouse }) => {
-        if (headRef.current) {
-            // Definição dos limites para evitar exageros
-            const maxRotationX = Math.PI / 3;  // Máximo de 30 graus para cima/baixo
-            const maxRotationY = Math.PI / 3;  // Máximo de 30 graus para olhar para os lados
+    // useFrame(({ mouse }) => {
+    //     if (headRef.current) {
+    //         // Definição dos limites para evitar exageros
+    //         const maxRotationX = Math.PI / 3;  // Máximo de 30 graus para cima/baixo
+    //         const maxRotationY = Math.PI / 3;  // Máximo de 30 graus para olhar para os lados
     
-            // Ajuste para manter a posição inicial correta
-            const initialRotationX = 1.8;  // Inclinação inicial
-            const initialRotationY = 0;    // Sem rotação inicial para o "não"
+    //         // Ajuste para manter a posição inicial correta
+    //         const initialRotationX = 1.8;  // Inclinação inicial
+    //         const initialRotationY = 0;    // Sem rotação inicial para o "não"
     
-            // Movimento do mouse ajustado corretamente
-            const moveX = -mouse.y * maxRotationX; // Movimento vertical (olhar para cima/baixo)
-            const moveY = -mouse.x * maxRotationY; // Movimento horizontal (girar a cabeça para os lados)
+    //         // Movimento do mouse ajustado corretamente
+    //         const moveX = -mouse.y * maxRotationX; // Movimento vertical (olhar para cima/baixo)
+    //         const moveY = -mouse.x * maxRotationY; // Movimento horizontal (girar a cabeça para os lados)
     
-            // Aplicar os movimentos ajustados
-            headRef.current.rotation.x = initialRotationX + moveX; // Inclinação para cima/baixo
-            headRef.current.rotation.z = initialRotationY + moveY; // Agora ele gira para os lados como um "não"
-        }
-    });
+    //         // Aplicar os movimentos ajustados
+    //         headRef.current.rotation.x = initialRotationX + moveX; // Inclinação para cima/baixo
+    //         headRef.current.rotation.z = initialRotationY + moveY; // Agora ele gira para os lados como um "não"
+    //     }
+    // });
 
     useFrame((_, delta) => {
         if (mixerRef.current) mixerRef.current.update(delta); // Atualiza a animação a cada frame
@@ -618,8 +618,8 @@ function Services() {
 </defs>
 </svg>
 
-          <div ref={modelRef} className="w-full absolute left-0 -mt-5 first-letter h-[400px]">
-          <Canvas camera={{ position: [3, 3, 0], fov: 50 }}>
+          <div ref={modelRef} className="w-fit fixed left-10 top-10 z-[998] first-letter h-[400px]">
+          <Canvas camera={{ position: [3, 3, 0], fov: 50 }} width="100px">
         <ambientLight intensity={3} />
         <directionalLight position={[5, 5, 5]} intensity={7} />
         <Model isVisible={isVisible} />
