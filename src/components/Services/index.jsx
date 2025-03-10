@@ -63,7 +63,7 @@ function Services(){
                             </div>
                             </div>
                             <video
-                                    className="w-full h-full object-cover border-4 border-[#000] rounded-2xl"
+                                    className="w-full h-[300px] object-cover border-4 border-[#000] rounded-2xl"
                                     controls
                                     ref={videoRef}
                                     onPause={pauseResume}
@@ -87,12 +87,12 @@ function Services(){
                     <div className='w-12/12 xl:w-7/12 h-full rounded-2xl'>
                     <div className='w-full h-full relative'>
                             <div onClick={pauseResume2} className={`${isPlaying2 ? "hidden" : "block"} absolute w-full h-full z-10 bg-[#000000]/50 flex justify-center items-center cursor-pointer`}>
-                            <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg">
+                            <div className="bg-[#06E5F1] w-fit h-fit px-7 py-2 rounded-lg mb-20">
                                 <img src={rightArrow} className="w-4"/>
                             </div>
                             </div>
                             <video
-                                    className="w-full h-full object-cover border-4 border-[#000] rounded-2xl"
+                                    className="w-full h-[300px] object-cover border-4 border-[#000] rounded-2xl"
                                     controls
                                     ref={videoRef2}
                                     onPause={pauseResume2}
