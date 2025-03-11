@@ -99,20 +99,20 @@ function Robot() {
     >
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-full relative">
         <div className="flex justify-center content-center w-full h-full flex-wrap text-white -mt-20">
-          <h1 className="mb-20 font-[ClashDisplay-Bold] text-[45px]">
+          <h1 className="mb-20 font-[ClashDisplay-Bold] text-[38px] md:text-[45px] ">
             Our Services
           </h1>
           <div className="w-full h-fit flex justify-center">
 
       
             <div className="relative ml-auto md:ml-0 w-52 h-20">
-              <button className="absolute top-0 left-2 md:-left-9 w-52 md:w-72 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
+              <button className="absolute top-0 left-2 md:-left-9 md:right-11 w-52 md:w-72 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 CGI 3D
               </button>
-              <div className="absolute -top-1 md:-left-10 w-[218px] md:w-[297px] h-[90px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-1 -right-2.5 md:-left-10 md:right-10 w-[218px] md:w-[297px] h-[87px] md:h-[90px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
-              before:bg-gradient-to-b before:from-cyan-600/90 before:to-gray-950/10 
+              before:bg-gradient-to-r md:before:bg-gradient-to-b before:from-cyan-600/90 before:to-gray-950/10 
               before:p-[2px] before:content-['']">
               </div>
             </div>
