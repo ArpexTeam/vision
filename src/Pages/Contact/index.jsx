@@ -38,7 +38,7 @@ function Contact(){
             <div className="w-full text-left bg-black mt-48 py-20">
                 <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>
                 <div className="w-full sm:w-10/12 md:w-6/12">
-                     <h1 className='text-[36px] font-[ClashDisplay-Bold]'>Your feedback matters!</h1>
+                     <h1 className='text-[28px] md:text-[36px] font-[ClashDisplay-Bold] mb-5'>Your feedback matters!</h1>
                      <p className="text-white font-[ClashDisplay-Regular]">Did you like one of our services? Leave your<br/> feedback
                      so we can keep improving and<br/> delivering the best for you.</p>
                 </div>
