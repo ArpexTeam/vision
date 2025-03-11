@@ -226,7 +226,7 @@ function Events(){
 
                 <div className="mt-28">
                     <div className="w-full md:w-1/2 ml-auto mr-auto">
-                <h1 className="ml-auto mr-auto font-[ClashDisplay-Semibold] text-[32px] mb-6 md:mb-0 md:text-[40px] w-fit titleBlueLineLeft">
+                <h1 className="ml-auto mr-auto font-[ClashDisplay-Semibold] text-[32px] mb-6 md:mb-4 md:text-[40px] w-fit titleBlueLineLeft">
                     IN 2024
                     </h1>
                     <p className="text-white font-[ClashDisplay-Regular]">We covered 5 Italian circuits, including 3 international motorsport events, as well as a football stadium event and the achievements of 2 car racing champions: Andre Carpezano and Filippo Majrani.</p>
@@ -241,7 +241,7 @@ function Events(){
                 </div>
         </div>
 
-        <div className="w-full py-20 bg-[#070707] mt-36">
+        <div className="w-full py-10 bg-[#070707] mt-36">
                 <div className="max-w-[1280px] ml-auto mr-auto flex justify-center text-center w-4/5 flex-col items-center">
                 <h1 className="font-[ClashDisplay-Medium] text-[20px] md:text-[26px] w-2/3">Speak with one of our specialists and receive a personalized quote right now</h1>
                 <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact us</button>

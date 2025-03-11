@@ -40,7 +40,7 @@ function Services(){
     return(
         <div className='bg-black w-full md:py-20 h-auto relative'>
             <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>
-                <h1 className='text-[28px] md:text-[36] font-[ClashDisplay-Semibold]'>Hard to sell? we are the<br/> solution!</h1>
+                <h1 className='text-[28px] md:text-[40px] font-[ClashDisplay-Semibold] md:mb-20'>Hard to sell? we are the<br/> solution!</h1>
 
                 <div className='w-full mt-14 mb-20 lg:mb-0'>
                     <div className='flex flex-col lg:flex-row w-10/12 h-[550px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
@@ -78,7 +78,7 @@ function Services(){
                     </div>
                     </div>
 
-                    <h1 className='text-[28px] md:text-[36px] font-[ClashDisplay-Semibold] mb-16'>Elevate your event to the<br/> highest level!</h1>
+                    <h1 className='text-[28px] md:text-[40px] font-[ClashDisplay-Semibold] mb-16 md:mt-20 md:mb-20'>Elevate your event to the<br/> highest level!</h1>
 
 
                     <div className='w-full mt-14'>

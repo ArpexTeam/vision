@@ -626,7 +626,7 @@ function Services() {
       </Canvas>
           </div>
         <div className="text-left relative -top-8 mb-24">
-          <h1 className="font-[ClashDisplay-SemiBold] text-[48px] flex justify-center items-center">Services</h1>
+          <h1 className="font-[ClashDisplay-SemiBold] text-[48px] flex sm:flex-none justify-center items-center sm:justify-start sm:items-start ">Services</h1>
         </div>
 
         <div className='relative'>
