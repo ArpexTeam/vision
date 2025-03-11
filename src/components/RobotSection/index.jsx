@@ -30,6 +30,7 @@ function Model({ isVisible }) {
         headRef.current = parts[0];
 
         // Configuração da animação (caso existam animações no modelo)
+        console.log(gltf.animations);
         if (gltf.animations.length > 0) {
             console.log(gltf.animations);
             mixerRef.current = new THREE.AnimationMixer(gltf.scene);
@@ -65,8 +66,8 @@ function Model({ isVisible }) {
     });
 
     // Ajuste de posição e escala
-    gltf.scene.scale.set(4, 4, 4); // Diminui o modelo caso esteja muito grande
-    gltf.scene.position.set(0, 0.3, 0);
+    gltf.scene.scale.set(4.8, 4.8, 4.8); // Diminui o modelo caso esteja muito grande
+    gltf.scene.position.set(0, -0.7, 0);
 
     return <primitive object={gltf.scene} />;
 }
@@ -156,7 +157,7 @@ function Robot() {
           </div>
           <div className="w-1/3">
           <div ref={modelRef} className="w-1/2 md:w-full absolute -left-12 md:left-0 -mt-16 md:-mt-5 first-letter h-[800px] md:h-[400px]">
-          <Canvas camera={{ position: [3, 3, 0], fov: 50 }}>
+          <Canvas camera={{ position: [3, 1, 0], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
         <Model isVisible={isVisible} />
