@@ -23,7 +23,7 @@ import { Navigation } from 'swiper/modules';
 function Feedback(){
     return(
         
-        <div className="bg-black w-full pt-28 h-auto relative">
+        <div className="bg-black w-full pt-8 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative feedbackDiv">
         <Swiper
         slidesPerView={1}
@@ -79,26 +79,13 @@ function Feedback(){
         <div className='w-full flex items-center gap-3 text-white'>
 
             <img className='w-12 h-12 rounded-full' src={Marinoni}/>
-            <h2 className='font-[ClashDisplay-Semibold]'>Luccas Marinoni</h2>
+            <h2 className='font-[ClashDisplay-Semibold]'>Marinoni Serramenti</h2>
         </div>
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
             Since day one, Vision Production has been my trusted partner
              for all my racing circuit needs, consistently exceeding 
              expectations with their outstanding content.
-            </p>
-        </div>
-        </SwiperSlide>
-        <SwiperSlide className='p-5 bg-[rgba(34,33,33,1)]'>
-        <div className='w-full flex items-center gap-3 text-white'>
-            <img className='w-12 h-12 rounded-full' src={TecnoSportRacing}/>
-            <h2 className='font-[ClashDisplay-Semibold]'>Luccas Marinoni</h2>
-        </div>
-        <div className='w-full'>
-            <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
-            We operate in the doors and windows sector across Pavia and Milan, 
-            and partnering with Vision Production has significantly 
-            boosted the sales of my products.
             </p>
         </div>
         </SwiperSlide>
@@ -161,10 +148,10 @@ function Feedback(){
 
    
       </div>
-      <div className="w-full mt-40 py-10 bg-[#070707]">
+      <div className="w-full mt-28 py-10 bg-[#070707]">
         <div className="max-w-[1280px] ml-auto mr-auto flex justify-center text-center md:text-left w-4/5 flex-col items-center">
-          <h1 className="font-[ClashDisplay-Regular] text-[26px] w-2/3 text-center">Speak with one of our specialists and receive a personalized quote right now</h1>
-          <button className="text-lg mt-10 bg-[#06E7F2] h-fit w-[250px] p-4 px-6 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2] transition-all duration-150 ease-in-out" style={{border:'1px solid #06E7F2'}}>Contact Us</button>
+          <h1 className="font-[ClashDisplay-Regular] text-[20px] md:text-[26px] w-2/3 text-center">Speak with one of our specialists and receive a personalized quote right now</h1>
+          <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact Us</button>
         </div>
       </div>
       </div>

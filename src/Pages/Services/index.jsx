@@ -475,7 +475,7 @@ function Services() {
   
 
   return (
-    <div className="bg-black w-full pt-28 h-auto relative">
+    <div className="bg-black w-full pt-16 h-auto relative">
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
 
       <div className="relative md:text-left flex flex-col md:flex-row items-center md:items-start justify-between mb-40">
@@ -626,7 +626,7 @@ function Services() {
       </Canvas>
           </div>
         <div className="text-left relative -top-8 mb-24">
-          <h1 className="font-[ClashDisplay-SemiBold] text-[48px] ">Services</h1>
+          <h1 className="font-[ClashDisplay-SemiBold] text-[48px] flex justify-center items-center">Services</h1>
         </div>
 
         <div className='relative'>
@@ -635,29 +635,29 @@ function Services() {
              top="md:mt-10 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg2} paddingDirection={"md:pr-10 md:pl-24 p-10"} title={"Motion Design"} textBody={"With the power of motion design, we can present your promotion or product in the best way possible."}
-             top="mt-[100px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg3} title={"CGI 3D"}
              textBody={"With the power of CGI, we insert 3D elements into real scenes, creating a perfect fusion between the virtual and the real."} paddingDirection={"md:pl-10 md:pr-20 p-10"} 
-             top="mt-[100px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg4} title={"3D Modeling"} 
             textBody={"We model your product or scene and animate it with textures and lighting that make it realistic."} paddingDirection={"md:pr-10 md:pl-24 p-10"} 
-            top="mt-[100px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+            top="mt-[150px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg5} title={"3D Animation"}
              textBody={"We animate any 3D object or scene, bringing movement and life to every detail."} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
-             top="mt-[200px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg6} title={"Graphic Animation"}
              textBody={"We bring movement to your graphics to showcase your company in the best possible way, and we also offer general graphic design services."} paddingDirection={"pr-10 md:pl-24 p-10"} 
-             top="mt-[100px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
           
           <CardService image={cardImg7} title={"Website creation and editing"}
              textBody={"We design and edit websites that combine functionality and creativity to enhance your online presence and engage your audience."} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
-             top="mt-[200px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
-            <div className="relative w-full text-left mt-96">
+            <div className="relative w-full text-left mt-40 md:mt-96">
               <h1 className="font-[ClashDisplay-Bold] text-[28px] mb-7">Our Numbers in 2024</h1>
               <div className='flex gap-10 justify-between'>
               <div>
@@ -679,9 +679,9 @@ function Services() {
         </div>
       </div>
 
-      <div className="w-full py-10 bg-[#070707] flex justify-center">
+      <div className="w-full py-10 mt-20 bg-[#070707] flex justify-center">
         <div className="max-w-[1280px] w-full flex flex-col items-center text-center px-4">
-          <h1 className="font-[ClashDisplay-medium] text-[26px] w-2/3 text-center">Speak with one of our specialists and receive <br></br> a personalized quote right now</h1>
+          <h1 className="font-[ClashDisplay-medium] text-[20px] md:text-[26px] w-2/3 text-center">Speak with one of our specialists and receive <br></br> a personalized quote right now</h1>
           <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact us</button>
         </div>
       </div>
