@@ -27,17 +27,24 @@ import pic1 from '../../images/pic1.jpeg';
 function Commercial(){
     return(
         <div className='bg-black w-full pt-20 h-auto relative'>
-            <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>  
-            <div className='items-center justify-center flex-col md:flex'>
-            <div className='text-center md:text-left w-full'>
-                <h1 className="font-[ClashDisplay-SemiBold] text-[28px] md:text-[36px] titleBlueLine flex-col justify-center mb-5">CREATIVE STRATEGIES TO BOOST YOUR SALES</h1>
-                <p className='text-[#CCCCCC] font-[ClashDisplay-Regular]'>Optimizes your sales, better engagement, <br /> and top business results.</p>
-            </div>
-            <div>
-                <img src={commercial} className='w-9/12 md:mt-0 mt-10 ml-auto mr-auto md:mr-0'/>
-            </div>
-            </div>
+            <div className='max-w-[1280px] w-4/5 mx-auto h-auto relative'>  
+                <div className='flex flex-col md:flex-row items-center justify-between'>
+                
+                {/* Texto à esquerda */}
+                <div className='text-center md:text-left w-full md:w-1/2'>
+                    <h1 className="font-[ClashDisplay-SemiBold] text-[28px] md:text-[36px] titleBlueLine flex-col justify-center mb-5">
+                    CREATIVE STRATEGIES TO BOOST YOUR SALES
+                    </h1>
+                    <p className='text-[#CCCCCC] font-[ClashDisplay-Regular]'>
+                    Optimizes your sales, better engagement, <br /> and top business results.
+                    </p>
+                </div>
 
+                {/* Imagem à direita */}
+                <div className='w-full md:w-1/2 flex justify-center md:'>
+                    <img src={commercial} className='w-9/12 md:w-8/12 md:mt-0 mt-10 ' />
+                </div>
+            </div>
             <div>
                 <h1 className='font-[ClashDisplay-SemiBold] text-[28px] md:text-[40px] mt-28'>Commercial Portfolio</h1>
                 <p className='text-[#CCCCCC] font-[ClashDisplay-regular]'>Working with the best clients and collaborators.</p>
