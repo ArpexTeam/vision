@@ -12,22 +12,23 @@ function Footer(){
         <div className="bg-[#0C0C0C]">
             <hr style={{background:'linear-gradient(to left, #000000, #06E7F2, #BF4AFC, #EB700A, #000000)'}} className='h-1 m-0 border-0 w-full absolute'/>
 
-            <div className="gap-10 lg:gap-0 flex justify-around max-w-[1280px] ml-auto mr-auto w-4/5 py-20 text-white font-[ClashDisplay-Regular] flex-wrap">
+            <div className="gap-10 lg:gap-0 flex justify-around max-w-[1280px] ml-auto mr-auto w-4/5 py-10 text-white font-[ClashDisplay-Regular] flex-wrap">
             <div className='w-full sm:w-5/12 lg:w-48 h-auto text-left'>
-                <NavLink to='/'>
-                <img src={logoFooter} className='hover:scale-105 cursor-pointer transition-all'/>
+                <NavLink className="flex items-center justify-center" to='/'>
+                <img src={logoFooter} className='hover:scale-105 cursor-pointer transition-all w-48'/>
                 </NavLink>
-                <p className='text-[16px] flex mt-1 justify-center sm:justify-start'><img src={pinIcon} className='h-fit mr-2'/><a href='https://maps.app.goo.gl/AdLoFoHzJTe1EYJ49' target='_blank' className={'hover:text-[#06E5F180]'}>Via Teodoro Lovati 20 Pavia, PV 27100</a></p>
+                <p className='text-[16px] flex mt-1 justify-center sm:justify-start'><img src={pinIcon} className='h-fit mr-2'/><a 
+                href='https://maps.app.goo.gl/AdLoFoHzJTe1EYJ49' target='_blank' className={'hover:text-[#06E5F180]'}>Via Teodoro Lovati 20 Pavia, PV 27100</a></p>
             </div>
             <div className='text-center sm:text-left w-full sm:w-5/12 lg:w-auto'>
-                <h3 className="font-[ClashDisplay-Bold]">Serviços</h3>
+                <h3 className="font-[ClashDisplay-Bold]">Services</h3>
 
                 <ul className='flex flex-col gap-2 mt-6'>
-                    <li>Produção de vídeo</li>
-                    <li>Fotografia</li>
+                    <li>Video production</li>
+                    <li>Photography</li>
                     <li>Motion Design</li>
-                    <li>Animação Gráfica</li>
-                    <li>Cobertura de Eventos</li>
+                    <li>Graphic Animation</li>
+                    <li>Event Coverage</li>
                 </ul>
             </div>
             <div className='text-center sm:text-left w-full sm:w-auto'>
@@ -43,7 +44,7 @@ function Footer(){
                 </ul>
             </div>
             <div className='w-full sm:w-auto'>
-                <h3 className="font-[ClashDisplay-Bold]">Siga a Vision Productions</h3>
+                <h3 className="font-[ClashDisplay-Bold]">Follow Vision Productions</h3>
 
                 <div className='flex gap-2 mt-6 justify-center sm:justify-start'>
                 <img src={emailIcon} className='w-6 h-auto hover:rotate-12 transition-all cursor-pointer'/>
