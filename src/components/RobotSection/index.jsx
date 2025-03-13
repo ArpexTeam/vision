@@ -8,73 +8,91 @@ import * as THREE from "three";
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-function Model({ isVisible }) {
-    const gltf = useLoader(GLTFLoader, "/models/Modelo-textura.gltf"); // Caminho do seu modelo
-    const headRef = useRef();
-    const mixerRef = useRef(null);
+function Model({ isVisible, playAnimation1, playAnimation2, playAnimation3, playAnimation4, playAnimation5, playAnimation6, playAnimation7 }) {
+  const gltf = useLoader(GLTFLoader, "/models/Vision-BOt.glb");
+  const headRef = useRef();
+  const mixerRef = useRef(null);
 
-    useEffect(() => {
-        if (!gltf) return;
-        gltf.scene.rotation.y = 89.7; // Gira 180 graus no eixo Y
+  useEffect(() => {
+    if (!gltf) return;
 
+    gltf.scene.rotation.y = 89.7;
 
-        let parts = [];
-
-        // Procurando a cabeça dentro do modelo
-        gltf.scene.traverse((child) => {
-            if (child.name.toLowerCase().includes("head")) {
-                parts.push(child);
-            }
-        });
-
-        headRef.current = parts[0];
-
-        // Configuração da animação (caso existam animações no modelo)
-        console.log(gltf.animations);
-        if (gltf.animations.length > 0) {
-            console.log(gltf.animations);
-            mixerRef.current = new THREE.AnimationMixer(gltf.scene);
-            const action = mixerRef.current.clipAction(gltf.animations[0]); // Pegamos a primeira animação
-            action.setLoop(THREE.LoopOnce, 1); // Executa uma vez
-            action.clampWhenFinished = true; // Mantém o último frame quando terminar
-            action.play();
-        }
-    }, [gltf]);
-
-    useFrame(({ mouse }) => {
-        if (headRef.current) {
-            // Definição dos limites para evitar exageros
-            const maxRotationX = Math.PI / 3;  // Máximo de 30 graus para cima/baixo
-            const maxRotationY = Math.PI / 3;  // Máximo de 30 graus para olhar para os lados
-    
-            // Ajuste para manter a posição inicial correta
-            const initialRotationX = 1.8;  // Inclinação inicial
-            const initialRotationY = 0;    // Sem rotação inicial para o "não"
-    
-            // Movimento do mouse ajustado corretamente
-            const moveX = -mouse.y * maxRotationX; // Movimento vertical (olhar para cima/baixo)
-            const moveY = -mouse.x * maxRotationY; // Movimento horizontal (girar a cabeça para os lados)
-    
-            // Aplicar os movimentos ajustados
-            headRef.current.rotation.x = initialRotationX + moveX; // Inclinação para cima/baixo
-            headRef.current.rotation.z = initialRotationY + moveY; // Agora ele gira para os lados como um "não"
-        }
+    let parts = [];
+    gltf.scene.traverse((child) => {
+      if (child.name.toLowerCase().includes("head")) {
+        parts.push(child);
+      }
     });
 
-    useFrame((_, delta) => {
-        if (mixerRef.current) mixerRef.current.update(delta); // Atualiza a animação a cada frame
-    });
+    headRef.current = parts[0];
 
-    // Ajuste de posição e escala
-    gltf.scene.scale.set(4.8, 4.8, 4.8); // Diminui o modelo caso esteja muito grande
-    gltf.scene.position.set(0, -0.7, 0);
+    // Inicializar o mixer se o modelo tiver animações
+    if (gltf.animations.length > 0 && !mixerRef.current) {
+      mixerRef.current = new THREE.AnimationMixer(gltf.scene);
+      const action = mixerRef.current.clipAction(gltf.animations[0]);
+      action.setLoop(THREE.LoopOnce, 1);
+      action.clampWhenFinished = true;
+      action.play();
+    }
+  }, [gltf]);
 
-    return <primitive object={gltf.scene} />;
+  const handleAnimation = (action, shouldPlay, isReversed = false) => {
+    if (shouldPlay) {
+      action.reset();
+      action.timeScale = 1; // Animação vai para frente
+      action.play();
+    } else {
+      action.paused = false;
+      action.timeScale = -1; // Reverte ou normaliza a animação
+      action.setLoop(THREE.LoopOnce);
+      action.play();
+    }
+  };
+
+  useEffect(() => {
+    if (!gltf || !mixerRef.current) return;
+
+    if (gltf.animations.length > 1) {
+      const action2 = mixerRef.current.clipAction(gltf.animations[1]);
+      const action3 = mixerRef.current.clipAction(gltf.animations[2]);
+      const action4 = mixerRef.current.clipAction(gltf.animations[3]);
+      const action5 = mixerRef.current.clipAction(gltf.animations[4]);
+      const action6 = mixerRef.current.clipAction(gltf.animations[5]);
+      const action7 = mixerRef.current.clipAction(gltf.animations[6]);
+      const action8 = mixerRef.current.clipAction(gltf.animations[7]);
+  
+      // Chama a função para tratar cada animação
+      handleAnimation(action2, playAnimation1, !playAnimation1);
+      handleAnimation(action3, playAnimation2, !playAnimation2);
+      handleAnimation(action4, playAnimation3, !playAnimation3);
+      handleAnimation(action5, playAnimation4, !playAnimation4);
+      handleAnimation(action6, playAnimation5, !playAnimation5);
+      handleAnimation(action7, playAnimation6, !playAnimation6);
+      handleAnimation(action8, playAnimation7, !playAnimation7);
+    }
+  }, [playAnimation1, playAnimation2, playAnimation3, playAnimation4, playAnimation5, playAnimation6, playAnimation7]);
+
+  useFrame((_, delta) => {
+    if (mixerRef.current) mixerRef.current.update(delta);
+  });
+
+  gltf.scene.scale.set(0.5, 0.5, 0.5);
+  gltf.scene.position.set(0, -0.7, 0);
+
+  return <primitive object={gltf.scene} />;
 }
-
 
 function Robot() {
     const [isVisible, setIsVisible] = useState(false);
+    const [playAnimation1, setPlayAnimation1] = useState(null);
+    const [playAnimation2, setPlayAnimation2] = useState(null);
+    const [playAnimation3, setPlayAnimation3] = useState(null);
+    const [playAnimation4, setPlayAnimation4] = useState(null);
+    const [playAnimation5, setPlayAnimation5] = useState(null);
+    const [playAnimation6, setPlayAnimation6] = useState(null);
+    const [playAnimation7, setPlayAnimation7] = useState(null);
+
     const modelRef = useRef();
   
     useEffect(() => {
@@ -106,7 +124,10 @@ function Robot() {
 
       
             <div className="relative ml-auto md:ml-0 w-52 h-20">
-              <button className="absolute top-0 left-2 md:-left-9 w-52 md:w-72 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
+              <button
+                 onMouseEnter={() => setPlayAnimation4(true)}
+                 onMouseLeave={() => setPlayAnimation4(false)}
+              className="absolute top-0 left-2 md:-left-9 w-52 md:w-72 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 CGI 3D
               </button>
@@ -119,7 +140,10 @@ function Robot() {
           </div>
           <div className="w-full md:w-3/12 flex flex-col gap-5 mt-6 md:mt-0">
             <div className="relative w-52 h-20 ml-auto">
-              <button className="absolute top-0 -right-2 md:right-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
+              <button
+              onMouseEnter={() => setPlayAnimation3(true)}
+              onMouseLeave={() => setPlayAnimation3(false)}
+              className="absolute top-0 -right-2 md:right-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 3D Modeling
               </button>
@@ -130,7 +154,10 @@ function Robot() {
               </div>
             </div>
             <div className="relative w-52 h-20 ml-auto">
-              <button className="absolute top-0 -right-2 md:right-[85px] w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
+              <button 
+              onMouseEnter={() => setPlayAnimation2(true)}
+              onMouseLeave={() => setPlayAnimation2(false)}
+              className="absolute top-0 -right-2 md:right-[85px] w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
               <p>
                 Website creation <br />
@@ -144,7 +171,10 @@ function Robot() {
               </div>
             </div>
             <div className="relative w-52 h-20 ml-auto">
-              <button className="absolute top-0 -right-2 md:right-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
+              <button
+              onMouseEnter={() => setPlayAnimation1(true)}
+              onMouseLeave={() => setPlayAnimation1(false)}
+              className="absolute top-0 -right-2 md:right-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 <p>Graphic <br /> Animation</p>
               </button>
@@ -160,13 +190,19 @@ function Robot() {
           <Canvas camera={{ position: [3, 1, 0], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
-        <Model isVisible={isVisible} />
+        <Model isVisible={isVisible} playAnimation1={playAnimation1} 
+        playAnimation2={playAnimation2} playAnimation3={playAnimation3}
+        playAnimation4={playAnimation4} playAnimation5={playAnimation5} 
+        playAnimation6={playAnimation6} playAnimation7={playAnimation7}/>
       </Canvas>
           </div>
           </div>
           <div className="w-full md:w-3/12 flex flex-col gap-5 flex-wrap mt-6 md:mt-0">
             <div className="relative w-52 h-20 ml-auto">
-              <button className="absolute top-0 left-2 md:left-11 w-52 h-[70px] font-[ClashDisplay-semibold] text-[20px] text-gray-300
+              <button
+               onMouseEnter={() => setPlayAnimation5(true)}
+               onMouseLeave={() => setPlayAnimation5(false)}
+              className="absolute top-0 left-2 md:left-11 w-52 h-[70px] font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 3D Animation
               </button>
@@ -177,7 +213,10 @@ function Robot() {
               </div>
             </div>
             <div className="relative w-52 h-20 ml-auto">
-              <button className="absolute left-2 top-0 md-1 md:left-[85px] w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
+              <button
+               onMouseEnter={() => setPlayAnimation6(true)}
+               onMouseLeave={() => setPlayAnimation6(false)}
+              className="absolute left-2 top-0 md-1 md:left-[85px] w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 <p>Video <br /> Productions</p>
               </button>
@@ -188,7 +227,10 @@ function Robot() {
               </div>
             </div>
             <div className="relative w-52 h-20 ml-auto">
-              <button className="absolute top-0 left-2 md:left-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
+              <button
+               onMouseEnter={() => setPlayAnimation7(true)}
+               onMouseLeave={() => setPlayAnimation7(false)}
+              className="absolute top-0 left-2 md:left-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 Motion Design
               </button>
