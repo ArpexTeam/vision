@@ -19,7 +19,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 function Model({ isVisible }) {
-  const gltf = useLoader(GLTFLoader, "/models/Drone.glb");
+  const gltf = useLoader(GLTFLoader, "/models/Drone site2.glb");
   const mixerRef = useRef(null);
   const actionRef = useRef(null);
   const scrollTimeout = useRef(null);
@@ -27,8 +27,8 @@ function Model({ isVisible }) {
 
   useEffect(() => {
       if (!gltf) return;
-      gltf.scene.rotation.y = 89.7;
-
+      gltf.scene.rotation.y =4.4;
+      gltf.scene.rotation.x = 0;
       if (gltf.animations.length > 0) {
           mixerRef.current = new THREE.AnimationMixer(gltf.scene);
           const action = mixerRef.current.clipAction(gltf.animations[0]);
@@ -102,6 +102,9 @@ function Model({ isVisible }) {
   useFrame((_, delta) => {
       if (mixerRef.current) mixerRef.current.update(delta);
   });
+
+  gltf.scene.scale.set(0.74, 0.74, 0.74);
+
 
   return <primitive object={gltf.scene} />;
 }
@@ -619,8 +622,8 @@ function Services() {
 </defs>
 </svg>
 
-          <div ref={modelRef} className="w-fit fixed right-60 top-[330px] z-[998] first-letter h-[400px]">
-          <Canvas camera={{ position: [3, 3, 0], fov: 50 }} width="100px">
+          <div ref={modelRef} className="w-[400px] fixed right-36 top-[330px] z-[998] first-letter h-[400px]">
+          <Canvas camera={{ position: [3, 1, 0], fov: 50 }} width="150px">
         <ambientLight intensity={3} />
         <directionalLight position={[5, 5, 5]} intensity={7} />
         <Model isVisible={isVisible} />

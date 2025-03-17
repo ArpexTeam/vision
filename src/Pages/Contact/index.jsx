@@ -2,6 +2,64 @@ import world from '../../images/world.jpeg';
 import React, { useState, useRef } from 'react';
 
 
+
+import CardService from '../../components/CardService';
+import cardImg from '../../images/Video-Production.jpg';
+import cardImg2 from '../../images/MotionDesign.jpg';
+import cardImg3 from '../../images/CGI-3D.jpg';
+import cardImg4 from '../../images/3DModeling.jpg';
+import cardImg5 from '../../images/3D-animation.jpg';
+import cardImg6 from '../../images/Graphics.jpg';
+import cardImg7 from '../../images/Website.jpg';
+import ImageService from '../../images/Image-service.svg';
+import IconService from '../../images/icone-eventos.png';
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { OrbitControls, useGLTF, useAnimations  } from "@react-three/drei";
+import { useEffect } from "react";
+import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
+import * as THREE from "three";
+
+
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+
+function Model() {
+  const gltf = useLoader(GLTFLoader, "/models/globo.glb");
+  const mixerRef = useRef(null);
+  const actionRef = useRef(null);
+  const scrollTimeout = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+//   useEffect(() => {
+//       if (!gltf) return;
+//       gltf.scene.rotation.y = 89.7;
+
+//       if (gltf.animations.length > 0) {
+//           mixerRef.current = new THREE.AnimationMixer(gltf.scene);
+//           const action = mixerRef.current.clipAction(gltf.animations[0]);
+
+//           action.setLoop(THREE.LoopOnce, Infinity);
+//           action.clampWhenFinished = true;
+//           action.enabled = true;
+//           action.play(); // Mantém a animação sempre rodando
+//           actionRef.current = action;
+//           mixerRef.current.addEventListener("finished", () => {
+//             if (actionRef.current) {
+//                 actionRef.current.fadeOut(1.5); // Suaviza a saída ao longo de 1.5s
+//             }
+//         });
+//       }
+//   }, [gltf]);
+
+
+
+  useFrame((_, delta) => {
+      if (mixerRef.current) mixerRef.current.update(delta);
+  });
+  gltf.scene.scale.set(0.1, 0.1, 0.1);
+  gltf.scene.position.set(0, 0, 0);
+  return <primitive object={gltf.scene} />;
+}
+
 function Contact(){
 
     const [visible, setVisible] = useState(false);
@@ -17,8 +75,16 @@ function Contact(){
 
     return(
         <div style={{backgroundImage:`url(${world})`, backgroundPosition:'center', backgroundSize:'cover'}} className='w-full pt-20 h-auto relative'>
+                   <div className='w-2/4 h-screen absolute z-0'>
+                      <Canvas camera={{ position: [3, 10, 0], fov: 50 }} width="100vw" height="300px">
+                    <ambientLight intensity={3} />
+                    <directionalLight position={[5, 5, 5]} intensity={7} />
+                    <Model/>
+                  </Canvas>
+                  </div>
             <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>
-            <div className='flex'>
+     
+            <div className='flex z-10 relative'>
                  <div className='w-0 md:w-1/2'></div>
                  <div className='w-full md:w-9/12 lg:w-5/12 bg-black rounded-lg p-6 md:p-14 border border-[#414141]'>
                     <h1 className='font-[ClashDisplay-Bold] text-[30px]'>CONTACT</h1>
