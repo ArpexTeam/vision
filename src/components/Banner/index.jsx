@@ -1,5 +1,5 @@
 import thumb from '../../images/sponsor.png';
-import video1 from '../../images/Motion Sponsor_1.MP4';
+import video1 from '../../images/Motion Sponsor_1.mp4';
 
 
 
