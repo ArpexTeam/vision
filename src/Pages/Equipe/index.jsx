@@ -23,7 +23,7 @@ function Equipe(){
         <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>  
         <div className='flex md:flex-row flex-col items-center'>
         <div className="text-center text-white w-full sm:w-2/3 mt-14 md:mt-0 md:w-1/2 md:order-1 order-2">
-            <h1 className="text-[40px] font-[ClashDisplay-Bold] text-white mb-6">Pedro</h1>
+            <h2 className="text-[40px] font-[ClashDisplay-Bold] text-white mb-6">Pedro</h2>
             <p className="leading-7 font-[ClashDisplay-Extralight]">Lorem ipsum dolor sit amet consectetur. Volutpat sollicitudin purus 
                 nunc molestie. Tempor consectetur consectetur accumsan enim turpis.
                 Id orci nibh ipsum et turpis nisl non libero ut. Enim lectus vitae 
@@ -53,7 +53,7 @@ function Equipe(){
        </div>
        <div style={{backgroundImage:`url(${back2})`, backgroundSize:'contain', backgroundPosition:'center', backgroundRepeat:'no-repeat'}} className='py-10 md:py-20 bg-[#070707] text-left mt-32 w-full'>
         <div className='max-w-[1280px] flex justify-center items-center md:flex-row flex-col'>
-           <h1 className='font-[ClashDisplay-Bold] text-center md:mb-0 mb-4 md:text-left text-[16px] md:text-[26px] w-2/3 sm:w-1/2'>Criação de conteúdo visual que inspira, emociona e transforma seu negócio.</h1>
+           <h2 className='font-[ClashDisplay-Bold] text-center md:mb-0 mb-4 md:text-left text-[16px] md:text-[26px] w-2/3 sm:w-1/2'>Criação de conteúdo visual que inspira, emociona e transforma seu negócio.</h2>
            <button className='bg-[#06E7F2] h-fit w-fit p-4 px-6 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]' style={{border:'1px solid #06E7F2'}}>Reserve agora seu evento</button>
         </div>
         </div>

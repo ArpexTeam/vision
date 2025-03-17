@@ -150,7 +150,7 @@ function Feedback(){
       </div>
       <div className="w-full mt-28 py-10 bg-[#070707]">
         <div className="max-w-[1280px] ml-auto mr-auto flex justify-center text-center md:text-left w-4/5 flex-col items-center">
-          <h1 className="font-[ClashDisplay-Regular] text-[20px] md:text-[26px] w-2/3 text-center">Speak with one of our specialists and receive a personalized quote right now</h1>
+          <h2 className="font-[ClashDisplay-Regular] text-[20px] md:text-[26px] w-2/3 text-center">Speak with one of our specialists and receive a personalized quote right now</h2>
           <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact Us</button>
         </div>
       </div>

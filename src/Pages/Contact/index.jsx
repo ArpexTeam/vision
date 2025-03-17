@@ -21,7 +21,7 @@ function Contact(){
             <div className='flex'>
                  <div className='w-0 md:w-1/2'></div>
                  <div className='w-full md:w-9/12 lg:w-5/12 bg-black rounded-lg p-6 md:p-14 border border-[#414141]'>
-                    <h1 className='font-[ClashDisplay-Bold] text-[30px]'>CONTATO</h1>
+                    <h1 className='font-[ClashDisplay-Bold] text-[30px]'>CONTACT</h1>
                     <form className='flex flex-col'>
                         <input className='bg-[#161616] border-b-[#06E5F1] border-b p-4 py-3 mt-6 rounded-sm' type='text' placeholder='Name*'></input>
                         <input className='bg-[#161616] border-b-[#06E5F1] border-b p-4 py-3 mt-6 rounded-sm' type='email' placeholder='E-mail*'></input>
@@ -38,7 +38,7 @@ function Contact(){
             <div className="w-full text-left bg-black mt-48 py-20">
                 <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>
                 <div className="w-full sm:w-10/12 md:w-6/12">
-                     <h1 className='text-[28px] md:text-[36px] font-[ClashDisplay-Bold] mb-5'>Your feedback matters!</h1>
+                     <h2 className='text-[28px] md:text-[36px] font-[ClashDisplay-Bold] mb-5'>Your feedback matters!</h2>
                      <p className="text-white font-[ClashDisplay-Regular]">Did you like one of our services? Leave your<br/> feedback
                      so we can keep improving and<br/> delivering the best for you.</p>
                 </div>

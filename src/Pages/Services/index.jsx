@@ -19,93 +19,94 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 function Model({ isVisible }) {
-    const gltf = useLoader(GLTFLoader, "/models/Drone.glb"); // Caminho do seu modelo
-    const headRef = useRef();
-    const mixerRef = useRef(null);
-    const [scrollTriggered, setScrollTriggered] = useState(false); // Usado para evitar chamadas repetidas de animação
+  const gltf = useLoader(GLTFLoader, "/models/Drone.glb");
+  const mixerRef = useRef(null);
+  const actionRef = useRef(null);
+  const scrollTimeout = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
+  useEffect(() => {
+      if (!gltf) return;
+      gltf.scene.rotation.y = 89.7;
 
-    useEffect(() => {
-        if (!gltf) return;
-        gltf.scene.rotation.y = 89.7; // Gira 180 graus no eixo Y
+      if (gltf.animations.length > 0) {
+          mixerRef.current = new THREE.AnimationMixer(gltf.scene);
+          const action = mixerRef.current.clipAction(gltf.animations[0]);
 
-
-        let parts = [];
-
-        // Procurando a cabeça dentro do modelo
-        gltf.scene.traverse((child) => {
-            if (child.name.toLowerCase().includes("head")) {
-                parts.push(child);
+          action.setLoop(THREE.LoopOnce, Infinity);
+          action.clampWhenFinished = true;
+          action.enabled = true;
+          action.play(); // Mantém a animação sempre rodando
+          actionRef.current = action;
+          mixerRef.current.addEventListener("finished", () => {
+            if (actionRef.current) {
+                actionRef.current.fadeOut(1.5); // Suaviza a saída ao longo de 1.5s
             }
         });
+      }
+  }, [gltf]);
 
-        headRef.current = parts[0];
+  const [isScrolling, setIsScrolling] = useState(false);
 
-        // Configuração da animação (caso existam animações no modelo)
-        if (gltf.animations.length > 0) {
-            console.log(gltf.animations);
-            mixerRef.current = new THREE.AnimationMixer(gltf.scene);
-            const action = mixerRef.current.clipAction(gltf.animations[0]); // Pegamos a primeira animação
-            action.setLoop(THREE.LoopOnce, 1); // Executa uma vez
-            action.clampWhenFinished = true; // Mantém o último frame quando terminar
-            action.play();
+  const isPlayingRef = useRef(isPlaying); // Referência para o estado atual
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("🟢 Começou a rolar! Atual isPlaying:", isPlayingRef.current);
+
+      if (!isPlayingRef.current) {
+        console.log("🎬 Iniciando animação");
+
+        if (!mixerRef.current || !actionRef.current) {
+          console.warn("🚨 mixerRef ou actionRef não estão definidos!");
+          return;
         }
-    }, [gltf]);
 
-      // Detecta o evento de scroll
-    //   useEffect(() => {
-    //     const handleScroll = () => {
-    //         if (!scrollTriggered) {
-    //             setScrollTriggered(true); // Marca que o scroll ocorreu
-    //             console.log(mixerRef.current);
-    //             if (mixerRef.current) {
-    //                 const action = mixerRef.current.clipAction(gltf.animations[0]);
-    //                 action.reset(); // Reinicia a animação
-    //                 action.play(); // Executa a animação
-    //                 console.log("aaaa");
+        setIsPlaying(true);
+        isPlayingRef.current = true; // Atualiza a referência também
+        actionRef.current.play();
+        actionRef.current.time = 4;
+        actionRef.current.fadeIn(0.2);
+      }
 
-    //             }
-    //         }
-    //     };
+      // Resetar o timeout toda vez que rolar
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
 
-    //     window.addEventListener("scroll", handleScroll);
+      scrollTimeout.current = setTimeout(() => {
+        console.log("🔴 Parou de rolar!");
 
-    //     // Remove o listener quando o componente for desmontado
-    //     return () => {
-    //         window.removeEventListener("scroll", handleScroll);
-    //     };
-    // }, [gltf]);
+        if (mixerRef.current && actionRef.current) {
+          console.log("🛑 Parando animação lentamente...");
+          actionRef.current.fadeOut(1);
 
-    // useFrame(({ mouse }) => {
-    //     if (headRef.current) {
-    //         // Definição dos limites para evitar exageros
-    //         const maxRotationX = Math.PI / 3;  // Máximo de 30 graus para cima/baixo
-    //         const maxRotationY = Math.PI / 3;  // Máximo de 30 graus para olhar para os lados
-    
-    //         // Ajuste para manter a posição inicial correta
-    //         const initialRotationX = 1.8;  // Inclinação inicial
-    //         const initialRotationY = 0;    // Sem rotação inicial para o "não"
-    
-    //         // Movimento do mouse ajustado corretamente
-    //         const moveX = -mouse.y * maxRotationX; // Movimento vertical (olhar para cima/baixo)
-    //         const moveY = -mouse.x * maxRotationY; // Movimento horizontal (girar a cabeça para os lados)
-    
-    //         // Aplicar os movimentos ajustados
-    //         headRef.current.rotation.x = initialRotationX + moveX; // Inclinação para cima/baixo
-    //         headRef.current.rotation.z = initialRotationY + moveY; // Agora ele gira para os lados como um "não"
-    //     }
-    // });
+          setTimeout(() => {
+            actionRef.current.stop();
+            setIsPlaying(false);
+            isPlayingRef.current = false; // Atualiza a referência
+          }, 3000);
+        }
+      }, 3000); // Tempo após parar de rolar
+    };
 
-    useFrame((_, delta) => {
-        if (mixerRef.current) mixerRef.current.update(delta); // Atualiza a animação a cada frame
-    });
+    window.addEventListener("scroll", handleScroll);
 
-    // Ajuste de posição e escala
-    gltf.scene.scale.set(1, 1, 1); // Diminui o modelo caso esteja muito grande
-    gltf.scene.position.set(0, 0.3, 0);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    };
+  }, []); // Remove `isScrolling` das dependências para evitar problemas
 
-    return <primitive object={gltf.scene} />;
+
+  
+
+  useFrame((_, delta) => {
+      if (mixerRef.current) mixerRef.current.update(delta);
+  });
+
+  return <primitive object={gltf.scene} />;
 }
+
+
 
 function Services() {
   const [isVisible, setIsVisible] = useState(false);
@@ -481,12 +482,12 @@ function Services() {
       <div className="relative md:text-left flex flex-col md:flex-row items-center md:items-start justify-between mb-40">
         <div className="w-full md:w-1/2 lg:w-2/3">
         <h1 className="font-[ClashDisplay-Bold] text-[40px] mb-4">Our Services</h1>
-        <h1 className="font-[ClashDisplay-medium] text-[30px] mb-8">Difficulty to sell? We are the solution</h1>
+        <h2 className="font-[ClashDisplay-medium] text-[30px] mb-8">Difficulty to sell? We are the solution</h2>
 
-        <h1 className="font-[ClashDisplay-Light] text-[17px]">
+        <h2 className="font-[ClashDisplay-Light] text-[17px]">
           We offer complete solutions in video and animation, from creation to final delivery.
           Our portfolio includes advertising, corporate videos, 2D/3D animations, and more.
-          </h1>
+          </h2>
           </div>
 
           <div className="h-56 w-full mt-6 md:mt-0 md:w-1/2 lg:w-1/3">
@@ -494,7 +495,7 @@ function Services() {
           </div>
       </div>
 
-      <svg style={{ transform: "translateY(-110px)" }} className='float-left hidden sm:block' width="87" height="4110" viewBox="0 0 87 4110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg style={{ transform: "translateY(-5px)", transform:"translateX(-200px)" }} className='float-right hidden sm:block right-10' width="87" height="4110" viewBox="0 0 87 4110" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path id="line1" d="M42 0.566244L27.5662 15L42 29.4338L56.4338 15L42 0.566244ZM39.5 15L39.5 4067H44.5L44.5 15H39.5Z" fill="#494949"/>
 <g style={{ transform: "translateY(50px)" }} filter="url(#filter0_d_1009_4703)">
 <ellipse id="shadow1" cx="43.5" cy="354.709" rx="12.5" ry="12.1152" fill="black"/>
@@ -618,36 +619,36 @@ function Services() {
 </defs>
 </svg>
 
-          <div ref={modelRef} className="w-fit fixed left-10 top-10 z-[998] first-letter h-[400px]">
+          <div ref={modelRef} className="w-fit fixed right-60 top-[330px] z-[998] first-letter h-[400px]">
           <Canvas camera={{ position: [3, 3, 0], fov: 50 }} width="100px">
         <ambientLight intensity={3} />
         <directionalLight position={[5, 5, 5]} intensity={7} />
         <Model isVisible={isVisible} />
       </Canvas>
           </div>
-        <div className="text-left relative -top-8 mb-24">
-          <h1 className="font-[ClashDisplay-SemiBold] text-[48px] flex sm:flex-none justify-center items-center sm:justify-start sm:items-start ">Services</h1>
+        <div className="text-center relative -top-8 mb-24">
+          <h2 className="font-[ClashDisplay-SemiBold] text-[48px] flex sm:flex-none justify-center items-center sm:justify-center sm:items-start ">Services</h2>
         </div>
 
-        <div className='relative'>
+        <div className='relative w-2/3'>
           <div className="pb-2 mt-40 md:mt-20">
             <CardService image={cardImg} title={"Video Productions"} textBody={"We create personalized plans that combine market analysis, clear goals, and effective actions to elevate your brand and achieve your business objectives."}
-             top="md:mt-10 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="md:mt-40 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg2} paddingDirection={"md:pr-10 md:pl-24 p-10"} title={"Motion Design"} textBody={"With the power of motion design, we can present your promotion or product in the best way possible."}
              top="mt-[150px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg3} title={"CGI 3D"}
              textBody={"With the power of CGI, we insert 3D elements into real scenes, creating a perfect fusion between the virtual and the real."} paddingDirection={"md:pl-10 md:pr-20 p-10"} 
-             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg4} title={"3D Modeling"} 
             textBody={"We model your product or scene and animate it with textures and lighting that make it realistic."} paddingDirection={"md:pr-10 md:pl-24 p-10"} 
-            top="mt-[150px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+            top="mt-[150px] md:mt-[250px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg5} title={"3D Animation"}
              textBody={"We animate any 3D object or scene, bringing movement and life to every detail."} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
-             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[150px] md:mt-[140px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg6} title={"Graphic Animation"}
              textBody={"We bring movement to your graphics to showcase your company in the best possible way, and we also offer general graphic design services."} paddingDirection={"pr-10 md:pl-24 p-10"} 
@@ -658,18 +659,18 @@ function Services() {
              top="mt-[150px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <div className="relative w-full text-left mt-40 md:mt-96">
-              <h1 className="font-[ClashDisplay-Bold] text-[28px] mb-7">Our Numbers in 2024</h1>
+              <h2 className="font-[ClashDisplay-Bold] text-[28px] mb-7">Our Numbers in 2024</h2>
               <div className='flex gap-10 justify-between'>
               <div>
-                <h1 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>+100</h1>
+                <h2 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>+100</h2>
                 <p className='textGradient font-[ClashDisplay-Semibold]'>Projects  successfully completed</p>
               </div>
               <div>
-              <h1 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>35</h1>
+              <h2 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>35</h2>
               <p className='textGradient font-[ClashDisplay-Semibold]'>Companies served</p>
               </div>
               <div>
-              <h1 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>98%</h1>
+              <h2 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>98%</h2>
               <p className='textGradient font-[ClashDisplay-Semibold]'>Increase in client satisfaction</p>
               </div>
               </div>
@@ -681,7 +682,7 @@ function Services() {
 
       <div className="w-full py-10 mt-20 bg-[#070707] flex justify-center">
         <div className="max-w-[1280px] w-full flex flex-col items-center text-center px-4">
-          <h1 className="font-[ClashDisplay-medium] text-[20px] md:text-[26px] w-2/3 text-center">Speak with one of our specialists and receive <br></br> a personalized quote right now</h1>
+          <h2 className="font-[ClashDisplay-medium] text-[20px] md:text-[26px] w-2/3 text-center">Speak with one of our specialists and receive <br></br> a personalized quote right now</h2>
           <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact us</button>
         </div>
       </div>

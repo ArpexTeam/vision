@@ -1,5 +1,5 @@
 import thumb from '../../images/sponsor.png';
-// import video1 from '../../images/Motion Sponsor.MP4';
+import video1 from '../../images/Motion Sponsor.MP4';
 
 
 
@@ -7,7 +7,7 @@ function Banner(){
     return(
         <div className="bg-black w-full pb-10 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
-            <h1 className='text-[32px] md:text-[40px] font-[ClashDisplay-Semibold]'>Oficial Sponsor 2025</h1>
+            <h2 className='text-[32px] md:text-[40px] font-[ClashDisplay-Semibold]'>Oficial Sponsor 2025</h2>
                 <div className="w-full h-40 md:h-72 rounded-3xl mt-20">
                     <video
                     className="rounded-xl bg-slate-900"
@@ -17,7 +17,7 @@ function Banner(){
                             autoPlay
                             muted
                         >
-                            <source src={null} type="video/mp4" />
+                            <source src={video1} type="video/mp4" />
                             Seu navegador não suporta a tag de vídeo.
                         </video>
                 </div>

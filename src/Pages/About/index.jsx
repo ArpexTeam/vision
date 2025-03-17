@@ -15,15 +15,15 @@ function About() {
         <div className="w-full gap-8 md:pt-20">
           <div className="text-white w-9/12 mx-auto text-center">
             <h1 className="font-[ClashDisplay-Bold] text-[36px] md:text-[42px] mb-8">Who we are</h1>
-            <p className="text-[16px] font-[ClashDisplay-Regular]">
+            <p className="text-[20px] font-[ClashDisplay-Regular]">
               We are a creative production company born from the passion for storytelling and transforming ideas into impactful visual experiences. With a core team made up of CGI specialists, video production experts, and motion designers, as well as a vast network of highly skilled editors, filmmakers, and artists, we are always ready to meet the diverse demands of the market.
             </p>
           </div>
         </div>
 
         {/* Seção: Strategic Leader Team */}
-        <div className='mt-28'>
-          <h1 className='font-[ClashDisplay-Semibold] text-[32px] md:text-[42px]'>Strategic Leader Team</h1>
+        <div className='mt-20'>
+          <h2 className='font-[ClashDisplay-Semibold] text-[32px] md:text-[42px]'>Strategic Leader Team</h2>
           <div className='flex flex-col lg:flex-row gap-10 mt-20 relative textCardTeam'>
 
             {/* Card: ILARIA */}
@@ -33,7 +33,7 @@ function About() {
                   <img src={eq2} className='h-full object-cover aspect-[3/4]' alt="Ilaria" />
                 </div>
               </div>
-              <h1 className='font-[ClashDisplay-Bold] text-[30px] mt-8'>ILARIA</h1>
+              <h2 className='font-[ClashDisplay-Bold] text-[30px] mt-8'>ILARIA</h2>
               <p className='font-[ClashDisplay-SemiBold] text-[16px] text-white'>Communication Specialist</p>
               <div className='w-3/4 lg:w-auto'>
                 <p className='text-white py-8 px-5 font-[ClashDisplay-Regular]'>
@@ -49,7 +49,7 @@ function About() {
                   <img src={eq1} className='h-full object-cover aspect-[3/4]' alt="Pedro" />
                 </div>
               </div>
-              <h1 className='font-[ClashDisplay-Bold] text-[30px] mt-8 w-fit'>PEDRO</h1>
+              <h2 className='font-[ClashDisplay-Bold] text-[30px] mt-8 w-fit'>PEDRO</h2>
               <p className='font-[ClashDisplay-SemiBold] text-[16px] text-white'>CEO - Team Leader</p>
               <div className='w-3/4'>
                 <p className='text-white py-8 px-5 font-[ClashDisplay-Regular]'>
@@ -65,8 +65,8 @@ function About() {
                   <img src={eq3} className='h-full object-cover aspect-[3/4]' alt="Daniel" />
                 </div>
               </div>
-              <h1 className='font-[ClashDisplay-Bold] text-[30px] mt-8 '>DANIEL</h1>
-              <p className='font-[ClashDisplay-SemiBold] text-[16px] text-white'>CEO - Team Leader</p>
+              <h2 className='font-[ClashDisplay-Bold] text-[30px] mt-8 '>DANIEL</h2>
+              <p className='font-[ClashDisplay-SemiBold] text-[16px] text-white'>Project Manager</p>
               <div className='w-3/4 lg:w-auto'>
                 <p className='text-white py-8 px-5 font-[ClashDisplay-Regular]'>
                   The mastermind behind the edits that transform every project, delivering the best result in the editing of each project.
@@ -81,17 +81,17 @@ function About() {
 
       {/* Seção de citação */}
       <div className="w-8/12 mx-auto">
-        <h2 className='font-[ClashDisplay-Light] text-white text-[20px] md:text-[22px] mt-40 mb-24'>
+        <h2 className='font-[ClashDisplay-Light] text-white text-[20px] md:text-[22px] mt-20 mb-20'>
           With a core team composed of highly specialized leaders, our global network of collaborators and partners enables us to execute large-scale projects with unmatched quality, continuous innovation, and real impact.
         </h2>
       </div>
 
       {/* Seção de contato */}
-      <div className="w-full py-10 bg-[#070707] mt-36">
+      <div className="w-full py-10 bg-[#070707] mt-20">
         <div className="max-w-[1280px] mx-auto flex justify-center text-center w-4/5 flex-col items-center">
-          <h1 className="font-[ClashDisplay-Medium] text-[20px] md:text-[26px] w-2/3">
+          <h2 className="font-[ClashDisplay-Medium] text-[20px] md:text-[26px] w-2/3">
             Contact one of our specialists
-          </h1>
+          </h2>
           <button
             className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]"
             style={{ border: '1px solid #06E7F2' }}

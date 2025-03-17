@@ -46,34 +46,48 @@ function Commercial(){
                 </div>
             </div>
             <div>
-                <h1 className='font-[ClashDisplay-SemiBold] text-[28px] md:text-[40px] mt-28'>Commercial Portfolio</h1>
+                <h2 className='font-[ClashDisplay-SemiBold] text-[28px] md:text-[40px] mt-28'>Commercial Portfolio</h2>
                 <p className='text-[#CCCCCC] font-[ClashDisplay-regular]'>Working with the best clients and collaborators.</p>
             </div>
             <div className='flex gap-16 lg:gap-6 justify-center md:justify-between flex-wrap mt-10'>
-            <CardCommercial type="large" thumb={cm1} video={null} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm2} video={null} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm3} video={null} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm4} video={null} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm5} video={null} typeModal="video"/>
-            <CardCommercial type="large" thumb={cm6} video={null} typeModal="video"/>
+            <CardCommercial type="large" thumb={cm1} video={
+                <iframe className='w-full h-full' src="https://www.youtube.com/embed/6km8qiOabZI?si=EEjwBfeluf872ABB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            } typeModal="video"/>
+            <CardCommercial type="large" thumb={cm2} video={
+                <iframe className='w-full h-full' src="https://www.youtube.com/embed/6km8qiOabZI?si=m6BTF7CVAdaPBFCX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            } typeModal="video"/>
+            <CardCommercial type="large" thumb={cm3} video={
+                <iframe className='w-full h-full' src="https://www.youtube.com/embed/N1t70aO7rUo?si=G1jf-Eor4hIz78km" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            } typeModal="video"/>
+            <CardCommercial type="large" thumb={cm4} video={
+                <iframe className='w-full h-full' src="https://www.youtube.com/embed/eoSElmr4FAM?si=e3JGPjYEcCziW3Yb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            } typeModal="video"/>
+            <CardCommercial type="large" thumb={cm5} video={
+                <iframe className='w-full h-full' src="https://www.youtube.com/embed/YBtx0dOZI1o?si=GO0u9-7takqrjshm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            } typeModal="video"/>
+            <CardCommercial type="large" thumb={cm6} video={
+                <iframe className='w-full h-full' src="https://www.youtube.com/embed/uwORyxcoWWU?si=lp6Zai2dxF3jRKIH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            } typeModal="video"/>
             </div>
 
             <div>
-                <h1 className='font-[ClashDisplay-SemiBold] text-[28px] md:text-[40px] mt-36 md:mt-36'>Social Media Manegement</h1>
+                <h2 className='font-[ClashDisplay-SemiBold] text-[28px] md:text-[40px] mt-36 md:mt-36'>Social Media Manegement</h2>
                 <p className='text-[#CCCCCC] font-[ClashDisplay-Regular]'>Let a professional production studio take care of your business!</p>
             </div>
             <div className='flex gap-16 md:gap-5  justify-center md:justify-between flex-wrap mt-10 md:mt-24'>
             <CardCommercial type="high" thumb={sm1} video={sm1} typeModal="pic"/>
             <CardCommercial type="high" thumb={sm2} video={sm2} typeModal="pic"/>
-            <CardCommercial type="high" thumb={sm3} video={sm3} typeModal="pic"/>
+            <CardCommercial type="high" thumb={sm6} video={sm6} typeModal="pic"/>
+
             <CardCommercial type="high" thumb={sm4} video={sm4} typeModal="pic"/>
             <CardCommercial type="high" thumb={sm5} video={sm5} typeModal="pic"/>
-            <CardCommercial type="high" thumb={sm6} video={sm6} typeModal="pic"/>
+            <CardCommercial type="high" thumb={sm3} video={sm3} typeModal="pic"/>
+
             </div>
             </div>
             <div className="w-full py-10 bg-[#0e0e0e] mt-36">
                 <div className="max-w-[1280px] ml-auto mr-auto flex justify-center text-center w-4/5 flex-col items-center">
-                <h1 className="font-[ClashDisplay-Medium] text-[20px] md:text-[26px] w-2/3">Speak with one of our specialists and receive a personalized quote right now</h1>
+                <h2 className="font-[ClashDisplay-Medium] text-[20px] md:text-[26px] w-2/3">Speak with one of our specialists and receive a personalized quote right now</h2>
                 <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact us</button>
                 </div>
             </div>

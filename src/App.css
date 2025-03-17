@@ -61,6 +61,9 @@ html{
   font-size: calc(10px + 2vmin);
   color: white;
 }
+h2{
+  color: white;
+}
 
 .App-link {
   color: #61dafb;
