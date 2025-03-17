@@ -1,5 +1,5 @@
 import thumb from '../../images/sponsor.png';
-import video1 from '../../images/Motion Sponsor.MP4';
+//import video1 from '../../images/Motion Sponsor.MP4';
 
 
 
@@ -17,7 +17,7 @@ function Banner(){
                             autoPlay
                             muted
                         >
-                            <source src={video1} type="video/mp4" />
+                            <source src={null} type="video/mp4" />
                             Seu navegador não suporta a tag de vídeo.
                         </video>
                 </div>
