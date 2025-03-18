@@ -658,7 +658,7 @@ function Services() {
         <Model isVisible={isVisible} />
       </Canvas>
           </div>
-        <div className="text-center relative -top-8 mb-10">
+        <div className="text-center relative -top-8 mb-10 md:pr-48">
           <h2 className="font-[ClashDisplay-SemiBold] text-[48px] flex sm:flex-none justify-center items-center sm:justify-center sm:items-start ">Services</h2>
         </div>
 
@@ -720,12 +720,15 @@ function Services() {
         </div>
       </div>
 
-      <div className="w-full py-10 mt-20 bg-[#070707] flex justify-center">
+   
+    </div>
+    <div className="w-full py-10 mt-20 bg-[#070707] flex justify-center">
         <div className="max-w-[1280px] w-full flex flex-col items-center text-center px-4">
           <h2 className="font-[ClashDisplay-medium] text-[20px] md:text-[26px] w-2/3 text-center">Speak with one of our specialists and receive <br></br> a personalized quote right now</h2>
           <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact us</button>
         </div>
       </div>
+    </div>
     </div>
   );
 }
