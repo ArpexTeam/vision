@@ -9,14 +9,18 @@ import cardImg7 from '../../images/Website.jpg';
 import ImageService from '../../images/Image-service.svg';
 import IconService from '../../images/icone-eventos.png';
 import './style.css';
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF, useAnimations  } from "@react-three/drei";
 import { useEffect, useState, useRef } from "react";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 import * as THREE from "three";
-
-
+import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { Environment } from '@react-three/drei';  // For HDR environment map
+import { useLocation } from "react-router-dom";
+
+
+
 
 function Model({ isVisible }) {
   const gltf = useLoader(GLTFLoader, "/models/Drone site2.glb");
@@ -24,68 +28,84 @@ function Model({ isVisible }) {
   const actionRef = useRef(null);
   const scrollTimeout = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const { scene, gl: renderer } = useThree();
+
+  const backgroundMeshRef = useRef(null);
+
+  // Carregamento do HDRi
+  const hdrTexture = useLoader(RGBELoader, "/hdris/minedump_flats_4k.hdr");
 
   useEffect(() => {
-      if (!gltf) return;
-      gltf.scene.rotation.y =4.4;
-      gltf.scene.rotation.x = 0;
-      if (gltf.animations.length > 0) {
-          mixerRef.current = new THREE.AnimationMixer(gltf.scene);
-          const action = mixerRef.current.clipAction(gltf.animations[0]);
+    if (hdrTexture) {
+      console.log("texturizando");
+      hdrTexture.mapping = THREE.EquirectangularReflectionMapping;
+      scene.environment = hdrTexture; // Configura a iluminação da cena
 
-          action.setLoop(THREE.LoopOnce, Infinity);
-          action.clampWhenFinished = true;
-          action.enabled = true;
-          action.play(); // Mantém a animação sempre rodando
-          actionRef.current = action;
-          mixerRef.current.addEventListener("finished", () => {
-            if (actionRef.current) {
-                actionRef.current.fadeOut(1.5); // Suaviza a saída ao longo de 1.5s
-            }
-        });
-      }
+      // Criar e adicionar o fundo HDRi
+      const backgroundGeometry = new THREE.SphereGeometry(500, 60, 40);
+      backgroundGeometry.scale(-1, 1, 1); // Inverter para dentro
+      // Atualizar a intensidade e a exposição
+      scene.environment.intensity = 14;
+      renderer.toneMappingExposure = 0.7;
+    }
+  }, [hdrTexture, scene]);
+
+  
+
+  // Configuração da animação do modelo
+  useEffect(() => {
+    if (!gltf) return;
+
+    gltf.scene.rotation.y = 4.4;
+    gltf.scene.rotation.x = 0;
+    
+    if (gltf.animations.length > 0) {
+      mixerRef.current = new THREE.AnimationMixer(gltf.scene);
+      const action = mixerRef.current.clipAction(gltf.animations[0]);
+
+      action.setLoop(THREE.LoopOnce, Infinity);
+      action.clampWhenFinished = true;
+      action.enabled = true;
+      action.play();
+      actionRef.current = action;
+
+      mixerRef.current.addEventListener("finished", () => {
+        if (actionRef.current) {
+          actionRef.current.fadeOut(1.5);
+        }
+      });
+    }
   }, [gltf]);
 
-  const [isScrolling, setIsScrolling] = useState(false);
+  const isPlayingRef = useRef(isPlaying);
 
-  const isPlayingRef = useRef(isPlaying); // Referência para o estado atual
-
+  // Efeito de scroll para controlar animação
   useEffect(() => {
     const handleScroll = () => {
-      console.log("🟢 Começou a rolar! Atual isPlaying:", isPlayingRef.current);
-
       if (!isPlayingRef.current) {
-        console.log("🎬 Iniciando animação");
-
         if (!mixerRef.current || !actionRef.current) {
-          console.warn("🚨 mixerRef ou actionRef não estão definidos!");
           return;
         }
 
         setIsPlaying(true);
-        isPlayingRef.current = true; // Atualiza a referência também
+        isPlayingRef.current = true;
         actionRef.current.play();
         actionRef.current.time = 4;
         actionRef.current.fadeIn(0.2);
       }
 
-      // Resetar o timeout toda vez que rolar
       if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
 
       scrollTimeout.current = setTimeout(() => {
-        console.log("🔴 Parou de rolar!");
-
         if (mixerRef.current && actionRef.current) {
-          console.log("🛑 Parando animação lentamente...");
-          actionRef.current.fadeOut(1);
-
+          actionRef.current.fadeOut(0.5);
           setTimeout(() => {
             actionRef.current.stop();
             setIsPlaying(false);
-            isPlayingRef.current = false; // Atualiza a referência
-          }, 3000);
+            isPlayingRef.current = false;
+          }, 800);
         }
-      }, 3000); // Tempo após parar de rolar
+      }, 800);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -94,20 +114,18 @@ function Model({ isVisible }) {
       window.removeEventListener("scroll", handleScroll);
       if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
     };
-  }, []); // Remove `isScrolling` das dependências para evitar problemas
-
-
-  
+  }, []);
 
   useFrame((_, delta) => {
-      if (mixerRef.current) mixerRef.current.update(delta);
+    if (mixerRef.current) mixerRef.current.update(delta);
   });
 
-  gltf.scene.scale.set(0.74, 0.74, 0.74);
-
+  gltf.scene.scale.set(0.63, 0.63, 0.63);
 
   return <primitive object={gltf.scene} />;
 }
+
+
 
 
 
@@ -474,6 +492,17 @@ function Services() {
 
 
   };
+
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
   
   
   
@@ -635,12 +664,16 @@ function Services() {
 
         <div className='relative w-2/3'>
           <div className="pb-2 mt-40 md:mt-20">
+            <div id='videoProduction'>
             <CardService image={cardImg} title={"Video Productions"} textBody={"We create personalized plans that combine market analysis, clear goals, and effective actions to elevate your brand and achieve your business objectives."}
              top="md:mt-40 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
-            
+            </div>
+
+            <div id="motion">
             <CardService image={cardImg2} paddingDirection={"md:pr-10 md:pl-24 p-10"} title={"Motion Design"} textBody={"With the power of motion design, we can present your promotion or product in the best way possible."}
              top="mt-[150px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
-            
+            </div>
+
             <CardService image={cardImg3} title={"CGI 3D"}
              textBody={"With the power of CGI, we insert 3D elements into real scenes, creating a perfect fusion between the virtual and the real."} paddingDirection={"md:pl-10 md:pr-20 p-10"} 
              top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
@@ -653,10 +686,11 @@ function Services() {
              textBody={"We animate any 3D object or scene, bringing movement and life to every detail."} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
              top="mt-[150px] md:mt-[140px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
+            <div id="graphic">
             <CardService image={cardImg6} title={"Graphic Animation"}
              textBody={"We bring movement to your graphics to showcase your company in the best possible way, and we also offer general graphic design services."} paddingDirection={"pr-10 md:pl-24 p-10"} 
              top="mt-[150px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
-          
+          </div>
           <CardService image={cardImg7} title={"Website creation and editing"}
              textBody={"We design and edit websites that combine functionality and creativity to enhance your online presence and engage your audience."} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
              top="mt-[150px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />

@@ -19,6 +19,7 @@ function Model({ isVisible, playAnimation1, playAnimation2, playAnimation3, play
   const targetProgress = useRef(0); // Progresso alvo baseado no scroll
   const scrollSpeed = 0.0005; // Velocidade de resposta ao scroll
   const actionRef = useRef(null);
+  const [unlockRobot, setUnlockRobot] = useState(true);
   
 
   useEffect(() => {
@@ -67,6 +68,7 @@ function Model({ isVisible, playAnimation1, playAnimation2, playAnimation3, play
       action.setLoop(THREE.LoopOnce, 1);
       action.clampWhenFinished = true;
       actionRef.current.play();
+      actionRef.current.endTime = 0.4;
       actionRef.current.paused = true; // Inicia pausada
           }
   }, [gltf]);
@@ -112,27 +114,23 @@ function Model({ isVisible, playAnimation1, playAnimation2, playAnimation3, play
     }
   }, [playAnimation1, playAnimation2, playAnimation3, playAnimation4, playAnimation5, playAnimation6, playAnimation7]);
 
+// Função para lidar com o scroll
+useEffect(() => {
+  let isAnimating = false; // Evita repetição da animação enquanto já está rodando
+  const handleScroll = (event) => {
+    if (!mixerRef.current || !actionRef.current) return;
 
-   // Função para lidar com o scroll
-   useEffect(() => {
-    const handleScroll = (event) => {
-      if (!mixerRef.current || !actionRef.current) return;
+    const rect = modelRef.current.getBoundingClientRect();
+    const elementCenter = rect.top + rect.height / 2; // Ponto central do container
+    const viewportCenter = window.innerHeight / 2; // Ponto central da tela
+    let isVisible = Math.abs(elementCenter - viewportCenter) < 240;
 
-      
+    if (isVisible && !isAnimating) { // Se não estiver visível, não atualiza a animação
+      document.body.style.overflow = "hidden"; // 🔥 Bloqueia o scroll da página
 
-      const rect = modelRef.current.getBoundingClientRect();
-      const elementCenter = rect.top + rect.height / 2; // Ponto central do container
-      const viewportCenter = window.innerHeight / 2; // Ponto central da tela
-      let isVisible = false;
-    
-      if(Math.abs(elementCenter - viewportCenter) < 100){
-        isVisible = true;
-      }else{
-        isVisible = false;
-      }
-
-    if (isVisible){ // Se não estiver visível, não atualiza a animação
-    document.body.style.overflow = "hidden"; // 🔥 Bloqueia o scroll da página
+      const animationDuration = actionRef.current.getClip().duration;
+      const startTime = animationDuration * 0; // 🔥 Começa em 10%
+      const endTime = animationDuration * 0.6;   // 🔥 Termina em 40%
 
       // Ajusta o progresso do scroll (limita entre 0 e 1)
       targetProgress.current = Math.max(0, Math.min(1, targetProgress.current + event.deltaY * scrollSpeed));
@@ -142,28 +140,33 @@ function Model({ isVisible, playAnimation1, playAnimation2, playAnimation3, play
         current: targetProgress.current,
         duration: 0.2, // Tempo de transição suave
         onUpdate: () => {
-          const animationDuration = actionRef.current.getClip().duration;
-          actionRef.current.time = scrollProgress.current * animationDuration;
+          let newTime = startTime + scrollProgress.current * (endTime - startTime);
+          actionRef.current.time = Math.min(newTime, endTime); // 🔥 Garante que não ultrapasse o tempo limite
           mixerRef.current.update(0);
         },
         onComplete: () => {
-          if (scrollProgress.current === 1 || scrollProgress.current === 0) {
-            document.body.style.overflow = ""; // 🔥 Libera o scroll
-          }
+          setTimeout(() => {
+            isAnimating = true; 
+            setTimeout(() => {
+              isAnimating = false; 
+            }, 1500);
+          }, 2000); 
         }
       });
+
       event.preventDefault(); // 🔥 Impede que a página role
-
-    }else{
+    } else {
       document.body.style.overflow = ""; // 🔥 Libera o scroll quando sair da seção
-
     }
-    };
+  };
 
-    window.addEventListener("wheel", handleScroll);
-    return () => {window.removeEventListener("wheel", handleScroll);      document.body.style.overflow = ""; // Libera o scroll ao desmontar o componente
-    };
-  }, [modelRef]);
+  window.addEventListener("wheel", handleScroll);
+  return () => {
+    window.removeEventListener("wheel", handleScroll);
+    document.body.style.overflow = ""; // Libera o scroll ao desmontar o componente
+  };
+}, [modelRef]);
+
   
 
   useFrame((_, delta) => {
