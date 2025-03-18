@@ -527,39 +527,39 @@ function Services() {
           </div>
       </div>
 
-      <svg style={{ transform: "translateY(-5px)", transform:"translateX(-200px)" }} className='float-right hidden sm:block right-10' width="87" height="4110" viewBox="0 0 87 4110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg style={{ transform: "translateY(-5px)", transform:"translateX(-200px)" }} className='float-right hidden sm:block right-10' width="87" height="3310" viewBox="0 0 87 4110" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path id="line1" d="M42 0.566244L27.5662 15L42 29.4338L56.4338 15L42 0.566244ZM39.5 15L39.5 4067H44.5L44.5 15H39.5Z" fill="#494949"/>
-<g style={{ transform: "translateY(50px)" }} filter="url(#filter0_d_1009_4703)">
+<g style={{ transform: "translateY(25px)" }} filter="url(#filter0_d_1009_4703)">
 <ellipse id="shadow1" cx="43.5" cy="354.709" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse1" d="M55.5 354.709C55.5 361.109 50.1423 366.324 43.5 366.324C36.8577 366.324 31.5 361.109 31.5 354.709C31.5 348.309 36.8577 343.094 43.5 343.094C50.1423 343.094 55.5 348.309 55.5 354.709Z" stroke="#06E5F1"/>
 </g>
 
-<g style={{ transform: "translateY(20px)" }} filter="url(#filter1_d_1009_4703)">
+<g style={{ transform: "translateY(-50px)" }} filter="url(#filter1_d_1009_4703)">
 <ellipse cx="44.5" cy="891.654" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse2" d="M56.5 891.654C56.5 898.055 51.1423 903.27 44.5 903.27C37.8577 903.27 32.5 898.055 32.5 891.654C32.5 885.254 37.8577 880.039 44.5 880.039C51.1423 880.039 56.5 885.254 56.5 891.654Z" stroke="#06E5F1"/>
 </g>
 
-<g style={{ transform: "translateY(-20px)" }} filter="url(#filter2_d_1009_4703)">
+<g style={{ transform: "translateY(60px)" }} filter="url(#filter2_d_1009_4703)">
 <ellipse cx="42.5" cy="1370" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse3" d="M54.5 1371.42C54.5 1377.82 49.1423 1383.04 42.5 1383.04C35.8577 1383.04 30.5 1377.82 30.5 1371.42C30.5 1365.02 35.8577 1359.8 42.5 1359.8C49.1423 1359.8 54.5 1365.02 54.5 1371.42Z" stroke="#06E5F1"/>
 </g>
 
-<g style={{ transform: "translateY(-130px)" }} filter="url(#filter3_d_1009_4703)">
+<g style={{ transform: "translateY(-80px)" }} filter="url(#filter3_d_1009_4703)">
 <ellipse cx="42.5" cy="1994.63" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse4" d="M54.5 1994.63C54.5 2001.03 49.1423 2006.24 42.5 2006.24C35.8577 2006.24 30.5 2001.03 30.5 1994.63C30.5 1988.23 35.8577 1983.01 42.5 1983.01C49.1423 1983.01 54.5 1988.23 54.5 1994.63Z" stroke="#06E5F1"/>
 </g>
 
-<g style={{ transform: "translateY(-330px)" }} filter="url(#filter4_d_1009_4703)">
+<g style={{ transform: "translateY(-130px)" }} filter="url(#filter4_d_1009_4703)">
 <ellipse cx="42.5" cy="2639.15" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse5" d="M54.5 2639.15C54.5 2645.55 49.1423 2650.77 42.5 2650.77C35.8577 2650.77 30.5 2645.55 30.5 2639.15C30.5 2632.75 35.8577 2627.54 42.5 2627.54C49.1423 2627.54 54.5 2632.75 54.5 2639.15Z" stroke="#06E5F1"/>
 </g>
 
-<g style={{ transform: "translateY(-340px)" }} filter="url(#filter5_d_1009_4703)">
+<g style={{ transform: "translateY(-180px)" }} filter="url(#filter5_d_1009_4703)">
 <ellipse cx="42.5" cy="3161.57" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse6" d="M54.5 3161.57C54.5 3167.97 49.1423 3173.18 42.5 3173.18C35.8577 3173.18 30.5 3167.97 30.5 3161.57C30.5 3155.17 35.8577 3149.95 42.5 3149.95C49.1423 3149.95 54.5 3155.17 54.5 3161.57Z" stroke="#06E5F1"/>
 </g>
 
-<g style={{ transform: "translateY(-300px)" }} filter="url(#filter6_d_1009_4703)">
+<g style={{ transform: "translateY(20px)" }} filter="url(#filter6_d_1009_4703)">
 <ellipse cx="42.5" cy="3556.04" rx="12.5" ry="12.1152" fill="black"/>
 <path id="ellipse7" d="M54.5 3556.04C54.5 3562.44 49.1423 3567.65 42.5 3567.65C35.8577 3567.65 30.5 3562.44 30.5 3556.04C30.5 3549.64 35.8577 3544.42 42.5 3544.42C49.1423 3544.42 54.5 3549.64 54.5 3556.04Z" stroke="#06E5F1"/>
 </g>
@@ -658,7 +658,7 @@ function Services() {
         <Model isVisible={isVisible} />
       </Canvas>
           </div>
-        <div className="text-center relative -top-8 mb-24">
+        <div className="text-center relative -top-8 mb-10">
           <h2 className="font-[ClashDisplay-SemiBold] text-[48px] flex sm:flex-none justify-center items-center sm:justify-center sm:items-start ">Services</h2>
         </div>
 
@@ -666,13 +666,15 @@ function Services() {
           <div className="pb-2 mt-40 md:mt-20">
             <div id='videoProduction'>
             <CardService image={cardImg} title={"Video Productions"} textBody={"We create personalized plans that combine market analysis, clear goals, and effective actions to elevate your brand and achieve your business objectives."}
-             top="md:mt-40 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
-            </div>
 
-            <div id="motion">
+             top="md:mt-0 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+            
+          <div id="motion">
             <CardService image={cardImg2} paddingDirection={"md:pr-10 md:pl-24 p-10"} title={"Motion Design"} textBody={"With the power of motion design, we can present your promotion or product in the best way possible."}
-             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
-            </div>
+             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+           </div>
+
+            
 
             <CardService image={cardImg3} title={"CGI 3D"}
              textBody={"With the power of CGI, we insert 3D elements into real scenes, creating a perfect fusion between the virtual and the real."} paddingDirection={"md:pl-10 md:pr-20 p-10"} 
@@ -680,22 +682,23 @@ function Services() {
             
             <CardService image={cardImg4} title={"3D Modeling"} 
             textBody={"We model your product or scene and animate it with textures and lighting that make it realistic."} paddingDirection={"md:pr-10 md:pl-24 p-10"} 
-            top="mt-[150px] md:mt-[250px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+            top="mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg5} title={"3D Animation"}
              textBody={"We animate any 3D object or scene, bringing movement and life to every detail."} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
-             top="mt-[150px] md:mt-[140px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <div id="graphic">
             <CardService image={cardImg6} title={"Graphic Animation"}
              textBody={"We bring movement to your graphics to showcase your company in the best possible way, and we also offer general graphic design services."} paddingDirection={"pr-10 md:pl-24 p-10"} 
-             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
-          </div>
+             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+          
+
           <CardService image={cardImg7} title={"Website creation and editing"}
              textBody={"We design and edit websites that combine functionality and creativity to enhance your online presence and engage your audience."} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
-             top="mt-[150px] md:mt-[200px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
-            <div className="relative w-full text-left mt-40 md:mt-96">
+            <div className="relative w-full text-left mt-40 md:mt-36">
               <h2 className="font-[ClashDisplay-Bold] text-[28px] mb-7">Our Numbers in 2024</h2>
               <div className='flex gap-10 justify-between'>
               <div>
