@@ -24,11 +24,11 @@ function Footer(){
                 <h3 className="font-[ClashDisplay-Bold]">Services</h3>
 
                 <ul className='flex flex-col gap-2 mt-6'>
-                    <li>Video production</li>
-                    <li>Photography</li>
-                    <li>Motion Design</li>
-                    <li>Graphic Animation</li>
-                    <li>Event Coverage</li>
+                    <li><NavLink to='/servicos#videoProduction' className={'hover:text-[#06E5F180]'}>Video production</NavLink></li>
+                    <li><NavLink to='/servicos#photography' className={'hover:text-[#06E5F180]'}>Photography</NavLink></li>
+                    <li><NavLink to='/servicos#motion' className={'hover:text-[#06E5F180]'}>Motion Design</NavLink></li>
+                    <li><NavLink to='/servicos#graphic' className={'hover:text-[#06E5F180]'}>Graphic Animation</NavLink></li>
+                    <li><NavLink to='/servicos#event' className={'hover:text-[#06E5F180]'}>Event Coverage</NavLink></li>
                 </ul>
             </div>
             <div className='text-center sm:text-left w-full sm:w-auto'>
@@ -60,6 +60,8 @@ function Footer(){
             </div>
             <div className='pb-5 w-full text-center text-white font-extralight text-[12px] font-[ClashDisplay-ExtraLight]'>
             Copyright © 2024 Vision Productions. All rights reserved 
+            <br/>
+            Developed by <a href="https://www.instagram.com/arpextechnology/profilecard/?igsh=MW1pd25wcm52MWZwMw==" target='_blank' className='text-[#00CF77] font-[ClashDisplay-Regular]'>ArpexTech</a>
             </div>
         </div>
     );
