@@ -243,7 +243,7 @@ function Robot() {
               onMouseLeave={() => setPlayAnimation3(false)}
               className="absolute top-0 -right-2 md:right-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                3D Modeling
+                <p>3D Modeling <br /> and Animation</p>
               </button>
               <div className="absolute -top-1 md:right-10 w-[218px] h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
@@ -303,7 +303,7 @@ function Robot() {
                onMouseLeave={() => setPlayAnimation5(false)}
               className="absolute top-0 left-2 md:left-11 w-52 h-[70px] font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                3D Animation
+                <p>Video <br /> Productions</p>
               </button>
               <div className="absolute -top-1 md:left-10 w-[218px] h-[78px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
@@ -317,7 +317,7 @@ function Robot() {
                onMouseLeave={() => setPlayAnimation6(false)}
               className="absolute left-2 top-0 md-1 md:left-[85px] w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                <p>Video <br /> Productions</p>
+                <p>SEO, Meta <br /> and Google ADS</p>
               </button>
               <div className="absolute -top-1 md:left-20 w-[218px] h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 

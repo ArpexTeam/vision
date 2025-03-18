@@ -103,9 +103,9 @@ function Model({ isVisible }) {
             actionRef.current.stop();
             setIsPlaying(false);
             isPlayingRef.current = false;
-          }, 800);
+          }, 300);
         }
-      }, 800);
+      }, 300);
     };
 
     window.addEventListener("scroll", handleScroll);
