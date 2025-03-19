@@ -18,6 +18,7 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Environment } from '@react-three/drei';  // For HDR environment map
 import { useLocation } from "react-router-dom";
+import gsap from "gsap"; // Importa GSAP para suavização
 
 
 
@@ -81,13 +82,24 @@ function Model({ isVisible }) {
 
   // Efeito de scroll para controlar animação
   useEffect(() => {
+
     const handleScroll = () => {
+      const scrollDistance = Math.abs(window.scrollY);
+      console.log('Distância do topo:', scrollDistance);
+
+      if(scrollDistance > 3400){
+        return;
+      }
+
+      document.getElementById("drone").style.top = scrollDistance+"px";
+ 
       if (!isPlayingRef.current) {
         if (!mixerRef.current || !actionRef.current) {
           return;
         }
 
         setIsPlaying(true);
+        actionRef.current.setEffectiveTimeScale(1);
         isPlayingRef.current = true;
         actionRef.current.play();
         actionRef.current.time = 4;
@@ -98,14 +110,27 @@ function Model({ isVisible }) {
 
       scrollTimeout.current = setTimeout(() => {
         if (mixerRef.current && actionRef.current) {
-          actionRef.current.fadeOut(0.5);
-          setTimeout(() => {
-            actionRef.current.stop();
-            setIsPlaying(false);
-            isPlayingRef.current = false;
-          }, 300);
+            gsap.to(actionRef.current, {
+                duration: 2, // 🔥 Tempo total da transição
+                onUpdate: function () {
+                    let progress = this.progress(); // Progresso da animação (0 a 1)
+                    let newSpeed = 1 - progress * 1; // 🔥 Agora desacelera 4x mais rápido
+                    actionRef.current.setEffectiveTimeScale(newSpeed);
+                },
+                onComplete: () => {
+                    //actionRef.current.fadeOut(1.5); // 🔥 Faz um fade suave antes de parar
+                    
+                    setTimeout(() => {
+                        if (actionRef.current) {
+                  
+                            setIsPlaying(false);
+                            isPlayingRef.current = false;
+                        }
+                    }, 1400); // Tempo extra para garantir suavidade
+                },
+            });
         }
-      }, 300);
+    }, 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -651,7 +676,7 @@ function Services() {
 </defs>
 </svg>
 
-          <div ref={modelRef} className="w-[400px] fixed right-36 top-[330px] z-[998] first-letter h-[400px]">
+          <div ref={modelRef} id="drone" className="w-[400px] absolute right-0 top-[330px] z-[998] first-letter h-[400px]">
           <Canvas camera={{ position: [3, 1, 0], fov: 50 }} width="150px">
         <ambientLight intensity={3} />
         <directionalLight position={[5, 5, 5]} intensity={7} />

@@ -75,21 +75,45 @@ function Model({ isVisible, playAnimation1, playAnimation2, playAnimation3, play
 
   const handleAnimation = (action, shouldPlay, isReversed = false) => {
     if (shouldPlay) {
-      // Evitar reiniciar a animação se ela já estiver em andamento
-      if (action.isRunning()) return;
-      action.reset();
-      action.timeScale = 1;
-      action.fadeIn(0.5); // Fade in para suavizar o início
-      action.play();
+        if (action.isRunning()) return; // Evita reiniciar a animação se já estiver rodando
+
+        action.setLoop(THREE.LoopRepeat); // Garante que a animação pode repetir
+        action.reset(); // Reinicia a animação de forma suave
+        action.fadeIn(0.2); // Faz um fade-in suave de 1s
+        action.play();
+
+        // Suaviza a velocidade no início
+        gsap.to(action, {
+            duration: 0.2,
+            onUpdate: function () {
+                let progress = this.progress(); // Progresso da animação (0 a 1)
+                let newSpeed = 0.5 + progress * 0.9; // Acelera suavemente até a velocidade normal
+                action.setEffectiveTimeScale(newSpeed);
+            }
+        });
+
     } else {
-      // Evitar pausar a animação abruptamente se ela não estiver em andamento
-      if (!action.isRunning()) return;
-      action.fadeOut(0.5); // Fade out para suavizar a saída
-      action.timeScale = isReversed ? -0.5 : 1; // Ajuste a transição suave
-      action.setLoop(THREE.LoopOnce);
-      action.play();
+        if (!action.isRunning()) return; // Evita parar se já estiver parado
+        
+        // Suaviza a desaceleração antes de parar
+        gsap.to(action, {
+            duration: 0.2,
+            onUpdate: function () {
+                let progress = this.progress(); // Progresso da transição
+                let newSpeed = 1 - progress * 1.3; // Reduz suavemente até quase zero
+                action.setEffectiveTimeScale(newSpeed);
+            },
+            onComplete: () => {
+                action.fadeOut(0.2); // Fade-out suave
+                setTimeout(() => {
+                    action.stop(); // Para completamente a animação
+                    action.reset(); // Reseta para não dar tranco
+                }, 1000);
+            }
+        });
     }
-  };
+};
+
 
   useEffect(() => {
     if (!gltf || !mixerRef.current) return;
@@ -123,7 +147,7 @@ useEffect(() => {
     const rect = modelRef.current.getBoundingClientRect();
     const elementCenter = rect.top + rect.height / 2; // Ponto central do container
     const viewportCenter = window.innerHeight / 2; // Ponto central da tela
-    let isVisible = Math.abs(elementCenter - viewportCenter) < 240;
+    let isVisible = Math.abs(elementCenter - viewportCenter) < 200;
 
     if (isVisible && !isAnimating) { // Se não estiver visível, não atualiza a animação
       document.body.style.overflow = "hidden"; // 🔥 Bloqueia o scroll da página
