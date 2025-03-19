@@ -147,7 +147,11 @@ useEffect(() => {
     const rect = modelRef.current.getBoundingClientRect();
     const elementCenter = rect.top + rect.height / 2; // Ponto central do container
     const viewportCenter = window.innerHeight / 2; // Ponto central da tela
-    let isVisible = Math.abs(elementCenter - viewportCenter) < 200;
+
+    const scrollDistance = Math.abs(window.scrollY);
+
+    console.log(scrollDistance);
+    let isVisible = scrollDistance < 1000 && scrollDistance > 500;
 
     if (isVisible && !isAnimating) { // Se não estiver visível, não atualiza a animação
       document.body.style.overflow = "hidden"; // 🔥 Bloqueia o scroll da página
@@ -178,7 +182,7 @@ useEffect(() => {
         }
       });
 
-      event.preventDefault(); // 🔥 Impede que a página role
+     // event.preventDefault(); // 🔥 Impede que a página role
     } else {
       document.body.style.overflow = ""; // 🔥 Libera o scroll quando sair da seção
     }
@@ -235,7 +239,7 @@ function Robot() {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "0 30%",
       }}
-      className="bg-black w-full py-20 h-[1100px] md:h-[800px] relative"
+      className="bg-black w-full py-20 h-[1100px] md:h-[750px] relative"
     >
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-full relative">
         <div className="flex justify-center content-center w-full h-full flex-wrap text-white -mt-20">
