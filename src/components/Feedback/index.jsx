@@ -14,6 +14,8 @@ import Spendiamo from '../../images/Spendiamo-a-pavia.svg';
 import University from '../../images/University-of-pavia.svg';
 import Weester from '../../images/Weester.svg';
 
+import { useTranslation } from "react-i18next";
+import "../../lib/i18n";
 
 import './style.css';
 
@@ -21,6 +23,9 @@ import './style.css';
 import { Navigation } from 'swiper/modules';
 
 function Feedback(){
+
+    const { t } = useTranslation();
+
     return(
         
         <div className="bg-black w-full pt-20 h-auto relative">
@@ -54,9 +59,7 @@ function Feedback(){
         </div>
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
-            Since day one, Vision Production has been my trusted partner
-             for all my racing circuit needs, consistently exceeding 
-             expectations with their outstanding content.
+            {t("clients_card.description_toscano")}
             </p>
         </div>
         </SwiperSlide>
@@ -68,9 +71,7 @@ function Feedback(){
         </div>
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
-            Vision Production masterfully captured the essence of our brand, showcasing the quality 
-            and innovation that define our products. Their visuals perfectly align with the 
-            message we want to convey to our customers.
+            {t("clients_card.description_weester")}
             </p>
         </div>
         </SwiperSlide>
@@ -83,9 +84,7 @@ function Feedback(){
         </div>
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
-            Since day one, Vision Production has been my trusted partner
-             for all my racing circuit needs, consistently exceeding 
-             expectations with their outstanding content.
+            {t("clients_card.description_marinoni")}
             </p>
         </div>
         </SwiperSlide>
@@ -97,9 +96,7 @@ function Feedback(){
         </div>
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
-            We were searching for a team capable of bringing our logos to life in both 2D and 3D formats, 
-            and Vision Production not only met but surpassed our expectations with their 
-            exceptional creativity and technical expertise.
+            {t("clients_card.description_university_pavia")}
             </p>
         </div>
         </SwiperSlide>
@@ -111,8 +108,7 @@ function Feedback(){
         </div>
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
-            Collaborating with Vision Production brought new life to our project supporting local 
-            businesses in Pavia. Their visuals truly connect with our community and amplify our purpose.
+            {t("clients_card.description_spendiamo_pavia")}
             </p>
         </div>
         </SwiperSlide>
@@ -124,9 +120,7 @@ function Feedback(){
         </div>
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
-            Partnering with Vision Production has been a game-changer for highlighting our Porsche and 
-            BMW racing team. Their creativity, attention to detail, and expertise have taken 
-            our content to a whole new level.
+            {t("clients_card.description_tecno_sport")}
             </p>
         </div>
         </SwiperSlide>
@@ -138,9 +132,7 @@ function Feedback(){
         </div>
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
-            Vision Production has masterfully captured the essence of our football academy, 
-            highlighting our mission to develop the next generation of professional 
-            players with creativity and passion.
+            {t("clients_card.description_football")}
             </p>
         </div>
         </SwiperSlide>
@@ -150,8 +142,8 @@ function Feedback(){
       </div>
       <div className="w-full mt-28 py-10 bg-[#070707]">
         <div className="max-w-[1280px] ml-auto mr-auto flex justify-center text-center md:text-left w-4/5 flex-col items-center">
-          <h2 className="font-[ClashDisplay-Regular] text-[20px] md:text-[26px] w-2/3 text-center">Speak with one of our specialists and receive a personalized quote right now</h2>
-          <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact Us</button>
+          <h2 className="font-[ClashDisplay-Regular] text-[20px] md:text-[26px] w-2/3 text-center">{t("content.title_contact_us")}</h2>
+          <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>{t("content.button_contact_us")}</button>
         </div>
       </div>
       </div>

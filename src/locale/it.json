@@ -1,0 +1,123 @@
+{
+    "navbar": {
+        "home": "Inizio",
+        "services": "Servizi",
+        "commercial": "Commerciale",
+        "events": "Eventi",
+        "who we are": "Chi siamo",
+        "contact": "Contatto"
+    },
+
+    "services": {
+        "our_services": "I nostri servizi",
+        "cgi_3d": "CGI 3D",
+        "3d_modeling": "Modellazione 3D",
+        "website_creation": "Creazione e modifica \ndi siti web",
+        "graphic_animation": "Animazione Grafica",
+        "3d_animation": "Animazione 3D",
+        "video_production": "Produzione Video",
+        "motion_design": "Progettazione del movimento",
+        "ft_services": "Servizi",
+        "institutional": "Istituzionale",
+        "follow_vision_productions": "Segui Vision Productions",
+        "description_service": "Difficoltà a vendere? Noi siamo la soluzione",
+        "text_page_service": "Offriamo soluzioni complete in video e animazione, dalla creazione alla consegna finale. Il nostro portfolio include pubblicità, video aziendali, animazioni 2D/3D e altro ancora.",
+
+        "description_production": "Creiamo piani personalizzati che combinano analisi di mercato, obiettivi chiari e azioni efficaci per valorizzare il tuo marchio e raggiungere i tuoi obiettivi aziendali.",
+        "description_motion": "Grazie alla potenza del motion design, possiamo presentare la tua promozione o il tuo prodotto nel miglior modo possibile.",
+        "description_cgi_3d": "Grazie alla potenza della CGI, inseriamo elementi 3D in scene reali, creando una fusione perfetta tra virtuale e reale.",
+        "description_modeling": "Modelliamo il tuo prodotto o la tua scena e li animiamo con texture e luci che li rendono realistici.",
+        "description_3d_animation": "Animiamo qualsiasi oggetto o scena 3D, conferendo movimento e vita a ogni dettaglio.",
+        "description_graphic_animation": "Diamo movimento alla vostra grafica per presentare al meglio la vostra azienda e offriamo anche servizi generali di progettazione grafica.",
+        "description_website": "Progettiamo e modifichiamo siti web che uniscono funzionalità e creatività per migliorare la tua presenza online e coinvolgere il tuo pubblico.",
+
+        "our_numbers_in_2024": "I nostri numeri nel 2024",
+        "projects_successfully_completed": "Progetti completati con successo",
+        "companies_served": "Le aziende servite",
+        "increase_in_client_satisfaction": "Aumento della soddisfazione del cliente"
+    },
+
+    "content": {
+        "title_hard": "Difficile vendere? \nNoi siamo la soluzione!",
+        "title_commercial": "COMMERCIALE",
+        "description_commercial": "Aumenta le tue vendite con spot pubblicitari che catturano e generano risultati. Creiamo insieme!",
+        "button_commercial": "Visualizza altro",
+        "title_elevate": "Porta il tuo evento al \nlivello più alto!",
+        "title_events": "EVENTI",
+        "description_events": "Trasforma il tuo evento con immagini dinamiche e storytelling che coinvolgono il tuo pubblico.",
+        "button_events": "Visualizza altro",
+        "title_sponsor": "Sponsor Ufficiale 2025",
+        "sponsor-error": "Il tuo browser non supporta il tag video.",
+        "title_clients": "I nostri clienti",
+        "description_clients": "Nel corso degli anni, abbiamo collaborato con aziende di diversi settori",
+        "title_clients_say": "Cosa dicono i nostri clienti?",
+        "title_contact_us": "Parla con uno dei nostri specialisti e ricevi subito un \npreventivo personalizzato",
+        "button_contact_us": "Contattaci"
+    },
+
+
+    "clients_card": {
+        "description_toscano": "Sin dal primo giorno, Vision Production è stato il mio partner di fiducia per tutte le mie esigenze in ambito di circuiti automobilistici, superando costantemente le aspettative con i suoi eccezionali contenuti.",
+        "description_weester": "Vision Production ha catturato magistralmente l'essenza del nostro marchio, mettendo in risalto la qualità e l'innovazione che definiscono i nostri prodotti. Le loro immagini si allineano perfettamente al messaggio che vogliamo trasmettere ai nostri clienti.",
+        "description_marinoni": "Operiamo nel settore di porte e finestre tra Pavia e Milano, e collaborare con Vision Production ha aumentato significativamente le vendite dei miei prodotti.",
+        "description_university_pavia": "Eravamo alla ricerca di un team capace di dare vita ai nostri loghi in formati 2D e 3D, e Vision Production non solo ha soddisfatto, ma ha superato le nostre aspettative con la loro straordinaria creatività e competenza tecnica.",
+        "description_spendiamo_pavia": "Collaborare con Vision Production ha dato nuova vita al nostro progetto di supporto alle imprese locali di Pavia. Le loro immagini si connettono veramente con la nostra comunità e amplificano il nostro scopo.",
+        "description_tecno_sport": "Collaborare con Vision Production ha cambiato le regole del gioco nel mettere in risalto il nostro team di corse Porsche e BMW. La loro creatività, attenzione ai dettagli e competenza hanno portato i nostri contenuti a un livello completamente nuovo.",
+        "description_football": "Vision Production ha catturato magistralmente l'essenza della nostra accademia di calcio, mettendo in evidenza la nostra missione di sviluppare la prossima generazione di giocatori professionisti con creatività e passione."
+    },
+
+    "commercial": {
+        "title_commercial": "STRATEGIE CREATIVE PER AUMENTARE LE VENDITE",
+        "description_title": "Ottimizza le tue vendite, migliora il coinvolgimento e ottieni i migliori risultati aziendali.",
+        "title-portfolio": "Portafoglio Commerciale",
+        "description_portfolio": "Collaboriamo con i migliori clienti e collaboratori.",
+        "title_social_media": "Gestione dei Social Media",
+        "description_social_media": "Lascia che uno studio di produzione professionale si occupi del tuo business!"
+    },
+
+    "events": {
+        "title_events": "ETERNALIZZA IL TUO EVENTO \nCON LA MIGLIORE COPERTURA",
+        "title_varano": "CIRCUITO INTERNAZIONALE \nDI VARANO",
+        "description_varano": "Catturiamo l'adrenalina e l'emozione dei circuiti più emozionanti, come il Circuito Internazionale di Varano, con una produzione video che trasforma ogni momento in un'esperienza visiva indimenticabile. Indipendentemente dalla location o dall'evento, portiamo questa stessa energia a te.",
+        "title_cattolica": "STADIO DI CATTOLICA",
+        "description_cattolica": "Catturiamo l'intensa emozione del calcio, con l'energia vibrante dei principali stadi come lo Stadio di Cattolica. La nostra produzione video traduce ogni gol, ogni applauso e ogni momento indimenticabile in immagini che fanno battere il cuore. Qualunque sia il tuo evento, portiamo questa passione e qualità cinematografica per creare un'esperienza unica, ovunque tu sia.",
+        "title_misano": "EVENTO PERSONALIZZATO - CIRCUITO DI MISANO",
+        "description_misano": "Con l'esperienza di coprire eventi personalizzati al Circuito di Misano, dove abbiamo avuto l'onore di lavorare con il team Tecnosports e il campione di Italian Legend Car 850cc, Filippo Majrani, creiamo produzioni video che catturano ogni dettaglio e l'emozione del momento. Il nostro approccio flessibile e dedicato assicura che, indipendentemente dal tuo evento o dalla location, possiamo trasmettere tutta l'intensità e la personalizzazione che merita.",
+        "title_indoor_events": "EVENTI AL CHIUSO",
+        "description_indoor": "Trasformiamo qualsiasi spazio interno in un ambiente cinematografico, catturando l'essenza e l'energia del tuo evento con la stessa dedizione che applichiamo alle grandi produzioni all'aperto. Da convention a presentazioni, il nostro team porta qualità e flessibilità nella produzione per creare un'esperienza visiva indimenticabile, ovunque si svolga il tuo evento.",
+        "in_2024": "Nel 2024",
+        "description_2024": "Abbiamo coperto 5 circuiti italiani, tra cui 3 eventi internazionali di motorsport, oltre a un evento allo stadio di calcio e i successi di 2 campioni di corse automobilistiche: Andre Carpezano e Filippo Majrani."
+    },
+
+    "who_are": {
+        "title_who": "Chi siamo",
+        "title_who_description": "Siamo una compagnia di produzione creativa nata dalla passione per il storytelling e per trasformare le idee in esperienze visive impattanti. Con un team principale composto da specialisti CGI, esperti di produzione video e motion designer, oltre a una vasta rete di editor, filmmaker e artisti altamente qualificati, siamo sempre pronti a soddisfare le diverse esigenze del mercato.",
+        "title_strategic": "Team di Leadership Strategica",
+        "ilaria_position": "Specialista in Comunicazione",
+        "ilaria_description": "Adatta i contenuti per le diverse lingue e gestisce i social media, massimizzando l'engagement e l'efficacia della comunicazione.",
+        "pedro_position": "Amministratore Delegato - Caposquadra",
+        "pedro_description": "Supervisiona e guida ogni fase dell'esecuzione, garantendo l'eccellenza in ogni dettaglio, dalla ripresa alla consegna finale.",
+        "daniel_position": "Responsabile del progetto",
+        "daniel_description": "La mente dietro le modifiche che trasformano ogni progetto, offrendo il miglior risultato nell'editing di ogni progetto.",
+        "description_text": "Con un team principale composto da leader altamente specializzati, la nostra rete globale di collaboratori e partner ci consente di eseguire progetti su larga scala con qualità senza pari, innovazione continua e impatto reale.",
+        "contact_specialists": "Contatta uno dei nostri specialisti"
+    },
+
+    "contact": {
+        "contact": "CONTATTO",
+        "name_form": "Nome*",
+        "email_form": "E-mail*",
+        "phone_form": "telefono*",
+        "message": "messaggio",
+        "button_send": "Invia ora",
+        "title_feedback": "Il tuo feedback è importante!",
+        "description_feedback": "Ti è piaciuto uno dei nostri servizi? Lascia il tuo feedback affinché possiamo continuare a migliorare e offrirti sempre il meglio.",
+        "button_vote": "Vota",
+        "modal-thank_you": "Grazie per il tuo voto!",
+        "modal_thank_improving": "Grazie per il tuo voto! Ci aiuta a continuare a migliorare",
+        "close_windows": "Chiudi finestra"
+    }
+
+}   
+
+
