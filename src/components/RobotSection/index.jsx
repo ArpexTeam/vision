@@ -261,7 +261,7 @@ function Robot() {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "0 30%",
       }}
-      className="bg-black w-full py-20 h-[1100px] md:h-[730px] relative"
+      className="bg-black w-full py-20 h-[1100px] md:h-[710px] relative"
     >
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-full relative">
         <div className="flex justify-center content-center w-full h-full flex-wrap text-white -mt-20">
