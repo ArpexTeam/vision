@@ -116,7 +116,7 @@ function Model({ isVisible }) {
       scrollTimeout.current = setTimeout(() => {
         if (mixerRef.current && actionRef.current) {
             gsap.to(actionRef.current, {
-                duration: 0.7, // 🔥 Tempo total da transição
+                duration: 0.3, // 🔥 Tempo total da transição
                 onUpdate: function () {
                     let progress = this.progress(); // Progresso da animação (0 a 1)
                     let newSpeed = 1 - progress * 1; // 🔥 Agora desacelera 4x mais rápido
@@ -131,7 +131,7 @@ function Model({ isVisible }) {
                             setIsPlaying(false);
                             isPlayingRef.current = false;
                         }
-                    }, 600); // Tempo extra para garantir suavidade
+                    }, 200); // Tempo extra para garantir suavidade
                 },
             });
         }

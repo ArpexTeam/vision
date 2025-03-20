@@ -139,19 +139,39 @@ function Model({ isVisible, playAnimation1, playAnimation2, playAnimation3, play
 // Função para lidar com o scroll
 useEffect(() => {
   let isAnimating = false; // Evita repetição da animação enquanto já está rodando
+  let scrollDistance = 0; // Distância total do scroll
+  let isVisible; // Verifica se está dentro da margem de bloqueio
+  let scrollMoved = false;
+
   const handleScroll = (event) => {
-    if (!mixerRef.current || !actionRef.current) return;
-
-    const rect = modelRef.current.getBoundingClientRect();
-    const elementCenter = rect.top + rect.height / 2; // Ponto central do container
-    const viewportCenter = window.innerHeight / 2; // Ponto central da tela
-
-    const scrollDistance = Math.abs(window.scrollY);
-
+    scrollDistance = Math.abs(window.scrollY);
     console.log(scrollDistance);
-    let isVisible = scrollDistance < 800 && scrollDistance > 500;
 
-    if (isVisible && !isAnimating) { // Se não estiver visível, não atualiza a animação
+
+    if (isAnimating || !mixerRef.current || !actionRef.current) return;
+
+    const marginTop = 500; // Margem inferior do scroll
+    const marginBottom = 800; // Margem superior do scroll
+
+
+    if(scrollDistance > marginTop && scrollDistance < marginBottom){
+      console.log("teste externo");
+
+      isVisible = true;
+    }else{
+      isVisible = false;
+    }
+
+    if (isVisible) { // Se não estiver visível, não atualiza a animação
+      if(!scrollMoved){
+        console.log("teste interno");
+        window.scrollTo({
+          top: 650,  // Define a posição do scroll (distância em pixels do topo)
+        });
+  
+      }
+
+      scrollMoved = true;
       document.body.style.overflow = "hidden"; // 🔥 Bloqueia o scroll da página
 
       const animationDuration = actionRef.current.getClip().duration;
@@ -172,25 +192,28 @@ useEffect(() => {
         },
         onComplete: () => {
           setTimeout(() => {
+            document.body.style.overflow = ""; // 🔥 Libera o scroll quando sair da seção
+
             isAnimating = true; 
             setTimeout(() => {
+
               isAnimating = false; 
+              scrollMoved = false;
+
             }, 1500);
           }, 2000); 
         }
       });
 
-     // event.preventDefault(); // 🔥 Impede que a página role
-    } else {
-      document.body.style.overflow = ""; // 🔥 Libera o scroll quando sair da seção
-    }
+     event.preventDefault(); // 🔥 Impede que a página role
+    } 
   };
 
   window.addEventListener("wheel", handleScroll);
-  return () => {
-    window.removeEventListener("wheel", handleScroll);
-    document.body.style.overflow = ""; // Libera o scroll ao desmontar o componente
-  };
+  // return () => {
+  //   window.removeEventListener("wheel", handleScroll);
+  //   document.body.style.overflow = ""; // Libera o scroll ao desmontar o componente
+  // };
 }, [modelRef]);
 
   
