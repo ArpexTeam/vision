@@ -6,10 +6,18 @@ import Router from './Router';
 import upArrow from './images/upArrow.svg'
 import whats from './images/whatsIcon.png'
 import { BrowserRouter } from "react-router";
+import { useTranslation } from 'react-i18next';
+import "../src/lib/i18n";
 
 
 
 function App() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  }
+
   return (
     <BrowserRouter>
     <div className="App">

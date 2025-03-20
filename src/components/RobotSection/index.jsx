@@ -1,14 +1,12 @@
 import back from "../../images/Background.jpg";
 import "./style.css";
+import { useTranslation } from "react-i18next";
+import "../../lib/i18n";
 
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useEffect, useState, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap"; // Importa GSAP para suavização
-
-
-
-
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 function Model({ isVisible, playAnimation1, playAnimation2, playAnimation3, playAnimation4, playAnimation5, playAnimation6, playAnimation7, modelRef }) {
@@ -151,7 +149,7 @@ useEffect(() => {
     const scrollDistance = Math.abs(window.scrollY);
 
     console.log(scrollDistance);
-    let isVisible = scrollDistance < 1000 && scrollDistance > 500;
+    let isVisible = scrollDistance < 800 && scrollDistance > 500;
 
     if (isVisible && !isAnimating) { // Se não estiver visível, não atualiza a animação
       document.body.style.overflow = "hidden"; // 🔥 Bloqueia o scroll da página
@@ -208,6 +206,7 @@ useEffect(() => {
 }
 
 function Robot() {
+    const { t } = useTranslation();
     const [isVisible, setIsVisible] = useState(false);
     const [playAnimation1, setPlayAnimation1] = useState(null);
     const [playAnimation2, setPlayAnimation2] = useState(null);
@@ -239,23 +238,23 @@ function Robot() {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "0 30%",
       }}
-      className="bg-black w-full py-20 h-[1100px] md:h-[750px] relative"
+      className="bg-black w-full py-20 h-[1100px] md:h-[730px] relative"
     >
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-full relative">
         <div className="flex justify-center content-center w-full h-full flex-wrap text-white -mt-20">
           <h2 className="mb-20 font-[ClashDisplay-Bold] text-[38px] md:text-[45px] ">
-            Our Services
+          {t("services.our_services")}
           </h2>
           <div className="w-full h-fit flex justify-center">
 
       
             <div className="relative ml-auto md:ml-0 w-52 h-20">
               <button
-                 onMouseEnter={() => setPlayAnimation4(true)}
-                 onMouseLeave={() => setPlayAnimation4(false)}
+                onMouseEnter={() => setPlayAnimation4(true)}
+                onMouseLeave={() => setPlayAnimation4(false)}
               className="absolute top-0 left-2 md:-left-9 w-52 md:w-72 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                CGI 3D
+                {t('services.cgi_3d')}
               </button>
               <div className="absolute -top-1 -right-2.5 md:-left-10 md:right-10 w-[218px] md:w-[297px] h-[87px] md:h-[90px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
@@ -271,7 +270,7 @@ function Robot() {
               onMouseLeave={() => setPlayAnimation3(false)}
               className="absolute top-0 -right-2 md:right-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                <p>3D Modeling <br /> and Animation</p>
+                {t("services.3d_modeling")}
               </button>
               <div className="absolute -top-1 md:right-10 w-[218px] h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
@@ -284,11 +283,8 @@ function Robot() {
               onMouseEnter={() => setPlayAnimation2(true)}
               onMouseLeave={() => setPlayAnimation2(false)}
               className="absolute top-0 -right-2 md:right-[85px] w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
-              bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-              <p>
-                Website creation <br />
-                and editing
-              </p>
+              bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center p-2">
+              {t("services.website_creation")}
               </button>
               <div className="absolute -top-1 md:right-20 w-[218px] h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
@@ -301,8 +297,8 @@ function Robot() {
               onMouseEnter={() => setPlayAnimation1(true)}
               onMouseLeave={() => setPlayAnimation1(false)}
               className="absolute top-0 -right-2 md:right-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
-              bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                <p>Graphic <br /> Animation</p>
+              bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center p-4">
+                {t("services.graphic_animation")}
               </button>
               <div className="absolute -top-1 md:right-10 w-[218px] h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
@@ -312,7 +308,7 @@ function Robot() {
             </div>
           </div>
           <div className="w-1/3">
-          <div id="modelContainer" ref={modelRef} className="w-1/2 md:w-full absolute -left-12 md:left-0 -mt-16 mt-14 first-letter h-[800px] md:h-[400px]">
+          <div id="modelContainer" ref={modelRef} className="w-1/2 md:w-full absolute -left-12 md:left-0 mt-14 first-letter h-[800px] md:h-[400px]">
           <Canvas camera={{ position: [3.3, 1, 0], fov: 50 }}>
         <ambientLight intensity={0.1} />
         <directionalLight position={[5, 5, 5]} intensity={0.1} />
@@ -327,11 +323,11 @@ function Robot() {
           <div className="w-full md:w-3/12 flex flex-col gap-5 flex-wrap mt-6 md:mt-0">
             <div className="relative w-52 h-20 ml-auto">
               <button
-               onMouseEnter={() => setPlayAnimation5(true)}
-               onMouseLeave={() => setPlayAnimation5(false)}
-              className="absolute top-0 left-2 md:left-11 w-52 h-[70px] font-[ClashDisplay-semibold] text-[20px] text-gray-300
-              bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                <p>Video <br /> Productions</p>
+                onMouseEnter={() => setPlayAnimation5(true)}
+                onMouseLeave={() => setPlayAnimation5(false)}
+                className="absolute top-0 left-2 md:left-11 w-52 h-[70px] font-[ClashDisplay-semibold] text-[20px] text-gray-300
+                bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
+                  {t("services.3d_animation")}
               </button>
               <div className="absolute -top-1 md:left-10 w-[218px] h-[78px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
@@ -345,7 +341,7 @@ function Robot() {
                onMouseLeave={() => setPlayAnimation6(false)}
               className="absolute left-2 top-0 md-1 md:left-[85px] w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                <p>SEO, Meta <br /> and Google ADS</p>
+                {t("services.video_production")}
               </button>
               <div className="absolute -top-1 md:left-20 w-[218px] h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
@@ -359,7 +355,7 @@ function Robot() {
                onMouseLeave={() => setPlayAnimation7(false)}
               className="absolute top-0 left-2 md:left-11 w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                Motion Design
+                {t("services.motion_design")}
               </button>
               <div className="absolute -top-1 md:left-10 w-[218px] h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 

@@ -15,6 +15,11 @@ import { useEffect, useState, useRef } from "react";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 import * as THREE from "three";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
+
+import { useTranslation } from "react-i18next";
+import "../../lib/i18n";
+
+
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Environment } from '@react-three/drei';  // For HDR environment map
 import { useLocation } from "react-router-dom";
@@ -87,7 +92,7 @@ function Model({ isVisible }) {
       const scrollDistance = Math.abs(window.scrollY);
       console.log('Distância do topo:', scrollDistance);
 
-      if(scrollDistance > 3400){
+      if(scrollDistance > 3400 || scrollDistance < 180){
         return;
       }
 
@@ -111,7 +116,7 @@ function Model({ isVisible }) {
       scrollTimeout.current = setTimeout(() => {
         if (mixerRef.current && actionRef.current) {
             gsap.to(actionRef.current, {
-                duration: 2, // 🔥 Tempo total da transição
+                duration: 0.7, // 🔥 Tempo total da transição
                 onUpdate: function () {
                     let progress = this.progress(); // Progresso da animação (0 a 1)
                     let newSpeed = 1 - progress * 1; // 🔥 Agora desacelera 4x mais rápido
@@ -126,11 +131,11 @@ function Model({ isVisible }) {
                             setIsPlaying(false);
                             isPlayingRef.current = false;
                         }
-                    }, 1400); // Tempo extra para garantir suavidade
+                    }, 600); // Tempo extra para garantir suavidade
                 },
             });
         }
-    }, 1000);
+    }, 800);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -155,8 +160,11 @@ function Model({ isVisible }) {
 
 
 function Services() {
+
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const modelRef = useRef();
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -538,12 +546,11 @@ function Services() {
 
       <div className="relative md:text-left flex flex-col md:flex-row items-center md:items-start justify-between mb-40">
         <div className="w-full md:w-1/2 lg:w-2/3">
-        <h1 className="font-[ClashDisplay-Bold] text-[40px] mb-4">Our Services</h1>
-        <h2 className="font-[ClashDisplay-medium] text-[30px] mb-8">Difficulty to sell? We are the solution</h2>
+        <h1 className="font-[ClashDisplay-Bold] text-[40px] mb-4">{t("services.our_services")}</h1>
+        <h2 className="font-[ClashDisplay-medium] text-[30px] mb-8">{t("services.description_service")}</h2>
 
         <h2 className="font-[ClashDisplay-Light] text-[17px]">
-          We offer complete solutions in video and animation, from creation to final delivery.
-          Our portfolio includes advertising, corporate videos, 2D/3D animations, and more.
+          {t("services.text_page_service")}
           </h2>
           </div>
 
@@ -676,85 +683,75 @@ function Services() {
 </defs>
 </svg>
 
-          <div ref={modelRef} id="drone" className="w-[400px] absolute right-0 top-[330px] z-[998] first-letter h-[400px]">
+          <div ref={modelRef} id="drone" className="w-[400px] absolute right-0 top-[180px] z-[998] first-letter h-[400px]">
           <Canvas camera={{ position: [3, 1, 0], fov: 50 }} width="150px">
         <ambientLight intensity={3} />
         <directionalLight position={[5, 5, 5]} intensity={7} />
         <Model isVisible={isVisible} />
       </Canvas>
           </div>
-        <div className="text-center relative -top-8 mb-10 md:pr-48">
-          <h2 className="font-[ClashDisplay-SemiBold] text-[48px] flex sm:flex-none justify-center items-center sm:justify-center sm:items-start ">Services</h2>
+        <div className="text-center relative -top-8 mb-10">
+          <h2 className="font-[ClashDisplay-SemiBold] text-[48px] flex sm:flex-none justify-center items-center sm:justify-center sm:items-start ">{t("navbar.services")}</h2>
         </div>
 
         <div className='relative w-2/3'>
           <div className="pb-2 mt-40 md:mt-20">
-            <div id='videoProduction'>
-            <CardService image={cardImg} title={"Video Productions"} textBody={"We create personalized plans that combine market analysis, clear goals, and effective actions to elevate your brand and achieve your business objectives."}
-
+            <CardService id="card-1" image={cardImg} title={t("services.video_production")} textBody={t("services.description_production")}
              top="md:mt-0 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
-          <div id="motion">
-            <CardService image={cardImg2} paddingDirection={"md:pr-10 md:pl-24 p-10"} title={"Motion Design"} textBody={"With the power of motion design, we can present your promotion or product in the best way possible."}
+            <CardService id="card_2" image={cardImg2} paddingDirection={"md:pr-10 md:pl-24 p-10"} title={t("services.motion_design")} textBody={t("services.description_motion")}
              top="mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
            </div>
 
             
-
-            <CardService image={cardImg3} title={"CGI 3D"}
-             textBody={"With the power of CGI, we insert 3D elements into real scenes, creating a perfect fusion between the virtual and the real."} paddingDirection={"md:pl-10 md:pr-20 p-10"} 
+            <CardService id="card_3" image={cardImg3} title={t("services.cgi_3d")}
+             textBody={t("services.description_cgi_3d")} paddingDirection={"md:pl-10 md:pr-20 p-10"} 
              top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
-            <CardService image={cardImg4} title={"3D Modeling"} 
-            textBody={"We model your product or scene and animate it with textures and lighting that make it realistic."} paddingDirection={"md:pr-10 md:pl-24 p-10"} 
+            <CardService id="card_4" image={cardImg4} title={t("services.3d_modeling")} 
+            textBody={t("services.description_modeling")} paddingDirection={"md:pr-10 md:pl-24 p-10"} 
             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
-            <CardService image={cardImg5} title={"3D Animation"}
-             textBody={"We animate any 3D object or scene, bringing movement and life to every detail."} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
+            <CardService image={cardImg5} title={t("services.3d_animation")}
+             textBody={t("services.description_3d_animation")} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
              top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
-            <div id="graphic">
-            <CardService image={cardImg6} title={"Graphic Animation"}
-             textBody={"We bring movement to your graphics to showcase your company in the best possible way, and we also offer general graphic design services."} paddingDirection={"pr-10 md:pl-24 p-10"} 
+            <CardService image={cardImg6} title={t("services.graphic_animation")}
+             textBody={t("services.description_graphic_animation")} paddingDirection={"pr-10 md:pl-24 p-10"} 
              top="mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
           
-
-          <CardService image={cardImg7} title={"Website creation and editing"}
-             textBody={"We design and edit websites that combine functionality and creativity to enhance your online presence and engage your audience."} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
+          <CardService image={cardImg7} title={t("services.website_creation")} className="whitespace-pre-line"
+             textBody={t("services.description_website")} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
              top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <div className="relative w-full text-left mt-40 md:mt-36">
-              <h2 className="font-[ClashDisplay-Bold] text-[28px] mb-7">Our Numbers in 2024</h2>
+              <h2 className="font-[ClashDisplay-Bold] text-[28px] mb-7">{t("services.our_numbers_in_2024")}</h2>
               <div className='flex gap-10 justify-between'>
               <div>
                 <h2 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>+100</h2>
-                <p className='textGradient font-[ClashDisplay-Semibold]'>Projects  successfully completed</p>
+                <p className='textGradient font-[ClashDisplay-Semibold] text-[13px]'>{t("services.projects_successfully_completed")}</p>
               </div>
               <div>
               <h2 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>35</h2>
-              <p className='textGradient font-[ClashDisplay-Semibold]'>Companies served</p>
+              <p className='textGradient font-[ClashDisplay-Semibold] text-[13px]'>{t("services.companies_served")}</p>
               </div>
               <div>
               <h2 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>98%</h2>
-              <p className='textGradient font-[ClashDisplay-Semibold]'>Increase in client satisfaction</p>
+              <p className='textGradient font-[ClashDisplay-Semibold] text-[13px]'>{t("services.increase_in_client_satisfaction")}</p>
               </div>
               </div>
             </div>
           
           </div>
         </div>
-      </div>
-
-   
-    </div>
-    <div className="w-full py-10 mt-20 bg-[#070707] flex justify-center">
+        <div className="w-full py-10 mt-20 bg-[#070707] flex justify-center">
         <div className="max-w-[1280px] w-full flex flex-col items-center text-center px-4">
-          <h2 className="font-[ClashDisplay-medium] text-[20px] md:text-[26px] w-2/3 text-center">Speak with one of our specialists and receive <br></br> a personalized quote right now</h2>
-          <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact us</button>
+          <h2 className="font-[ClashDisplay-medium] text-[20px] md:text-[26px] w-2/3 text-center whitespace-pre-line">{t("content.title_contact_us")}</h2>
+          <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>{t("content.button_contact_us")}</button>
         </div>
       </div>
-    </div>
-    </div>
+      </div>
+
   );
 }
 

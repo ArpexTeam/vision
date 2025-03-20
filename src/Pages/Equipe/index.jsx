@@ -17,7 +17,12 @@ import eq1 from '../../images/equipe1.png';
 import eq2 from '../../images/equipe2.jpeg';
 import eq3 from '../../images/equipe3.jpeg';
 
+import { useTranslation } from "react-i18next";
+import "../../lib/i18n";
+
 function Equipe(){
+  const { t } = useTranslation();
+
     return(
         <div style={{backgroundImage:`url(${back})`, backgroundSize:'cover', backgroundPosition:'center'}} className='bg-black w-full pt-20 h-auto relative'>
         <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>  

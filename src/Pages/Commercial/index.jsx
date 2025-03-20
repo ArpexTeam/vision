@@ -23,8 +23,14 @@ import sm6 from '../../images/sm6.jpeg';
 
 import pic1 from '../../images/pic1.jpeg';
 
+import { useTranslation } from "react-i18next";
+import "../../lib/i18n";
+
 
 function Commercial(){
+
+    const { t } = useTranslation();
+
     return(
         <div className='bg-black w-full pt-20 h-auto relative'>
             <div className='max-w-[1280px] w-4/5 mx-auto h-auto relative'>  
@@ -33,10 +39,10 @@ function Commercial(){
                 {/* Texto à esquerda */}
                 <div className='text-center md:text-left w-full md:w-1/2'>
                     <h1 className="font-[ClashDisplay-SemiBold] text-[28px] md:text-[36px] titleBlueLine flex-col justify-center mb-5">
-                    CREATIVE STRATEGIES TO BOOST YOUR SALES
+                    {t("commercial.title_commercial")}
                     </h1>
                     <p className='text-[#CCCCCC] font-[ClashDisplay-Regular]'>
-                    Optimizes your sales, better engagement, <br /> and top business results.
+                    {t("commercial.description_title")}
                     </p>
                 </div>
 
@@ -46,8 +52,8 @@ function Commercial(){
                 </div>
             </div>
             <div>
-                <h2 className='font-[ClashDisplay-SemiBold] text-[28px] md:text-[40px] mt-28'>Commercial Portfolio</h2>
-                <p className='text-[#CCCCCC] font-[ClashDisplay-regular]'>Working with the best clients and collaborators.</p>
+                <h2 className='font-[ClashDisplay-SemiBold] text-[28px] md:text-[40px] mt-28'>{t("commercial.title-portfolio")}</h2>
+                <p className='text-[#CCCCCC] font-[ClashDisplay-regular]'>{t("commercial.description_portfolio")}</p>
             </div>
             <div className='flex gap-16 lg:gap-6 justify-center md:justify-between flex-wrap mt-10'>
             <CardCommercial type="large" thumb={cm1} video={
@@ -71,8 +77,8 @@ function Commercial(){
             </div>
 
             <div>
-                <h2 className='font-[ClashDisplay-SemiBold] text-[28px] md:text-[40px] mt-36 md:mt-36'>Social Media Manegement</h2>
-                <p className='text-[#CCCCCC] font-[ClashDisplay-Regular]'>Let a professional production studio take care of your business!</p>
+                <h2 className='font-[ClashDisplay-SemiBold] text-[28px] md:text-[40px] mt-36 md:mt-36'>{t("commercial.title_social_media")}</h2>
+                <p className='text-[#CCCCCC] font-[ClashDisplay-Regular]'>{t("commercial.description_social_media")}</p>
             </div>
             <div className='flex gap-16 md:gap-5  justify-center md:justify-between flex-wrap mt-10 md:mt-24'>
             <CardCommercial type="high" thumb={sm1} video={sm1} typeModal="pic"/>
@@ -87,8 +93,8 @@ function Commercial(){
             </div>
             <div className="w-full py-10 bg-[#0e0e0e] mt-36">
                 <div className="max-w-[1280px] ml-auto mr-auto flex justify-center text-center w-4/5 flex-col items-center">
-                <h2 className="font-[ClashDisplay-Medium] text-[20px] md:text-[26px] w-2/3">Speak with one of our specialists and receive a personalized quote right now</h2>
-                <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>Contact us</button>
+                <h2 className="font-[ClashDisplay-Medium] text-[20px] md:text-[26px] w-2/3">{t("content.title_contact_us")}</h2>
+                <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>{t("content.button_contact_us")}</button>
                 </div>
             </div>
         </div>

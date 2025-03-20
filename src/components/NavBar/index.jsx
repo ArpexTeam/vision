@@ -1,24 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next'; // Importando o hook de tradução
+import i18n from '../../lib/i18n'; // Importando o i18n para mudar o idioma
 import logo from '../../images/logo.png';
 import facebookIcon from '../../images/facebookIcon.png';
 import instaIcon from '../../images/instaIcon.png';
 import whatsIcon from '../../images/whatsIcon.png';
 import burguer from '../../images/MenuBurguer.svg';
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import downArrow from "../../images/down.png";
 import ItalyFlag from "../../images/italy_flags_flag_8964.png";
 import UnitedStatesFlag from "../../images/UnitedStates-Flag.png";
 
 function NavBar() {
+    const { t } = useTranslation();
     const [isExpanded, setExpanded] = useState(false);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState("EN");
+    const [selectedLanguage, setSelectedLanguage] = useState(i18n.language?.toUpperCase() || "EN");
+
+    useEffect(() => {
+        setSelectedLanguage(i18n.language.toUpperCase());
+    }, [i18n.language]);
+    
 
     const toggleLanguageMenu = () => {
         setIsLanguageOpen(!isLanguageOpen);
     };
 
     const selectLanguage = (language) => {
+        i18n.changeLanguage(language.toLowerCase()); // Muda o idioma
         setSelectedLanguage(language);
         setIsLanguageOpen(false);
     };
@@ -37,12 +46,12 @@ function NavBar() {
                 </div>
                 <nav className='h-fit hidden lg:block'>
                     <ul className='text-white flex gap-3 lg:gap-6 items-center font-[ClashDisplay-Regular]'>
-                        <li><NavLink to='/' className={'hover:text-[#06E5F180]'}>Home</NavLink></li>
-                        <li><NavLink to='/servicos' className={'hover:text-[#06E5F180]'}>Services</NavLink></li>
-                        <li><NavLink to='/commercial' className={'hover:text-[#06E5F180]'}>Commercial</NavLink></li>
-                        <li><NavLink to='/eventos' className={'hover:text-[#06E5F180]'}>Events</NavLink></li>
-                        <li><NavLink to='/sobre' className={'hover:text-[#06E5F180]'}>Who we are</NavLink></li>
-                        <li><NavLink to='/contato' className={'hover:text-[#06E5F180]'}>Contact</NavLink></li>
+                        <li><NavLink to='/' className={'hover:text-[#06E5F180]'}>{t('navbar.home')}</NavLink></li>
+                        <li><NavLink to='/servicos' className={'hover:text-[#06E5F180]'}>{t('navbar.services')}</NavLink></li>
+                        <li><NavLink to='/commercial' className={'hover:text-[#06E5F180]'}>{t('navbar.commercial')}</NavLink></li>
+                        <li><NavLink to='/eventos' className={'hover:text-[#06E5F180]'}>{t('navbar.events')}</NavLink></li>
+                        <li><NavLink to='/sobre' className={'hover:text-[#06E5F180]'}>{t('navbar.who we are')}</NavLink></li>
+                        <li><NavLink to='/contato' className={'hover:text-[#06E5F180]'}>{t('navbar.contact')}</NavLink></li>
                     </ul>
                 </nav>
                 <div className='hidden md:flex items-center gap-4 relative'>
@@ -50,7 +59,7 @@ function NavBar() {
                         <li className='h-6 w-6 hover:rotate-12 transition-all cursor-pointer'><img src={facebookIcon} /></li>
                         <li className='h-6 w-6 hover:rotate-12 transition-all cursor-pointer'>
                             <a href="https://www.instagram.com/visionproductionsco" target='_blank'>
-                                <img src={instaIcon} />
+                                <img src={instaIcon} alt="icon-instagram" />
                             </a>
                         </li>
                         <a href='https://wa.me/+393663013278' target='_blank'>
@@ -69,32 +78,33 @@ function NavBar() {
                                 <ul className="py-2 text-center">
                                     <li 
                                         className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2"
-                                        onClick={() => selectLanguage("EN")}
-                                    >
-                                        <img src={UnitedStatesFlag} alt="United States Flag" className='w-5 h-3' />English
-                                    </li>
-                                    <li 
-                                        className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2"
                                         onClick={() => selectLanguage("IT")}
                                     >
                                         <img src={ItalyFlag} alt="Italy flag" className='w-5 h-5'/>Italian
                                     </li>
+                                    <li 
+                                        className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2"
+                                        onClick={() => selectLanguage("EN")}
+                                    >
+                                        <img src={UnitedStatesFlag} alt="United States Flag" className='w-5 h-3' />English
+                                    </li>
+                                    
                                 </ul>
                             </div>
                         )}
                     </div>
                 </div>
             </div>
-       <div className={`${isExpanded == true ? 'block lg:hidden' : 'hidden'} relative bg-black py-10 z-20 -mt-1`}>
+       <div className={`${isExpanded === true ? 'block lg:hidden' : 'hidden'} relative bg-black py-10 z-20 -mt-1`}>
             <nav>
                     <ul className='text-white flex flex-col gap-3 lg:gap-6 items-center font-[ClashDisplay-Regular]'>
-                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/' className={'hover:text-[#06E5F180]'}>Home</NavLink></li>
-                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/servicos' className={'hover:text-[#06E5F180]'}>Services</NavLink></li>
-                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/commercial' className={'hover:text-[#06E5F180]'}>Commercial</NavLink></li>
-                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/eventos' className={'hover:text-[#06E5F180]'}>Events</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/' className={'hover:text-[#06E5F180]'}>{t('navbar.home')}</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/servicos' className={'hover:text-[#06E5F180]'}>{t('navbar.services')}</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/commercial' className={'hover:text-[#06E5F180]'}>{t('navbar.commercial')}</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/eventos' className={'hover:text-[#06E5F180]'}>{t('navbar.events')}</NavLink></li>
                         {/* <li><NavLink to='/equipe' className={'hover:text-[#06E5F180]'}>Equipe</NavLink></li> */}
-                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/sobre' className={'hover:text-[#06E5F180]'}>Who we are</NavLink></li>
-                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/contato' className={'hover:text-[#06E5F180]'}>Contact</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/sobre' className={'hover:text-[#06E5F180]'}>{t('navbar.who we are')}</NavLink></li>
+                        <li onClick={() =>{setExpanded(!isExpanded)}}><NavLink to='/contato' className={'hover:text-[#06E5F180]'}>{t('navbar.contact')}</NavLink></li>
                     </ul>
                 </nav>
             </div>

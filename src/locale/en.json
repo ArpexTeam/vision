@@ -1,0 +1,121 @@
+{
+        "navbar": {
+                "home": "Home",
+                "services": "Services",
+                "commercial": "Commercial",
+                "events": "Events",
+                "who we are": "Who we are",
+                "contact": "Contact"
+        },
+
+        "services": {
+                "our_services": "Our Services",
+                "cgi_3d": "CGI 3D",
+                "3d_modeling": "3D Modeling",
+                "website_creation": "Creation and \nediting of sites",
+                "graphic_animation": "Graphic Animation",
+                "3d_animation": "3D Animation",
+                "video_production": "Video Production",
+                "motion_design": "Motion Design",
+                "ft_services": "Services",
+                "institutional": "Institutional",
+                "follow_vision_productions": "follow_vision_productions",
+                "description_service": "Difficulty to sell? We are the solution",
+                "text_page_service": "We offer complete solutions in video and animation, from creation to final delivery. Our portfolio includes advertising, corporate videos, 2D/3D animations, and more.",
+
+                "description_production": "We create personalized plans that combine market analysis, clear goals, and effective actions to elevate your brand and achieve your business objectives.",
+                "description_motion": "With the power of motion design, we can present your promotion or product in the best way possible.",
+                "description_cgi_3d": "With the power of CGI, we insert 3D elements into real scenes, creating a perfect fusion between the virtual and the real.",
+                "description_modeling": "We model your product or scene and animate it with textures and lighting that make it realistic.",
+                "description_3d_animation": "We animate any 3D object or scene, bringing movement and life to every detail.",
+                "description_graphic_animation": "We bring movement to your graphics to showcase your company in the best possible way, and we also offer general graphic design services.",
+                "description_website": "We design and edit websites that combine functionality and creativity to enhance your online presence and engage your audience.",
+
+                "our_numbers_in_2024": "Our Numbers in 2024",
+                "projects_successfully_completed": "Projects  successfully completed",
+                "companies_served": "Companies served",
+                "increase_in_client_satisfaction": "Increase in client satisfaction"
+        },
+
+        "content": {
+                "title_hard": "Hard to sell? \nwe are the solution!",
+                "title_commercial": "COMMERCIAL",
+                "description_commercial": "Boost your sales with commercials that captivate and deliver results. Let’s create together!",
+                "button_commercial": "View more",
+                "title_elevate": "Elevate your event to the \nhighest level!",
+                "title_events": "EVENTS",
+                "description_events": "Transform your event with dynamic visuals and storytelling that captivate your audience.",
+                "button_events": "View more",
+                "title_sponsor": "Oficial Sponsor 2025",
+                "sponsor-error": "Your browser does not support the video tag.",
+                "title_clients": "Our Clients",
+                "description_clients": "Over the years, we've worked with companies from various industries",
+                "title_clients_say": "What do our clients say?",
+                "title_contact_us": "Speak with one of our specialists and \nreceive a personalized quote right now",
+                "button_contact_us": "Contact us"
+        },
+
+        "clients_card": {
+                "description_toscano": "Since day one, Vision Production has been my trusted partner for all my racing circuit needs, consistently exceeding expectations with their outstanding content.",
+                "description_weester": "Vision Production masterfully captured the essence of our brand, showcasing the quality and innovation that define our products. Their visuals perfectly align with the message we want to convey to our customers.",
+                "description_marinoni": "We operate in the doors and windows sector across Pavia and Milan, and partnering with Vision Production has significantly boosted the sales of my products.",
+                "description_university_pavia": "We were searching for a team capable of bringing our logos to life in both 2D and 3D formats, and Vision Production not only met but surpassed our expectations with their exceptional creativity and technical expertise.",
+                "description_spendiamo_pavia": "Collaborating with Vision Production brought new life to our project supporting local businesses in Pavia. Their visuals truly connect with our community and amplify our purpose.",
+                "description_tecno_sport": "Partnering with Vision Production has been a game-changer for highlighting our Porsche and BMW racing team. Their creativity, attention to detail, and expertise have taken our content to a whole new level.",
+                "description_football": "Vision Production has masterfully captured the essence of our football academy, highlighting our mission to develop the next generation of professional players with creativity and passion."
+        },
+
+        "commercial": {
+                "title_commercial": "CREATIVE STRATEGIES TO BOOST YOUR SALES",
+                "description_title": "Optimizes your sales, better engagement, and top business results.",
+                "title-portfolio": "Commercial Portfolio",
+                "description_portfolio": "Working with the best clients and collaborators.",
+                "title_social_media": "Social Media Manegement",
+                "description_social_media": "Let a professional production studio take care of your business!"
+        },
+
+        "events": {
+                "title_events": "ETERNALIZE YOUR EVENT \nWITH THE BEST COVERAGE",
+                "title_varano": "VARANO INTERNATIONAL CIRCUIT",
+                "description_varano": "We capture the adrenaline and excitement of the most thrilling circuits, like the Varano International Circuit, with a video production that turns every moment into an unforgettable visual experience. No matter the location or event, we bring this same energy to you.",
+                "title_cattolica": "CATTOLICA STADIUM",
+                "description_cattolica": "We capture the intense emotion of football, with the vibrant energy of major stadiums like Cattolica Stadium. Our video production translates every goal, every cheer, and every unforgettable moment into images that make the heart race. Regardless of your event, we bring this passion and cinematic quality to create a unique experience, wherever you are.",
+                "title_misano": "CUSTOM EVENT - MISANO CIRCUIT",
+                "description_misano": "With the experience of covering custom events at the Misano Circuit, where we had the honor of working with the Tecnosports team and the Italian Legend Car 850cc champion, Filippo Majrani, we create video productions that capture every detail and the emotion of the moment. Our flexible and dedicated approach ensures that, no matter your event or location, we can convey all the intensity and personalization it deserves.",
+                "title_indoor_events": "INDOOR EVENTS",
+                "description_indoor": "We transform any indoor space into a cinematic setting, capturing the essence and energy of your event with the same dedication we apply to large outdoor productions. From conventions to presentations, our team brings production quality and flexibility to create an unforgettable visual experience, wherever your event takes place.",
+                "in_2024": "In 2024",
+                "description_2024": "We covered 5 Italian circuits, including 3 international motorsport events, as well as a football stadium event and the achievements of 2 car racing champions: Andre Carpezano and Filippo Majrani."
+        },
+
+        "who_are": {
+                "title_who": "Who we are",
+                "title_who_description": "We are a creative production company born from the passion for storytelling and transforming ideas into impactful visual experiences. With a core team made up of CGI specialists, video production experts, and motion designers, as well as a vast network of highly skilled editors, filmmakers, and artists, we are always ready to meet the diverse demands of the market.",
+                "title_strategic": "Strategic Leader Team",
+                "ilaria_position": "Communication Specialist",
+                "ilaria_description": "Adapts content for different languages and manages social media, maximizing engagement and communication effectiveness.",
+                "pedro_position": "CEO - Team Leader",
+                "pedro_description": "Oversees and guides every phase of execution, ensuring excellence in every detail, from filming to final delivery.",
+                "daniel_position": "Project Manager",
+                "daniel_description": "The mastermind behind the edits that transform every project, delivering the best result in the editing of each project.",
+                "description_text": "With a core team composed of highly specialized leaders, our global network of collaborators and partners enables us to execute large-scale projects with unmatched quality, continuous innovation, and real impact.",
+                "contact_specialists": "Contact one of our specialists"
+        },
+
+
+        "contact": {
+                "contact": "CONTACT",
+                "name_form": "Name*",
+                "email_form": "E-mail*",
+                "phone_form": "Phone*",
+                "message": "message",
+                "button_send": "Send Now",
+                "title_feedback": "Your feedback matters!",
+                "description_feedback": "Did you like one of our services? Leave your feedback so we can keep improving and delivering the best for you.",
+                "button_vote": "Vote",
+                "modal-thank_you": "Thank you for your vote!",
+                "modal_thank_improving": "Thank you for your vote! It helps us continue improving",
+                "close_windows": "Close Window"
+        }
+
+}

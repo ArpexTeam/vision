@@ -4,6 +4,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './style.css';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { useTranslation } from "react-i18next";
+import "../../lib/i18n";
 
 import partner1 from '../../images/partner1.png';
 import partner2 from '../../images/partner2.png';
@@ -15,11 +17,13 @@ import partner7 from '../../images/partner7.png';
 
 function Partners() {
   
+  const { t } = useTranslation();
+
   return (
     <div className="bg-black w-full pt-10 pb-0 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
-    <h2 className='text-[32px] md:text-[40px] font-[ClashDisplay-Semibold] mt-10 mb-4'>Our Clients</h2>
-    <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>Over the years, we've worked with companies from various industries</p>
+    <h2 className='text-[32px] md:text-[40px] font-[ClashDisplay-Semibold] mt-10 mb-4'>{t("content.title_clients")}</h2>
+    <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>{t("content.description_clients")}</p>
     <div className='flex justify-between items-center pt-16 flex-wrap gap-10 md:gap-3'>
         <img src={partner1} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
         <img src={partner2} className='w-16 lg:w-24 xl:w-32 h-full bg-transparent ' />
@@ -33,7 +37,7 @@ function Partners() {
     </div>
 
     <div className='w-full h-[100px] mt-20 flex justify-center items-center'> 
-      <p className='text-[28px] md:text-[38px] md:mb-20 md: text-center text-[#ffffff] font-[ClashDisplay-medium]'>What do our clients say?</p>
+      <p className='text-[28px] md:text-[38px] md:mb-20 md: text-center text-[#ffffff] font-[ClashDisplay-medium]'>{t("content.title_clients_say")}</p>
     </div>
     </div>
   );
