@@ -37,7 +37,7 @@ function Partners() {
     </div>
 
     <div className='w-full h-[100px] mt-20 flex justify-center items-center'> 
-      <p className='text-[28px] md:text-[38px] md:mb-20 md: text-center text-[#ffffff] font-[ClashDisplay-medium]'>{t("content.title_clients_say")}</p>
+      <h2 className='text-[28px] md:text-[38px] md:mb-20 md: text-center text-[#ffffff] font-[ClashDisplay-medium]'>{t("content.title_clients_say")}</h2>
     </div>
     </div>
   );
