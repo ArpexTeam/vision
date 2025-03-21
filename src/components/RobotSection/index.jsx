@@ -210,10 +210,10 @@ useEffect(() => {
   };
 
   window.addEventListener("wheel", handleScroll);
-  // return () => {
-  //   window.removeEventListener("wheel", handleScroll);
-  //   document.body.style.overflow = ""; // Libera o scroll ao desmontar o componente
-  // };
+  return () => {
+    window.removeEventListener("wheel", handleScroll);
+    document.body.style.overflow = ""; // Libera o scroll ao desmontar o componente
+  };
 }, [modelRef]);
 
   
