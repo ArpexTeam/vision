@@ -46,7 +46,7 @@ function Services(){
                 <h2 className='text-[28px] md:text-[40px] font-[ClashDisplay-Semibold] md:mb-20 whitespace-pre-line'>{t("content.title_hard")}</h2>
 
                 <div className='w-full mt-14 mb-20 lg:mb-0'>
-                    <div className='flex flex-col lg:flex-row w-10/12 h-[550px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
+                    <div className='flex flex-col lg:flex-row w-11/12 h-[550px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
                     <div className='text-center lg:text-left w-10/12 xl:w-4/12 mb-10 lg:mb-0'>
                         <h2 className='text-[24px] md:text-[38px] font-[ClashDisplay-Semibold] titleBlueLine mt-8 mb-4'>{t("content.title_commercial")}</h2>
                         <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>
@@ -58,7 +58,7 @@ function Services(){
                     </div>
                     <div className='w-12/12 xl:w-7/12 h-full rounded-2xl'>
                         <div className='w-full h-full relative'>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uwORyxcoWWU?si=tg0Iw7VOCHUJcvzh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/uwORyxcoWWU?si=tg0Iw7VOCHUJcvzh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                         </div>
                     </div>
@@ -71,10 +71,10 @@ function Services(){
 
                     <div className='w-full mt-14'>
 
-                    <div className='flex flex-col lg:flex-row w-10/12 h-[550px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
+                    <div className='flex flex-col lg:flex-row w-11/12 h-[550px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
                     <div className='w-12/12 xl:w-7/12 h-full rounded-2xl'>
                     <div className='w-full h-full relative'>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bvX_fl83Oh0?si=a7-97ynGhOnNw18G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bvX_fl83Oh0?si=a7-97ynGhOnNw18G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div className='text-center lg:text-left w-10/12 box-border block xl:w-4/12 mb-10 lg:mb-0 '>

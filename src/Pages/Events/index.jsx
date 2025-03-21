@@ -41,7 +41,7 @@ function Events(){
                         </div>
                         
                 <div className="gap-12 mt-20 md:mt-20 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto">
-                    <div className="mt-8 md:w-6/12 xl:w-5/12 md:text-left text-center bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
+                    <div className="mt-8 w-full md:w-6/12 xl:w-5/12 md:text-left text-center bg-gradient-to-l md:pl-6 pb-16 md:px-10 rounded-xl">
                     <h2 className="font-[ClashDisplay-Semibold] text-[28px] md:text-[36px]/10 titleBlueLine mb-8 whitespace-pre-line">
                     {t("events.title_varano")}
                     </h2>
@@ -75,7 +75,7 @@ function Events(){
                                 </div>
                     </div>
                    
-                    <div className="mt-8 order-1 md:order-2 w-full md:text-left text-center md:w-5/12 bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
+                    <div className="mt-8 order-1 md:order-2 w-full md:text-left text-center md:w-5/12 bg-gradient-to-l md:pl-6 pb-16 md:px-10 rounded-xl">
                     <h2 className="font-[ClashDisplay-Semibold] text-[28px] md:text-[36px]/10 titleBlueLine">
                     {t("events.title_cattolica")}
                     </h2>
@@ -85,7 +85,7 @@ function Events(){
                 </div>
 
                 <div className="gap-12 mt-20 flex md:flex-row flex-col w-full text-white text-left ml-auto mr-auto md:ml-[150px]">
-                    <div className="mt-8 text-center md:text-left w-full md:w-5/12 bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
+                    <div className="mt-8 text-center md:text-left w-full md:w-5/12 bg-gradient-to-l md:pl-6 pb-16 md:px-10 rounded-xl">
                     <h2 className="font-[ClashDisplay-Semibold] text-[28px] md:text-[40px]/10 titleBlueLine mb-8">
                     {t("events.title_misano")}
                     </h2>
@@ -113,7 +113,7 @@ function Events(){
                                 </div>
                     </div>
                    
-                    <div className="mt-8 text-center order-1 md:order-2 md:text-left w-full md:w-5/12 bg-gradient-to-l pl-6 pb-16 px-10 rounded-xl">
+                    <div className="mt-8 text-center order-1 md:order-2 md:text-left w-full md:w-5/12 bg-gradient-to-l md:pl-6 pb-16 md:px-10 rounded-xl">
                     <h2 className="font-[ClashDisplay-Semibold] text-[28px] md:text-[40px]/10 titleBlueLine">
                     {t("events.title_indoor_events")}
                     </h2>

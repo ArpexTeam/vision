@@ -116,7 +116,7 @@ function Model({ isVisible }) {
       scrollTimeout.current = setTimeout(() => {
         if (mixerRef.current && actionRef.current) {
             gsap.to(actionRef.current, {
-                duration: 0.3, // 🔥 Tempo total da transição
+                duration: 0.12, // 🔥 Tempo total da transição
                 onUpdate: function () {
                     let progress = this.progress(); // Progresso da animação (0 a 1)
                     let newSpeed = 1 - progress * 1; // 🔥 Agora desacelera 4x mais rápido
@@ -135,7 +135,7 @@ function Model({ isVisible }) {
                 },
             });
         }
-    }, 800);
+    }, 600);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -150,7 +150,7 @@ function Model({ isVisible }) {
     if (mixerRef.current) mixerRef.current.update(delta);
   });
 
-  gltf.scene.scale.set(0.63, 0.63, 0.63);
+  gltf.scene.scale.set(0.54, 0.54, 0.54);
 
   return <primitive object={gltf.scene} />;
 }
@@ -555,7 +555,7 @@ function Services() {
           </div>
 
           <div className="h-56 w-full mt-6 md:mt-0 md:w-1/2 lg:w-1/3">
-            <img className='w-60 ml-10'  src={IconService} alt="icone-image" />
+            <img className='w-60 md:ml-10'  src={IconService} alt="icone-image" />
           </div>
       </div>
 
@@ -683,7 +683,7 @@ function Services() {
 </defs>
 </svg>
 
-          <div ref={modelRef} id="drone" className="w-[400px] absolute right-0 top-[180px] z-[998] first-letter h-[400px]">
+          <div ref={modelRef} id="drone" className="w-full md:w-[400px] absolute right-0 top-[180px] hidden md:block z-[998] first-letter h-[400px]">
           <Canvas camera={{ position: [3, 1, 0], fov: 50 }} width="150px">
         <ambientLight intensity={3} />
         <directionalLight position={[5, 5, 5]} intensity={7} />
@@ -694,7 +694,7 @@ function Services() {
           <h2 className="font-[ClashDisplay-SemiBold] text-[48px] flex sm:flex-none justify-center items-center sm:justify-center sm:items-start ">{t("navbar.services")}</h2>
         </div>
 
-        <div className='relative w-2/3'>
+        <div className='relative w-full md:w-2/3'>
           <div className="pb-2 mt-40 md:mt-20">
             <CardService id="card-1" image={cardImg} title={t("services.video_production")} textBody={t("services.description_production")}
              top="md:mt-0 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
@@ -724,9 +724,9 @@ function Services() {
              textBody={t("services.description_website")} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
              top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
-            <div className="relative w-full text-left mt-40 md:mt-36">
+            <div className="relative w-full text-center md:text-left mt-40 md:mt-36">
               <h2 className="font-[ClashDisplay-Bold] text-[28px] mb-7">{t("services.our_numbers_in_2024")}</h2>
-              <div className='flex gap-10 justify-between'>
+              <div className='flex gap-6 md:gap-10 justify-between'>
               <div>
                 <h2 className='text-[#00FF55] text-[26px] font-[ClashDisplay-Semibold]'>+100</h2>
                 <p className='textGradient font-[ClashDisplay-Semibold] text-[13px]'>{t("services.projects_successfully_completed")}</p>

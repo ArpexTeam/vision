@@ -52,7 +52,7 @@ function Feedback(){
         modules={[Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide className='p-5 rounded-md bg-gradient-to-t from-[#610000] to-[#000000] w-full h-screen'>
+        <SwiperSlide className='md:order-1 order-2 p-5 rounded-md bg-gradient-to-t from-[#610000] to-[#000000] w-full h-screen'>
         <div className='w-full flex items-center gap-3 text-white relative overflow-hidden'>
             <img className='w-12 h-12 rounded-full' src={Toscano}/>
             <h2 className='font-[ClashDisplay-Semibold]'>Toscano</h2>
@@ -60,6 +60,18 @@ function Feedback(){
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
             {t("clients_card.description_toscano")}
+            </p>
+        </div>
+        </SwiperSlide>
+
+        <SwiperSlide className='p-5 rounded-md bg-gradient-to-b from-[#000000] to-[#B02E52]'>
+        <div className='w-full flex items-center gap-3 text-white'>
+            <img className='w-12 h-12 rounded-full' src={University}/>
+            <h2 className='font-[ClashDisplay-Semibold]'>University of Pavia</h2>
+        </div>
+        <div className='w-full'>
+            <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
+            {t("clients_card.description_university_pavia")}
             </p>
         </div>
         </SwiperSlide>
@@ -85,18 +97,6 @@ function Feedback(){
         <div className='w-full'>
             <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
             {t("clients_card.description_marinoni")}
-            </p>
-        </div>
-        </SwiperSlide>
-
-        <SwiperSlide className='p-5 rounded-md bg-gradient-to-b from-[#000000] to-[#B02E52]'>
-        <div className='w-full flex items-center gap-3 text-white'>
-            <img className='w-12 h-12 rounded-full' src={University}/>
-            <h2 className='font-[ClashDisplay-Semibold]'>University of Pavia</h2>
-        </div>
-        <div className='w-full'>
-            <p className='text-[12px] text-left text-white font-[ClashDisplay-Regular]'>
-            {t("clients_card.description_university_pavia")}
             </p>
         </div>
         </SwiperSlide>

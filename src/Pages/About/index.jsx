@@ -16,7 +16,7 @@ function About() {
 
         {/* Seção: Quem somos */}
         <div className="w-full gap-8 md:pt-20">
-          <div className="text-white w-9/12 mx-auto text-center">
+          <div className="text-white w-full md:w-9/12 mx-auto text-center">
             <h1 className="font-[ClashDisplay-Bold] text-[36px] md:text-[42px] mb-8">{t("who_are.title_who")}</h1>
             <p className="text-[20px] font-[ClashDisplay-Regular]">
             {t("who_are.title_who_description")}
@@ -38,7 +38,7 @@ function About() {
               </div>
               <h2 className='font-[ClashDisplay-Bold] text-[30px] mt-8'>ILARIA</h2>
               <p className='font-[ClashDisplay-SemiBold] text-[16px] text-white'>{t("who_are.ilaria_position")}</p>
-              <div className='w-3/4 lg:w-auto'>
+              <div className='w-full lg:w-auto'>
                 <p className='text-white py-8 px-5 font-[ClashDisplay-Regular]'>
                 {t("who_are.ilaria_description")}
                 </p>
@@ -54,7 +54,7 @@ function About() {
               </div>
               <h2 className='font-[ClashDisplay-Bold] text-[30px] mt-8 w-fit'>PEDRO</h2>
               <p className='font-[ClashDisplay-SemiBold] text-[16px] text-white'>{t("who_are.pedro_position")}</p>
-              <div className='w-3/4'>
+              <div className='w-full md:w-3/4'>
                 <p className='text-white py-8 px-5 font-[ClashDisplay-Regular]'>
                 {t("who_are.pedro_description")}
                 </p>
@@ -70,7 +70,7 @@ function About() {
               </div>
               <h2 className='font-[ClashDisplay-Bold] text-[30px] mt-8 '>DANIEL</h2>
               <p className='font-[ClashDisplay-SemiBold] text-[16px] text-white'>{t("who_are.daniel_position")}</p>
-              <div className='w-3/4 lg:w-auto'>
+              <div className='w-full lg:w-auto'>
                 <p className='text-white py-8 px-5 font-[ClashDisplay-Regular]'>
                 {t("who_are.daniel_description")}
                 </p>

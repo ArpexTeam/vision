@@ -166,7 +166,7 @@ useEffect(() => {
       if(!scrollMoved){
         console.log("teste interno");
         window.scrollTo({
-          top: 650,  // Define a posição do scroll (distância em pixels do topo)
+          top: 680,  // Define a posição do scroll (distância em pixels do topo)
         });
   
       }
@@ -261,7 +261,7 @@ function Robot() {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "0 30%",
       }}
-      className="bg-black w-full py-20 h-[1100px] md:h-[710px] relative"
+      className="bg-black w-full py-20 h-[1100px] md:h-[800px] relative"
     >
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-full relative">
         <div className="flex justify-center content-center w-full h-full flex-wrap text-white -mt-20">
