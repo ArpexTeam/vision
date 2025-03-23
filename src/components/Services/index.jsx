@@ -45,7 +45,7 @@ function Services(){
             <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>
                 <h2 className='text-[28px] md:text-[40px] font-[ClashDisplay-Semibold] md:mb-20 whitespace-pre-line'>{t("content.title_hard")}</h2>
 
-                <div className='w-full mt-14 mb-20 lg:mb-0'>
+                <div className='w-full mt-14 mb-10 sm:mb-20 lg:mb-0'>
                     <div className='flex flex-col lg:flex-row w-11/12 h-[550px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
                     <div className='text-center lg:text-left w-10/12 xl:w-4/12 mb-10 lg:mb-0'>
                         <h2 className='text-[24px] md:text-[38px] font-[ClashDisplay-Semibold] titleBlueLine mt-8 mb-4'>{t("content.title_commercial")}</h2>
@@ -66,10 +66,10 @@ function Services(){
                     </div>
                     </div>
 
-                    <h2 className='text-[28px] md:text-[40px] font-[ClashDisplay-Semibold] mb-16 md:mt-20 md:mb-20 whitespace-pre-line'>{t("content.title_elevate")}</h2>
+                    <h2 className='text-[28px] md:text-[40px] font-[ClashDisplay-Semibold] mb-8 sm:mb-16 md:mt-20 md:mb-20 whitespace-pre-line'>{t("content.title_elevate")}</h2>
 
 
-                    <div className='w-full mt-14'>
+                    <div className='w-full sm:mt-14'>
 
                     <div className='flex flex-col lg:flex-row w-11/12 h-[550px] lg:h-[350px] items-center lg:items-start lg:justify-between gap-2 xl:gap-5 transition-all servicesCard relative ml-auto mr-auto'>
                     <div className='w-12/12 xl:w-7/12 h-full rounded-2xl'>

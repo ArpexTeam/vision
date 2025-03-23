@@ -11,7 +11,7 @@ function Slider() {
   };
 
   return (
-    <div className="bg-[#242424] w-full h-[610px] flex flex-col items-center slider relative">
+    <div className="bg-[#242424] w-full h-[660px] flex flex-col items-center slider relative">
       <video
 
         className="w-full h-full object-cover"

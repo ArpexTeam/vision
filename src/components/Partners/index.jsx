@@ -20,7 +20,7 @@ function Partners() {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-black w-full pt-10 pb-0 h-auto relative">
+    <div className="bg-black w-full pt-5 sm:pt-10 pb-0 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
     <h2 className='text-[32px] md:text-[40px] font-[ClashDisplay-Semibold] mt-10 mb-4'>{t("content.title_clients")}</h2>
     <p className='text-[#A5A5A5] font-[ClashDisplay-medium]'>{t("content.description_clients")}</p>
@@ -37,7 +37,7 @@ function Partners() {
     </div>
 
     <div className='w-full h-[100px] mt-20 flex justify-center items-center'> 
-      <h2 className='text-[28px] md:text-[38px] md:mb-20 md: text-center text-[#ffffff] font-[ClashDisplay-medium]'>{t("content.title_clients_say")}</h2>
+      <h2 className='text-[28px] md:text-[38px] md:mb-10 text-center text-[#ffffff] font-[ClashDisplay-medium]'>{t("content.title_clients_say")}</h2>
     </div>
     </div>
   );

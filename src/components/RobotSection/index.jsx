@@ -74,11 +74,13 @@ function Model({ isVisible, playAnimation1, playAnimation2, playAnimation3, play
   const handleAnimation = (action, shouldPlay, isReversed = false) => {
     if (shouldPlay) {
         if (action.isRunning()) return; // Evita reiniciar a animação se já estiver rodando
+        if(actionRef.current.time < 3.4) return;
 
         action.setLoop(THREE.LoopRepeat); // Garante que a animação pode repetir
         action.reset(); // Reinicia a animação de forma suave
         action.fadeIn(0.2); // Faz um fade-in suave de 1s
         action.play();
+      
 
         // Suaviza a velocidade no início
         gsap.to(action, {
@@ -155,7 +157,6 @@ useEffect(() => {
 
 
     if(scrollDistance > marginTop && scrollDistance < marginBottom){
-      console.log("teste externo");
 
       isVisible = true;
     }else{
@@ -164,7 +165,6 @@ useEffect(() => {
 
     if (isVisible) { // Se não estiver visível, não atualiza a animação
       if(!scrollMoved){
-        console.log("teste interno");
         window.scrollTo({
           top: 680,  // Define a posição do scroll (distância em pixels do topo)
         });
@@ -264,7 +264,7 @@ function Robot() {
       className="bg-black w-full py-20 h-[1100px] md:h-[800px] relative"
     >
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-full relative">
-        <div className="flex justify-center content-center w-full h-full flex-wrap text-white -mt-20">
+        <div className="flex justify-center content-center w-full h-full flex-wrap text-white -mt-28">
           <h2 className="mb-20 font-[ClashDisplay-Bold] text-[38px] md:text-[45px] ">
           {t("services.our_services")}
           </h2>
@@ -350,7 +350,7 @@ function Robot() {
                 onMouseLeave={() => setPlayAnimation5(false)}
                 className="absolute top-0 left-2 md:left-11 w-52 h-[70px] font-[ClashDisplay-semibold] text-[20px] text-gray-300
                 bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                  {t("services.3d_animation")}
+                  {t("services.video_production")}
               </button>
               <div className="absolute -top-1 md:left-10 w-[218px] h-[78px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
@@ -364,7 +364,7 @@ function Robot() {
                onMouseLeave={() => setPlayAnimation6(false)}
               className="absolute left-2 top-0 md-1 md:left-[85px] w-52 h-20 font-[ClashDisplay-semibold] text-[20px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
-                {t("services.video_production")}
+                {t("services.meta")}
               </button>
               <div className="absolute -top-1 md:left-20 w-[218px] h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 

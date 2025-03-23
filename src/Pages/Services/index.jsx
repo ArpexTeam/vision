@@ -92,7 +92,7 @@ function Model({ isVisible }) {
       const scrollDistance = Math.abs(window.scrollY);
       console.log('Distância do topo:', scrollDistance);
 
-      if(scrollDistance > 3400 || scrollDistance < 180){
+      if(scrollDistance > 3400 || scrollDistance < 80){
         return;
       }
 
@@ -116,7 +116,7 @@ function Model({ isVisible }) {
       scrollTimeout.current = setTimeout(() => {
         if (mixerRef.current && actionRef.current) {
             gsap.to(actionRef.current, {
-                duration: 0.12, // 🔥 Tempo total da transição
+                duration: 0.14, // 🔥 Tempo total da transição
                 onUpdate: function () {
                     let progress = this.progress(); // Progresso da animação (0 a 1)
                     let newSpeed = 1 - progress * 1; // 🔥 Agora desacelera 4x mais rápido
@@ -544,17 +544,17 @@ function Services() {
     <div className="bg-black w-full pt-16 h-auto relative">
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative">
 
-      <div className="relative md:text-left flex flex-col md:flex-row items-center md:items-start justify-between mb-40">
+      <div className="relative md:text-left flex flex-col md:flex-row items-center md:items-start justify-between mb-16 sm:mb-16">
         <div className="w-full md:w-1/2 lg:w-2/3">
-        <h1 className="font-[ClashDisplay-Bold] text-[40px] mb-4">{t("services.our_services")}</h1>
-        <h2 className="font-[ClashDisplay-medium] text-[30px] mb-8">{t("services.description_service")}</h2>
+        <h1 className="font-[ClashDisplay-Bold] text-[40px] mb-2 sm:mb-4">{t("services.our_services")}</h1>
+        <h2 className="font-[ClashDisplay-medium] text-[30px] mb-4 sm:mb-8">{t("services.description_service")}</h2>
 
-        <h2 className="font-[ClashDisplay-Light] text-[17px]">
+        <h2 className="text-pretty font-[ClashDisplay-Light] text-[17px]">
           {t("services.text_page_service")}
           </h2>
           </div>
 
-          <div className="h-56 w-full mt-6 md:mt-0 md:w-1/2 lg:w-1/3">
+          <div className="hidden sm:block h-56 w-full mt-6 md:mt-0 md:w-1/2 lg:w-1/3">
             <img className='w-60 md:ml-10'  src={IconService} alt="icone-image" />
           </div>
       </div>
@@ -690,7 +690,7 @@ function Services() {
         <Model isVisible={isVisible} />
       </Canvas>
           </div>
-        <div className="text-center relative -top-8 mb-10">
+        <div className="text-center relative sm:-top-8 sm:mb-10">
           <h2 className="font-[ClashDisplay-SemiBold] text-[48px] flex sm:flex-none justify-center items-center sm:justify-center sm:items-start ">{t("navbar.services")}</h2>
         </div>
 
@@ -700,31 +700,31 @@ function Services() {
              top="md:mt-0 -mt-[150px]" left="" paddingDirection={"p-10 md:p-0 md:pl-10 md:pr-16"} marginDirection="-ml-0 md:-ml-16" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService id="card_2" image={cardImg2} paddingDirection={"md:pr-10 md:pl-24 p-10"} title={t("services.motion_design")} textBody={t("services.description_motion")}
-             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+             top="mt-[60px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
            </div>
 
             
             <CardService id="card_3" image={cardImg3} title={t("services.cgi_3d")}
              textBody={t("services.description_cgi_3d")} paddingDirection={"md:pl-10 md:pr-20 p-10"} 
-             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[60px] sm:mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService id="card_4" image={cardImg4} title={t("services.3d_modeling")} 
             textBody={t("services.description_modeling")} paddingDirection={"md:pr-10 md:pl-24 p-10"} 
-            top="mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+            top="mt-[60px] sm:mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg5} title={t("services.3d_animation")}
              textBody={t("services.description_3d_animation")} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
-             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[60px] sm:mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
             <CardService image={cardImg6} title={t("services.graphic_animation")}
              textBody={t("services.description_graphic_animation")} paddingDirection={"pr-10 md:pl-24 p-10"} 
-             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
+             top="mt-[60px] sm:mt-[150px] md:mt-[150px]" left="" marginDirection="-mr-0 md:-mr-20" flexDirection="flex-col md:flex-row-reverse" gradientDirection="bg-gradient-to-l" />
           
           <CardService image={cardImg7} title={t("services.website_creation")} className="whitespace-pre-line"
              textBody={t("services.description_website")} paddingDirection={"md:pl-10 md:pr-16 p-10"} 
-             top="mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
+             top="mt-[60px] sm:mt-[150px] md:mt-[150px]" left="" marginDirection="-ml-0 md:-ml-20" flexDirection="flex-col md:flex-row" gradientDirection="bg-gradient-to-l" />
             
-            <div className="relative w-full text-center md:text-left mt-40 md:mt-36">
+            <div className="relative w-full text-center md:text-left mt-16 sm:mt-40 md:mt-36">
               <h2 className="font-[ClashDisplay-Bold] text-[28px] mb-7">{t("services.our_numbers_in_2024")}</h2>
               <div className='flex gap-6 md:gap-10 justify-between'>
               <div>
@@ -744,7 +744,7 @@ function Services() {
           
           </div>
         </div>
-        <div className="w-full py-10 mt-20 bg-[#070707] flex justify-center">
+        <div className="w-full py-10 mt-5 sm:mt-20 bg-[#070707] flex justify-center">
         <div className="max-w-[1280px] w-full flex flex-col items-center text-center px-4">
           <h2 className="font-[ClashDisplay-medium] text-[20px] md:text-[26px] w-2/3 text-center whitespace-pre-line">{t("content.title_contact_us")}</h2>
           <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>{t("content.button_contact_us")}</button>

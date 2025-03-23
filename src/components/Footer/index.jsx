@@ -19,19 +19,19 @@ function Footer(){
         <div className="bg-[#0C0C0C]">
             <hr style={{background:'linear-gradient(to left, #000000, #06E7F2, #BF4AFC, #EB700A, #000000)'}} className='h-1 m-0 border-0 w-full absolute'/>
 
-            <div className="gap-10 lg:gap-0 flex justify-around max-w-[1280px] ml-auto mr-auto w-4/5 py-10 text-white font-[ClashDisplay-Regular] flex-wrap">
+            <div className="gap-5 sm:gap-10 lg:gap-0 flex justify-around max-w-[1280px] ml-auto mr-auto w-4/5 py-10 text-white font-[ClashDisplay-Regular] flex-wrap">
             <div className='w-full sm:w-5/12 lg:w-48 h-auto text-left'>
                 <NavLink className="flex items-center justify-center" to='/'>
                 <img src={logoFooter} className='hover:scale-105 cursor-pointer transition-all w-48'/>
                 </NavLink>
                 <p className='text-[16px] flex mt-1 justify-center sm:justify-start'><img src={pinIcon} className='h-fit mr-2'/><a 
-                href='https://maps.app.goo.gl/AdLoFoHzJTe1EYJ49' target='_blank' className={'hover:text-[#06E5F180]'}>Via Teodoro Lovati 20 Pavia, PV 27100</a></p>
+                href='https://maps.app.goo.gl/AdLoFoHzJTe1EYJ49' target='_blank' className={'hover:text-[#06E5F180]'}>Milão - Itália</a></p>
             </div>
             <div className='text-center sm:text-left w-full sm:w-5/12 lg:w-auto'>
                 <h3 className="font-[ClashDisplay-Bold]">{t("services.ft_services")}</h3>
 
 
-                <ul className='flex flex-col gap-2 mt-6 '>
+                <ul className='flex flex-col gap-1 sm:gap-2 mt-1 sm:mt-6 '>
                     <li><NavLink to='/servicos#videoProduction' className={'hover:text-[#06E5F180] cursor-pointer'}>{t("services.video_production")}</NavLink></li>
                     <li><NavLink to='/servicos#photography' className={'hover:text-[#06E5F180] cursor-pointer'}>{t("services.motion_design")}</NavLink></li>
                     <li><NavLink to='/servicos#motion' className={'hover:text-[#06E5F180] cursor-pointer'}>{t('services.cgi_3d')}</NavLink></li>
@@ -46,7 +46,7 @@ function Footer(){
             <div className='text-center sm:text-left w-full sm:w-auto'>
                 <h3 className="font-[ClashDisplay-Bold]">{t("services.institutional")}</h3>
 
-                <ul className='flex flex-col gap-2 mt-6'>
+                <ul className='flex flex-col gap-1 sm:gap-2 mt-1 sm:mt-6'>
                     <li><NavLink to='/' className={'hover:text-[#06E5F180]'}>{t('navbar.home')}</NavLink></li>
                     <li><NavLink to='/servicos' className={'hover:text-[#06E5F180]'}>{t('navbar.services')}</NavLink></li>
                     <li><NavLink to='/commercial' className={'hover:text-[#06E5F180]'}>{t('navbar.commercial')}</NavLink></li>

@@ -36,7 +36,7 @@ function Model() {
     useEffect(() => {
         if (!gltf) return;
 
-        gltf.scene.rotation.set(13.4, 0.8, 0);
+        gltf.scene.rotation.set(13.4, 1.9, 0);
         
         // Deixa o material transparente
         gltf.scene.traverse((node) => {
@@ -65,7 +65,7 @@ function Model() {
         }
 
         // Aguarda 2.3s antes de ativar o zoom
-        const timeout = setTimeout(() => setZoomActive(true), 2300);
+        const timeout = setTimeout(() => setZoomActive(true), 400);
 
         return () => clearTimeout(timeout);
     }, [gltf]);
@@ -95,9 +95,9 @@ function Model() {
             console.log(camera.position.z);
 
             // Aplica zoom e aumenta escala
-            gltf.scene.scale.x += 0.001;
-            gltf.scene.scale.y += 0.001;
-            gltf.scene.scale.z += 0.001;
+            gltf.scene.scale.x += 0.002;
+            gltf.scene.scale.y += 0.002;
+            gltf.scene.scale.z += 0.002;
 
             camera.lookAt(gltf.scene.position);
 
@@ -108,7 +108,7 @@ function Model() {
 
                 gltf.scene.traverse((node) => {
                     if (node.isMesh) {
-                        node.material.opacity = Math.max(node.material.opacity - 0.01, 0);
+                        node.material.opacity = Math.max(node.material.opacity - 0.014, 0);
                         if (node.material.opacity <= 0.2) {
                             if (mapaGoogle) mapaGoogle.style.opacity = "1";
                             if (worldAnimation) worldAnimation.style.display = "none";
@@ -116,7 +116,7 @@ function Model() {
                         }
                     }
                 });
-            }, 800);
+            }, 100);
         }
     });
 
@@ -144,7 +144,7 @@ function Contact(){
     };
 
     return(
-        <div className='w-full pt-20 h-auto relative bg-black'>
+        <div className='w-full sm:pt-20 h-auto relative bg-black'>
                    <div id="worldAnimation" className='w-full h-[700px] absolute z-30'>
                       <Canvas camera={{ position: [3, 10, 0], fov: 50 }} width="100vw" height="300px">
                     <ambientLight intensity={3} />
@@ -174,7 +174,7 @@ function Contact(){
         
          
             </div>
-            <div className="w-full text-left bg-black mt-48 py-20">
+            <div className="w-full text-left bg-black mt-10 sm:mt-10 pb-7 pt-20 sm:py-20">
                 <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>
                 <div className="w-full sm:w-10/12 md:w-6/12">
                      <h2 className='text-[28px] md:text-[36px] font-[ClashDisplay-Bold] mb-5'>{t("contact.title_feedback")}</h2>
@@ -193,7 +193,7 @@ function Contact(){
                 <button className="focus:bg-[#06E5F1] py-1 px-7 bg-[#06E5F1] font-[ClashDisplay-Medium] rounded-md text-white">10</button>
 
                 </div>
-                <button onClick={sendVote} className="py-1 px-8 font-[ClashDisplay-Medium] mt-10 relative left-1/2 rounded-md text-white" style={{background: 'linear-gradient(to right, #000000, #06E5F1)'}}>{t("contact.button_vote")}</button>
+                <button onClick={sendVote} className="py-1 px-8 font-[ClashDisplay-Medium] mt-10 relative sm:left-1/2 rounded-md text-white" style={{background: 'linear-gradient(to right, #000000, #06E5F1)'}}>{t("contact.button_vote")}</button>
 
                 <div className={`fixed backdrop-blur-sm w-screen h-screen z-30 top-0 left-0 bg-[#000000]/40 ${visible ? "block" : "hidden"}`}>
                     <div className="w-4/12 h-5/12 border border-white fixed rounded-2xl bg-green-400 top-1/2 left-1/2 p-10 text-left"

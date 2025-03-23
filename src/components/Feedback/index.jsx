@@ -28,7 +28,7 @@ function Feedback(){
 
     return(
         
-        <div className="bg-black w-full pt-20 h-auto relative">
+        <div className="bg-black w-full pt-6 sm:pt-20 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative feedbackDiv">
         <Swiper
         slidesPerView={1}
@@ -140,7 +140,7 @@ function Feedback(){
 
    
       </div>
-      <div className="w-full mt-28 py-10 bg-[#070707]">
+      <div className="w-full mt-8 sm:mt-28 py-10 bg-[#070707]">
         <div className="max-w-[1280px] ml-auto mr-auto flex justify-center text-center md:text-left w-4/5 flex-col items-center">
           <h2 className="font-[ClashDisplay-Regular] text-[20px] md:text-[26px] w-2/3 text-center">{t("content.title_contact_us")}</h2>
           <button className="mt-10 bg-[#06E7F2] h-fit w-fit p-3 px-14 rounded-xl font-[ClashDisplay-Semibold] hover:bg-transparent hover:text-[#06E7F2]" style={{border:'1px solid #06E7F2'}}>{t("content.button_contact_us")}</button>
