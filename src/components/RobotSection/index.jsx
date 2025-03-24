@@ -271,7 +271,7 @@ function Robot() {
           <div className="w-full h-fit flex justify-center">
 
       
-            <div className="relative left-10 md:left-0 mr-auto ml-auto md:mr-0 md:ml-0 w-52 h-20">
+            <div className="relative left-5 md:left-0 mr-auto ml-auto md:mr-0 md:ml-0 w-52 h-20">
               <button
                 onMouseEnter={() => setPlayAnimation4(true)}
                 onMouseLeave={() => setPlayAnimation4(false)}
@@ -288,7 +288,7 @@ function Robot() {
               </div>
             </div>
           </div>
-          <div className="w-4/12 md:w-3/12 flex flex-col gap-5 mt-6 md:mt-0">
+          <div className="w-4/12 -ml-10 md:ml-0 md:w-3/12 flex flex-col gap-5 mt-6 md:mt-0">
             <div className="relative w-52 h-20 ml-auto">
               <button
               onMouseEnter={() => setPlayAnimation3(true)}
@@ -339,7 +339,7 @@ function Robot() {
             </div>
           </div>
           <div className="w-1/3">
-          <div id="modelContainer" ref={modelRef} className="w-1/2 md:w-full top-[240px] md:top-auto left-24 sm:left-56 absolute md:left-0 mt-14 first-letter h-[240px] md:h-[400px]">
+          <div id="modelContainer" ref={modelRef} className="w-1/2 md:w-full top-[240px] md:top-auto left-16 sm:left-56 absolute md:left-0 mt-14 first-letter h-[240px] md:h-[400px]">
           <Canvas camera={{ position: [3.3, 1, 0], fov: 50 }}>
         <ambientLight intensity={0.1} />
         <directionalLight position={[5, 5, 5]} intensity={0.1} />
