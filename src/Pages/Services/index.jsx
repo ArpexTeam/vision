@@ -549,7 +549,7 @@ function Services() {
         <h1 className="font-[ClashDisplay-Bold] text-[40px] mb-2 sm:mb-4">{t("services.our_services")}</h1>
         <h2 className="font-[ClashDisplay-medium] text-[30px] mb-4 sm:mb-8">{t("services.description_service")}</h2>
 
-        <h2 className="text-pretty font-[ClashDisplay-Light] text-[17px]">
+        <h2 className="text-pretty font-[ClashDisplay-Light] text-[15px] ">
           {t("services.text_page_service")}
           </h2>
           </div>

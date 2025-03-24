@@ -193,10 +193,10 @@ function Contact(){
                 <button className="focus:bg-[#06E5F1] py-1 px-7 bg-[#06E5F1] font-[ClashDisplay-Medium] rounded-md text-white">10</button>
 
                 </div>
-                <button onClick={sendVote} className="py-1 px-8 font-[ClashDisplay-Medium] mt-10 relative sm:left-1/2 rounded-md text-white" style={{background: 'linear-gradient(to right, #000000, #06E5F1)'}}>{t("contact.button_vote")}</button>
+                <button onClick={sendVote} className="py-1 px-8 font-[ClashDisplay-Medium] mt-10 relative md:-left-[5px] sm:left-1/2 rounded-md text-white" style={{background: 'linear-gradient(to right, #000000, #06E5F1)'}}>{t("contact.button_vote")}</button>
 
                 <div className={`fixed backdrop-blur-sm w-screen h-screen z-30 top-0 left-0 bg-[#000000]/40 ${visible ? "block" : "hidden"}`}>
-                    <div className="w-4/12 h-5/12 border border-white fixed rounded-2xl bg-green-400 top-1/2 left-1/2 p-10 text-left"
+                    <div className="w-80 h-auto md:w-4/12 md:h-5/12 border border-white fixed rounded-2xl bg-green-400 top-1/2 left-1/2 p-10 text-left"
                      style={{
                         transform: "translate(-50%, -50%)",
                         background:'linear-gradient(to left, #070707, #323232)'

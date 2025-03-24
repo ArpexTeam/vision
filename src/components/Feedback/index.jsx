@@ -28,7 +28,7 @@ function Feedback(){
 
     return(
         
-        <div className="bg-black w-full pt-6 sm:pt-20 h-auto relative">
+        <div className="bg-black w-full pt-6 sm:pt-10 h-auto relative">
             <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative feedbackDiv">
         <Swiper
         slidesPerView={1}

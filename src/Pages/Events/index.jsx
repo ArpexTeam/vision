@@ -45,7 +45,7 @@ function Events(){
                     <h2 className="font-[ClashDisplay-Semibold] text-[28px] md:text-[36px]/10 titleBlueLine mb-3 sm:mb-8 whitespace-pre-line">
                     {t("events.title_varano")}
                     </h2>
-                        <p className='mt-4 sm:mt-10 md:mr-2 font-[ClashDisplay-Regular] '>{t("events.description_varano")}</p>
+                        <p className='mt-4 sm:mt-10 md:mr-2 font-[ClashDisplay-Regular] text-[14px] md:text-[16px] '>{t("events.description_varano")}</p>
                     </div>
                     <div className='w-full md:w-7/12 h-[300px] rounded-3xl relative'>
                     <div className='w-full bg-[#000000]/20 h-full relative'>
