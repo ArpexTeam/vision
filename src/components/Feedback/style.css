@@ -1,35 +1,122 @@
 .swiper {
-    width: 100%;
-    height: 200px;
-  }
-  
+  width: 100%;
+  height: 200px; /* Reduzido de 250px para 200px */
+  position: relative;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  transform: scale(0.9);
+  cursor: pointer;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 10;
+  cursor: default;
+}
+
+/* Estilos para o header do card (imagem + título) */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 12px; /* Reduzido de 16px para 12px */
+}
+
+/* Estilos para a imagem */
+.card-header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Estilos para o título */
+.card-header h2 {
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 60px);
+}
+
+/* Estilos para o conteúdo (parágrafo) */
+.card-content {
+  width: 100%;
+  flex-grow: 0; /* Alterado de flex-grow: 1 para evitar expansão desnecessária */
+  display: flex;
+  align-items: flex-start;
+}
+
+.card-content p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+  width: 100%;
+  max-height: 100px; /* Reduzido de 150px para 100px */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estilos para as setas personalizadas */
+.custom-prev, .custom-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.custom-prev:hover, .custom-next:hover {
+  opacity: 0.8;
+}
+
+.custom-prev {
+  left: -50px;
+}
+
+.custom-next {
+  right: -50px;
+}
+
+@media only screen and (max-width: 520px) {
   .swiper-slide {
-    text-align: center;
-    font-size: 18px;  
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: all 0.2s linear;
+      opacity: 0.8;
+      transform: scale(0.95);
   }
 
-  /* .feedbackDiv .swiper-slide-next{
-    transform: scale(1.5)!important;
-    z-index: 10;
-  } */
-
-
-  @media only screen and (max-width: 520px) {
-    .feedbackDiv .swiper-slide-next{
-      transform: scale(1)!important;
-      z-index: 10;
-    }
-
-    .feedbackDiv .swiper-slide-active{
-      transform: scale(1.1)!important;
-      z-index: 10;
-    }
-  
+  .swiper-slide-active {
+      transform: scale(1);
   }
-  
+
+  .custom-prev {
+      left: 10px;
+  }
+
+  .custom-next {
+      right: 10px;
+  }
+
+  .card-header h2 {
+      font-size: 16px;
+  }
+
+  .card-content p {
+      font-size: 11px;
+  }
+}

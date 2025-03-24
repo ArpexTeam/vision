@@ -41,7 +41,7 @@ function Services(){
     }
 
     return(
-        <div className='bg-black w-full md:py-20 h-auto relative'>
+        <div className='bg-black w-full md:py-20 -mt-3 h-auto relative'>
             <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative'>
                 <h2 className='text-[28px] md:text-[40px] font-[ClashDisplay-Semibold] md:mb-20 whitespace-pre-line'>{t("content.title_hard")}</h2>
 

@@ -295,7 +295,7 @@ function Robot() {
               onMouseLeave={() => setPlayAnimation3(false)}
 
               // button Modelação 3D
-              className="absolute -top-2 md:top-0 -left-10 md:-left-[65px] md:right-11 w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[12px] text-gray-300
+              className="absolute -top-2 md:top-0 -left-9 md:-left-[65px] md:right-11 w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[12px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 {t("services.3d_modeling")}
               </button>
@@ -311,7 +311,7 @@ function Robot() {
               onMouseLeave={() => setPlayAnimation2(false)}
 
               // button criação de site
-              className="absolute md:-top-0 -top-[25px] -left-10 md:-left-[100px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[12px] text-gray-300
+              className="absolute md:-top-0 -top-[25px] -left-9 md:-left-[100px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[12px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center p-2">
               {t("services.website_creation")}
               </button>
@@ -327,7 +327,7 @@ function Robot() {
               onMouseLeave={() => setPlayAnimation1(false)}
 
               // button Animação gráfica
-              className="absolute md:-top-0 -left-10 -top-[40px] md:-left-[65px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
+              className="absolute md:-top-0 -left-9 -top-[40px] md:-left-[65px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center p-4">
                 {t("services.graphic_animation")}
               </button>
@@ -358,11 +358,11 @@ function Robot() {
                 onMouseLeave={() => setPlayAnimation5(false)}
 
                 // button Produçãp de video
-                className="absolute md:-top-1 left-[55px] md:left-[45px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
+                className="absolute md:-top-1 -translate-y-2 left-[55px] md:left-[45px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
                 bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                   {t("services.video_production")}
               </button>
-              <div className="absolute -top-1 md:-top-2 left-[27px] md:left-10 w-40 h-16 md:w-[218px] md:h-[88px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-1 md:-top-2 -translate-y-2 left-[27px] md:left-10 w-40 h-16 md:w-[218px] md:h-[88px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               md:before:bg-gradient-to-r before:bg-gradient-to-l before:to-gray-950/10 before:from-cyan-600/90 md:before:to-cyan-600/90 md:before:from-gray-950/10
               before:p-[2px] before:content-['']">
@@ -375,11 +375,11 @@ function Robot() {
 
 
               // button SEO
-              className="absolute left-[55px] md:top-0 md-1 md:left-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
+              className="absolute left-[55px] md:top-0 md-1 -translate-y-1 md:left-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 {t("services.meta")}
               </button>
-              <div className="absolute -top-1 md:-top-1 left-[27px] md:left-20 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-1 md:-top-1 -translate-y-1 left-[27px] md:left-20 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               md:before:bg-gradient-to-r before:bg-gradient-to-l before:to-gray-950/10 before:from-cyan-600/90 md:before:to-cyan-600/90 md:before:from-gray-950/10
               before:p-[2px] before:content-['']">
