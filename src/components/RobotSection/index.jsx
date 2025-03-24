@@ -261,45 +261,45 @@ function Robot() {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "0 30%",
       }}
-      className="bg-black w-full py-20 h-[1100px] md:h-[800px] relative"
+      className="bg-black w-full md:py-20 h-[600px] md:h-[800px] relative"
     >
       <div className="max-w-[1280px] w-4/5 mr-auto ml-auto h-full relative sm:flex sm:justify-center sm:items-center ">
-        <div className="flex justify-center content-center w-full h-full flex-wrap text-white -mt-28">
+        <div className="flex justify-center content-center w-full h-full flex-wrap text-white md:-mt-28">
           <h2 className="mb-10 mt-12 md:mb-20 md:mt-0 font-[ClashDisplay-Bold] text-[38px] md:text-[45px] ">
           {t("services.our_services")}
           </h2>
           <div className="w-full h-fit flex justify-center">
 
       
-            <div className="relative ml-auto md:ml-0 w-52 h-20">
+            <div className="relative left-10 md:left-0 mr-auto ml-auto md:mr-0 md:ml-0 w-52 h-20">
               <button
                 onMouseEnter={() => setPlayAnimation4(true)}
                 onMouseLeave={() => setPlayAnimation4(false)}
 
               // button CGI
-              className="absolute top-4 md:top-0 -left-[45px] md:-left-9 w-40 h-14 md:w-72 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[16px]  text-gray-300
+              className="absolute top-4 md:top-0 left-1 md:-left-9 w-40 h-14 md:w-72 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[16px]  text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 {t('services.cgi_3d')}
               </button>
-              <div className="absolute top-3 md:-top-1 -left-[50px] md:-left-10 md:right-10 w-[170px] h-[70px] md:w-[297px] md:h-[90px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute top-3 md:-top-1 md:-left-10 md:right-10 w-[170px] h-[70px] md:w-[297px] md:h-[90px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               before:bg-gradient-to-b md:before:bg-gradient-to-b  before:from-cyan-600/90 before:to-gray-950/10 
               before:p-[2px] before:content-['']">
               </div>
             </div>
           </div>
-          <div className="w-full md:w-3/12 flex flex-col gap-5 mt-6 md:mt-0">
+          <div className="w-4/12 md:w-3/12 flex flex-col gap-5 mt-6 md:mt-0">
             <div className="relative w-52 h-20 ml-auto">
               <button
               onMouseEnter={() => setPlayAnimation3(true)}
               onMouseLeave={() => setPlayAnimation3(false)}
 
               // button Modelação 3D
-              className="absolute -top-2 md:top-0 -left-[160px] md:-left-[65px] md:right-11 w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[12px] text-gray-300
+              className="absolute -top-2 md:top-0 -left-10 md:-left-[65px] md:right-11 w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[12px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 {t("services.3d_modeling")}
               </button>
-              <div className="absolute -top-3 -left-[165px] w-40 h-16 md:-top-1 md:-left-[70px] md:right-10 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-3 w-40 h-16 -left-10 md:-top-1 md:-left-[70px] md:right-10 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               before:bg-gradient-to-r before:from-cyan-600/90 before:to-gray-950/10 
               before:p-[2px] before:content-['']">
@@ -311,11 +311,11 @@ function Robot() {
               onMouseLeave={() => setPlayAnimation2(false)}
 
               // button criação de site
-              className="absolute md:-top-0 -top-[25px] -left-[170px] md:-left-[100px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[12px] text-gray-300
+              className="absolute md:-top-0 -top-[25px] -left-10 md:-left-[100px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[12px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center p-2">
               {t("services.website_creation")}
               </button>
-              <div className="absolute -top-[29px] -left-[175px] md:-left-[105px] md:-top-1 md:right-20 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-[29px] -left-10 md:-left-[105px] md:-top-1 md:right-20 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               before:bg-gradient-to-r before:from-cyan-600/90 before:to-gray-950/10
               before:p-[2px] before:content-['']">
@@ -327,11 +327,11 @@ function Robot() {
               onMouseLeave={() => setPlayAnimation1(false)}
 
               // button Animação gráfica
-              className="absolute md:-top-0 -top-[40px] -left-[160px] md:-left-[65px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
+              className="absolute md:-top-0 -left-10 -top-[40px] md:-left-[65px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center p-4">
                 {t("services.graphic_animation")}
               </button>
-              <div className="absolute -top-[45px] -left-[165px] md:-left-[70px] md:-top-1 md:right-20 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-[45px] -left-10 md:-left-[70px] md:-top-1 md:right-20 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               before:bg-gradient-to-r before:from-cyan-600/90 before:to-gray-950/10 
               before:p-[2px] before:content-['']">
@@ -339,7 +339,7 @@ function Robot() {
             </div>
           </div>
           <div className="w-1/3">
-          <div id="modelContainer" ref={modelRef} className="w-1/2 md:w-full absolute -left-12 md:left-0 mt-14 first-letter h-[800px] md:h-[400px]">
+          <div id="modelContainer" ref={modelRef} className="w-1/2 md:w-full top-[240px] md:top-auto left-24 sm:left-56 absolute md:left-0 mt-14 first-letter h-[240px] md:h-[400px]">
           <Canvas camera={{ position: [3.3, 1, 0], fov: 50 }}>
         <ambientLight intensity={0.1} />
         <directionalLight position={[5, 5, 5]} intensity={0.1} />
@@ -351,18 +351,18 @@ function Robot() {
       </Canvas>
           </div>
           </div>
-          <div className="w-full md:w-3/12 flex flex-col gap-5 flex-wrap mt-6 md:mt-0">
+          <div className="w-4/12 md:w-3/12 flex -ml-14 flex-col md:gap-5 flex-wrap mt-6 md:mt-0">
             <div className="relative w-52 h-20 ml-auto">
               <button
                 onMouseEnter={() => setPlayAnimation5(true)}
                 onMouseLeave={() => setPlayAnimation5(false)}
 
                 // button Produçãp de video
-                className="absolute md:-top-1 -top-[310px] left-[105px] md:left-[45px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
+                className="absolute md:-top-1 left-[55px] md:left-[45px] md:right-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
                 bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                   {t("services.video_production")}
               </button>
-              <div className="absolute -top-[315px] md:-top-2 left-[78px] md:left-10 w-40 h-16 md:w-[218px] md:h-[88px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-1 md:-top-2 left-[27px] md:left-10 w-40 h-16 md:w-[218px] md:h-[88px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               md:before:bg-gradient-to-r before:bg-gradient-to-l before:to-gray-950/10 before:from-cyan-600/90 md:before:to-cyan-600/90 md:before:from-gray-950/10
               before:p-[2px] before:content-['']">
@@ -375,11 +375,11 @@ function Robot() {
 
 
               // button SEO
-              className="absolute -top-[326px] left-[112px] md:top-0 md-1 md:left-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
+              className="absolute left-[55px] md:top-0 md-1 md:left-[85px] w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 {t("services.meta")}
               </button>
-              <div className="absolute -top-[330px] md:-top-1 left-[85px] md:left-20 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-1 md:-top-1 left-[27px] md:left-20 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               md:before:bg-gradient-to-r before:bg-gradient-to-l before:to-gray-950/10 before:from-cyan-600/90 md:before:to-cyan-600/90 md:before:from-gray-950/10
               before:p-[2px] before:content-['']">
@@ -391,11 +391,11 @@ function Robot() {
                onMouseLeave={() => setPlayAnimation7(false)}
 
                // button MOVIMENTO
-              className="absolute -top-[343px] md:top-0 left-[105px]  md:left-11 w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
+              className="absolute md:top-0 left-[55px]  md:left-11 w-32 h-14 md:w-52 md:h-20 font-[ClashDisplay-semibold] md:text-[20px] text-[14px] text-gray-300
               bg-gradient-to-r from-stone-950 to-gray-950 rounded-lg z-10 flex items-center justify-center">
                 {t("services.motion_design")}
               </button>
-              <div className="absolute -top-[348px] md:-top-1 left-[78px] md:left-10 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
+              <div className="absolute -top-1  md:-top-1 left-[27px] md:left-10 w-40 h-16 md:w-[218px] md:h-[87px] rounded-md z-0 flex items-center justify-center text-gray-300
               before:absolute before:inset-0 before:-z-10 before:rounded-lg 
               md:before:bg-gradient-to-r before:bg-gradient-to-l before:to-gray-950/10 before:from-cyan-600/90 md:before:to-cyan-600/90 md:before:from-gray-950/10 
               before:p-[2px] before:content-['']">

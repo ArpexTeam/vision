@@ -35,9 +35,35 @@ function NavBar() {
     return (
         <div className="w-full bg-black h-16 xl-h16 relative">
             <div className="max-w-[1280px] w-4/5 h-full flex ml-auto mr-auto justify-between items-center">
-                 <div className='lg:hidden block' onClick={() =>{setExpanded(!isExpanded)}}>
-                    <img src={burguer}/>
-
+                 <div className='lg:hidden block flex'>
+                    <img src={burguer} onClick={() =>{setExpanded(!isExpanded)}}/>
+                    <div className="relative">
+                        <button 
+                            onClick={toggleLanguageMenu} 
+                            className="text-white bg-[#000] px-3 py-1 rounded-md flex items-center gap-2 cursor-pointer hover:bg-gray-800"
+                        >
+                            {selectedLanguage} <span><img src={downArrow} alt="ArrowDown" className='w-5 h-5'/></span>
+                        </button>
+                        {isLanguageOpen && (
+                            <div className="absolute right-0 mt-2 w-28 bg-[#080808] text-white rounded-md shadow-lg z-50">
+                                <ul className="py-2 text-center">
+                                    <li 
+                                        className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2"
+                                        onClick={() => selectLanguage("IT")}
+                                    >
+                                        <img src={ItalyFlag} alt="Italy flag" className='w-5 h-5'/>Italian
+                                    </li>
+                                    <li 
+                                        className="px-4 py-2 hover:bg-gray-700 cursor-pointer flex items-center gap-2"
+                                        onClick={() => selectLanguage("EN")}
+                                    >
+                                        <img src={UnitedStatesFlag} alt="United States Flag" className='w-5 h-3' />English
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        )}
+                    </div>
                 </div>
                 <div className='h-full'>
                     <NavLink to='/'>

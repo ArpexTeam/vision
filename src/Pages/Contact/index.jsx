@@ -153,7 +153,7 @@ function Contact(){
                   </Canvas>
                   </div>
 
-                  <iframe id="mapaGoogle" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2811.720496711281!2d9.1436055!3d45.19275389999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47872655e5b0970d%3A0xbbb95258ec199069!2sVia%20Teodoro%20Lovati%2C%2020%2C%2027100%20Pavia%20PV%2C%20It%C3%A1lia!5e0!3m2!1spt-BR!2sbr!4v1742254221646!5m2!1spt-BR!2sbr" className='invert w-full h-[700px] absolute transition-all opacity-0' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <iframe id="mapaGoogle" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89547.2774339683!2d9.095331889950069!3d45.462704227678486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c1493f1275e7%3A0x3cffcd13c6740e8d!2zTWlsw6NvLCBJdMOhbGlh!5e0!3m2!1spt-BR!2sbr!4v1742815951576!5m2!1spt-BR!2sbr" className='invert w-full h-[700px] absolute transition-all opacity-0' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div className='max-w-[1280px] w-4/5 mr-auto ml-auto h-auto relative pointer-events-none'>
 
           

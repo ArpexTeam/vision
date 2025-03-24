@@ -25,7 +25,7 @@ function Footer(){
                 <img src={logoFooter} className='hover:scale-105 cursor-pointer transition-all w-48'/>
                 </NavLink>
                 <p className='text-[16px] flex mt-1 justify-center sm:justify-start'><img src={pinIcon} className='h-fit mr-2'/><a 
-                href='https://maps.app.goo.gl/AdLoFoHzJTe1EYJ49' target='_blank' className={'hover:text-[#06E5F180]'}>Milão - Itália</a></p>
+                href='https://maps.app.goo.gl/oRTw2aDyya7CxYzw7' target='_blank' className={'hover:text-[#06E5F180]'}>Milão - Itália</a></p>
             </div>
             <div className='text-center sm:text-left w-full sm:w-5/12 lg:w-auto'>
                 <h3 className="font-[ClashDisplay-Bold]">{t("services.ft_services")}</h3>
